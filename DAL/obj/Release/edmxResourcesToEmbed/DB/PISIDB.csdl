@@ -1,0 +1,1986 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PISIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TB_ACTIVIDAD">
+    <Key>
+      <PropertyRef Name="ID_ACTIVIDAD" />
+    </Key>
+    <Property Name="ID_ACTIVIDAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="Int32" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HORA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DIRECCION" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_ACTIVIDAD_USUARIO" FromRole="TB_ACTIVIDAD" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_ACTIVIDAD_USUARIO1" FromRole="TB_ACTIVIDAD" ToRole="TB_USUARIO" />
+  </EntityType>
+  <EntityType Name="TB_BENEFICIARIO">
+    <Key>
+      <PropertyRef Name="ID_BENEFICIARIO" />
+    </Key>
+    <Property Name="ID_BENEFICIARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SECTOR_ECONOMICO" Type="Int32" />
+    <Property Name="ID_PERSONA" Type="Int32" />
+    <Property Name="ID_ESTADO_PROCESO" Type="Int32" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="CODIGO_BENEFICIARIO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIPO_PERSONA" Type="Int16" Nullable="false" />
+    <Property Name="DUI" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NIT" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LAT" Type="Decimal" Precision="14" Scale="0" />
+    <Property Name="LONG" Type="Decimal" Precision="14" Scale="0" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <Property Name="EXISTEN_ACTIVOS" Type="Boolean" />
+    <Property Name="MAS_ANIOS_EN_LUGAR" Type="Boolean" />
+    <Property Name="PUEDE_COMPROBAR_VENTAS" Type="Boolean" />
+    <Property Name="MEDIO_CONTACTO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="INFO_COMPLEMENTARIA" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBC_ESTADO_PROCESO" Relationship="Self.FK_BENEFICIARIO_ESTADO_PROCESO" FromRole="TB_BENEFICIARIO" ToRole="TBC_ESTADO_PROCESO" />
+    <NavigationProperty Name="TB_PERSONA" Relationship="Self.FK_BENEFICIARIO_PERSONA" FromRole="TB_BENEFICIARIO" ToRole="TB_PERSONA" />
+    <NavigationProperty Name="TBC_SECTOR_ECONOMICO" Relationship="Self.FK_BENEFICIARIO_SECTOR_ECONOMICA" FromRole="TB_BENEFICIARIO" ToRole="TBC_SECTOR_ECONOMICO" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_BENEFICIARIO_USUARIO1" FromRole="TB_BENEFICIARIO" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_BENEFICIARIO_USUARIO2" FromRole="TB_BENEFICIARIO" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_DOCUMENTO" Relationship="Self.FK_DOCUMENTO_BENEFICIARIO" FromRole="TB_BENEFICIARIO" ToRole="TB_DOCUMENTO" />
+    <NavigationProperty Name="TB_PROBLEMA" Relationship="Self.FK_PROBLEMA_BENEFICIARIO" FromRole="TB_BENEFICIARIO" ToRole="TB_PROBLEMA" />
+  </EntityType>
+  <EntityType Name="TB_DOCUMENTO">
+    <Key>
+      <PropertyRef Name="ID_DOCUMENTO" />
+    </Key>
+    <Property Name="ID_DOCUMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPO_DOCUMENTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_BENEFICIARIO" Type="Int32" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_BENEFICIARIO" Relationship="Self.FK_DOCUMENTO_BENEFICIARIO" FromRole="TB_DOCUMENTO" ToRole="TB_BENEFICIARIO" />
+    <NavigationProperty Name="TBC_TIPO_DOCUMENTO" Relationship="Self.FK_DOCUMENTO_TIPO_DOCUMENTO" FromRole="TB_DOCUMENTO" ToRole="TBC_TIPO_DOCUMENTO" />
+  </EntityType>
+  <EntityType Name="TB_EJECUCION">
+    <Key>
+      <PropertyRef Name="ID_EJECUCION" />
+    </Key>
+    <Property Name="ID_EJECUCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROYECTO_ACTIVIDAD" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="4096" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="TB_PROYECTO_ACTIVIDAD" Relationship="Self.FK_EJECUCION_PROYECTO_ACTIVIDAD" FromRole="TB_EJECUCION" ToRole="TB_PROYECTO_ACTIVIDAD" />
+  </EntityType>
+  <EntityType Name="TB_NOTIFICACION">
+    <Key>
+      <PropertyRef Name="ID_NOTIFICACION" />
+    </Key>
+    <Property Name="ID_NOTIFICACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="Int32" />
+    <Property Name="ID_TIPO_NOTIFICACION" Type="Int32" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LEIDO" Type="Int16" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_NOTIFICACION_USUARIO" FromRole="TB_NOTIFICACION" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_TB_NOTIF_REFERENCE_TB_USUAR" FromRole="TB_NOTIFICACION" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TBC_TIPO_NOTIFICACION" Relationship="Self.FK_TB_NOTIF_REFERENCE_TBC_TIPO" FromRole="TB_NOTIFICACION" ToRole="TBC_TIPO_NOTIFICACION" />
+  </EntityType>
+  <EntityType Name="TB_PERMISO">
+    <Key>
+      <PropertyRef Name="ID_ROL" />
+      <PropertyRef Name="ID_RECURSO" />
+    </Key>
+    <Property Name="ID_ROL" Type="Int32" Nullable="false" />
+    <Property Name="ID_RECURSO" Type="Int32" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_RECURSO" Relationship="Self.FK_PERMISO_RECURSO" FromRole="TB_PERMISO" ToRole="TB_RECURSO" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_PERMISO_USUARIO1" FromRole="TB_PERMISO" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_PERMISO_USUARIO2" FromRole="TB_PERMISO" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_ROL" Relationship="Self.FK_PERSMISO_ROL" FromRole="TB_PERMISO" ToRole="TB_ROL" />
+  </EntityType>
+  <EntityType Name="TB_PERSONA">
+    <Key>
+      <PropertyRef Name="ID_PERSONA" />
+    </Key>
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="ID_MUNICIPIO" Type="Int32" />
+    <Property Name="NOMBRES" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDOS" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CORREO_E" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TEL_FIJO" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="TEL_CEL" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_BENEFICIARIO" Relationship="Self.FK_BENEFICIARIO_PERSONA" FromRole="TB_PERSONA" ToRole="TB_BENEFICIARIO" />
+    <NavigationProperty Name="TBC_MUNICIPIO" Relationship="Self.FK_PERSONA_MUNICIPIO" FromRole="TB_PERSONA" ToRole="TBC_MUNICIPIO" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_PERSONA_USUARIO1" FromRole="TB_PERSONA" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_PERSONA_USUARIO2" FromRole="TB_PERSONA" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO2" Relationship="Self.FK_USUARIO_PERSONA" FromRole="TB_PERSONA" ToRole="TB_USUARIO" />
+  </EntityType>
+  <EntityType Name="TB_PROBLEMA">
+    <Key>
+      <PropertyRef Name="ID_PROBLEMA" />
+    </Key>
+    <Property Name="ID_PROBLEMA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_BENEFICIARIO" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTADO_PROCESO" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="MERCADO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CANT_EMPLEADOS" Type="Int32" Nullable="false" />
+    <Property Name="REQUIERE_APOYO" Type="Boolean" Nullable="false" />
+    <Property Name="NOMBRE_PROBLEMA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION_NEGOCIO" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="VENTA_DIA" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="VENTA_MES" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="DESCRIPCION_PROBLEMA" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION_OTRO_PROBLEMA" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_BENEFICIARIO" Relationship="Self.FK_PROBLEMA_BENEFICIARIO" FromRole="TB_PROBLEMA" ToRole="TB_BENEFICIARIO" />
+    <NavigationProperty Name="TBC_ESTADO_PROCESO" Relationship="Self.FK_PROBLEMA_ESTADO_PROCESO" FromRole="TB_PROBLEMA" ToRole="TBC_ESTADO_PROCESO" />
+    <NavigationProperty Name="TB_PROPUESTA" Relationship="Self.FK_PROPUESTA_PROBLEMA" FromRole="TB_PROBLEMA" ToRole="TB_PROPUESTA" />
+    <NavigationProperty Name="TB_PROYECTO" Relationship="Self.FK_PROYECTO_PROBLEMA" FromRole="TB_PROBLEMA" ToRole="TB_PROYECTO" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_TB_PROBL_REFERENCE_TB_USUAR" FromRole="TB_PROBLEMA" ToRole="TB_USUARIO" />
+  </EntityType>
+  <EntityType Name="TB_PROPUESTA">
+    <Key>
+      <PropertyRef Name="ID_PROPUESTA" />
+    </Key>
+    <Property Name="ID_PROPUESTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROBLEMA" Type="Int32" Nullable="false" />
+    <Property Name="ID_USUARIO_FORMULA" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTADO_PROCESO" Type="Int32" />
+    <Property Name="ID_TIPO_INICIATIVA" Type="Int32" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PROBLEMA" Relationship="Self.FK_PROPUESTA_PROBLEMA" FromRole="TB_PROPUESTA" ToRole="TB_PROBLEMA" />
+    <NavigationProperty Name="TBC_ESTADO_PROCESO" Relationship="Self.FK_PROPUESTA_ESTADO_PROCESO" FromRole="TB_PROPUESTA" ToRole="TBC_ESTADO_PROCESO" />
+    <NavigationProperty Name="TBC_TIPO_INICIATIVA" Relationship="Self.FK_PROPUESTA_TIPO_INICIATIVA" FromRole="TB_PROPUESTA" ToRole="TBC_TIPO_INICIATIVA" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_PROPUESTA_USUARIO" FromRole="TB_PROPUESTA" ToRole="TB_USUARIO" />
+  </EntityType>
+  <EntityType Name="TB_PROYECTO">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO" />
+    </Key>
+    <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_PROYECTO" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_PROBLEMA" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_INICIATIVA" Type="Int32" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PROBLEMA" Relationship="Self.FK_PROYECTO_PROBLEMA" FromRole="TB_PROYECTO" ToRole="TB_PROBLEMA" />
+    <NavigationProperty Name="TB_PROYECTO_ACTIVIDAD" Relationship="Self.FK_PROYECTO_ACTIVIDAD_PROYECTO" FromRole="TB_PROYECTO" ToRole="TB_PROYECTO_ACTIVIDAD" />
+    <NavigationProperty Name="TBC_TIPO_INICIATIVA" Relationship="Self.FK_PROYECTO_TIPO_INICIATIVA" FromRole="TB_PROYECTO" ToRole="TBC_TIPO_INICIATIVA" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_PROYECTO_USUARIO1" FromRole="TB_PROYECTO" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_PROYECTO_USUARIO2" FromRole="TB_PROYECTO" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_SOLICITUD_SEGUIMIENTO" Relationship="Self.FK_SOLICITUD_SEGUIMIENTO_PROYECTO" FromRole="TB_PROYECTO" ToRole="TB_SOLICITUD_SEGUIMIENTO" />
+  </EntityType>
+  <EntityType Name="TB_PROYECTO_ACTIVIDAD">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO_ACTIVIDAD" />
+    </Key>
+    <Property Name="ID_PROYECTO_ACTIVIDAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ACTIVIDAD_INICIATIVA" Type="Int32" Nullable="false" />
+    <Property Name="ID_PROYECTO" Type="Int32" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="SEMANA_INICIO" Type="Int16" Nullable="false" />
+    <Property Name="SEMANA_FIN" Type="Int16" Nullable="false" />
+    <Property Name="PORCENTAJE_AVANCE" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_EJECUCION" Relationship="Self.FK_EJECUCION_PROYECTO_ACTIVIDAD" FromRole="TB_PROYECTO_ACTIVIDAD" ToRole="TB_EJECUCION" />
+    <NavigationProperty Name="TB_PROYECTO" Relationship="Self.FK_PROYECTO_ACTIVIDAD_PROYECTO" FromRole="TB_PROYECTO_ACTIVIDAD" ToRole="TB_PROYECTO" />
+    <NavigationProperty Name="TBC_ACTIVIDAD_INICIATIVA" Relationship="Self.FK_ACTIVIDAD_INICIATIVA_ACTIVIDAD_PROYECTO" FromRole="TB_PROYECTO_ACTIVIDAD" ToRole="TBC_ACTIVIDAD_INICIATIVA" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_PROYECTO_ACTIVIDAD_USUARIO1" FromRole="TB_PROYECTO_ACTIVIDAD" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_PROYECTO_ACTIVIDAD_USUARIO2" FromRole="TB_PROYECTO_ACTIVIDAD" ToRole="TB_USUARIO" />
+  </EntityType>
+  <EntityType Name="TB_RECURSO">
+    <Key>
+      <PropertyRef Name="ID_RECURSO" />
+    </Key>
+    <Property Name="ID_RECURSO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="URL_RECURSO" Type="String" MaxLength="512" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PERMISO" Relationship="Self.FK_PERMISO_RECURSO" FromRole="TB_RECURSO" ToRole="TB_PERMISO" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_RECURSO_USUARIO1" FromRole="TB_RECURSO" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_RECURSO_USUARIO2" FromRole="TB_RECURSO" ToRole="TB_USUARIO" />
+  </EntityType>
+  <EntityType Name="TB_ROL">
+    <Key>
+      <PropertyRef Name="ID_ROL" />
+    </Key>
+    <Property Name="ID_ROL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="NOMBRE" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PERMISO" Relationship="Self.FK_PERSMISO_ROL" FromRole="TB_ROL" ToRole="TB_PERMISO" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_ROL_USUARIO1" FromRole="TB_ROL" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_ROL_USUARIO2" FromRole="TB_ROL" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO2" Relationship="Self.FK_USUARIO_ROL" FromRole="TB_ROL" ToRole="TB_USUARIO" />
+  </EntityType>
+  <EntityType Name="TB_SOLICITUD_SEGUIMIENTO">
+    <Key>
+      <PropertyRef Name="ID_SOLICITUD_SEGUIMIENTO" />
+    </Key>
+    <Property Name="ID_SOLICITUD_SEGUIMIENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROYECTO" Type="Int32" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="4096" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PROYECTO" Relationship="Self.FK_SOLICITUD_SEGUIMIENTO_PROYECTO" FromRole="TB_SOLICITUD_SEGUIMIENTO" ToRole="TB_PROYECTO" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_SOLICITUD_SEGUIMIENTO_USUARIO1" FromRole="TB_SOLICITUD_SEGUIMIENTO" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_SOLICITUD_SEGUIMIENTO_USUARIO2" FromRole="TB_SOLICITUD_SEGUIMIENTO" ToRole="TB_USUARIO" />
+  </EntityType>
+  <EntityType Name="TB_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ROL" Type="Int32" Nullable="false" />
+    <Property Name="ID_PERSONA" Type="Int32" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONTRASENA" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ID_SESION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_ACTIVIDAD" Relationship="Self.FK_ACTIVIDAD_USUARIO" FromRole="TB_USUARIO" ToRole="TB_ACTIVIDAD" />
+    <NavigationProperty Name="TB_ACTIVIDAD1" Relationship="Self.FK_ACTIVIDAD_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_ACTIVIDAD" />
+    <NavigationProperty Name="TB_BENEFICIARIO" Relationship="Self.FK_BENEFICIARIO_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_BENEFICIARIO" />
+    <NavigationProperty Name="TB_BENEFICIARIO1" Relationship="Self.FK_BENEFICIARIO_USUARIO2" FromRole="TB_USUARIO" ToRole="TB_BENEFICIARIO" />
+    <NavigationProperty Name="TB_NOTIFICACION" Relationship="Self.FK_NOTIFICACION_USUARIO" FromRole="TB_USUARIO" ToRole="TB_NOTIFICACION" />
+    <NavigationProperty Name="TB_NOTIFICACION1" Relationship="Self.FK_TB_NOTIF_REFERENCE_TB_USUAR" FromRole="TB_USUARIO" ToRole="TB_NOTIFICACION" />
+    <NavigationProperty Name="TB_PERMISO" Relationship="Self.FK_PERMISO_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_PERMISO" />
+    <NavigationProperty Name="TB_PERMISO1" Relationship="Self.FK_PERMISO_USUARIO2" FromRole="TB_USUARIO" ToRole="TB_PERMISO" />
+    <NavigationProperty Name="TB_PERSONA" Relationship="Self.FK_PERSONA_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_PERSONA" />
+    <NavigationProperty Name="TB_PERSONA1" Relationship="Self.FK_PERSONA_USUARIO2" FromRole="TB_USUARIO" ToRole="TB_PERSONA" />
+    <NavigationProperty Name="TB_PERSONA2" Relationship="Self.FK_USUARIO_PERSONA" FromRole="TB_USUARIO" ToRole="TB_PERSONA" />
+    <NavigationProperty Name="TB_PROBLEMA" Relationship="Self.FK_TB_PROBL_REFERENCE_TB_USUAR" FromRole="TB_USUARIO" ToRole="TB_PROBLEMA" />
+    <NavigationProperty Name="TB_PROPUESTA" Relationship="Self.FK_PROPUESTA_USUARIO" FromRole="TB_USUARIO" ToRole="TB_PROPUESTA" />
+    <NavigationProperty Name="TB_PROYECTO" Relationship="Self.FK_PROYECTO_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_PROYECTO" />
+    <NavigationProperty Name="TB_PROYECTO1" Relationship="Self.FK_PROYECTO_USUARIO2" FromRole="TB_USUARIO" ToRole="TB_PROYECTO" />
+    <NavigationProperty Name="TB_PROYECTO_ACTIVIDAD" Relationship="Self.FK_PROYECTO_ACTIVIDAD_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_PROYECTO_ACTIVIDAD" />
+    <NavigationProperty Name="TB_PROYECTO_ACTIVIDAD1" Relationship="Self.FK_PROYECTO_ACTIVIDAD_USUARIO2" FromRole="TB_USUARIO" ToRole="TB_PROYECTO_ACTIVIDAD" />
+    <NavigationProperty Name="TB_RECURSO" Relationship="Self.FK_RECURSO_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_RECURSO" />
+    <NavigationProperty Name="TB_RECURSO1" Relationship="Self.FK_RECURSO_USUARIO2" FromRole="TB_USUARIO" ToRole="TB_RECURSO" />
+    <NavigationProperty Name="TB_ROL" Relationship="Self.FK_ROL_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_ROL" />
+    <NavigationProperty Name="TB_ROL1" Relationship="Self.FK_ROL_USUARIO2" FromRole="TB_USUARIO" ToRole="TB_ROL" />
+    <NavigationProperty Name="TB_ROL2" Relationship="Self.FK_USUARIO_ROL" FromRole="TB_USUARIO" ToRole="TB_ROL" />
+    <NavigationProperty Name="TB_SOLICITUD_SEGUIMIENTO" Relationship="Self.FK_SOLICITUD_SEGUIMIENTO_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_SOLICITUD_SEGUIMIENTO" />
+    <NavigationProperty Name="TB_SOLICITUD_SEGUIMIENTO1" Relationship="Self.FK_SOLICITUD_SEGUIMIENTO_USUARIO2" FromRole="TB_USUARIO" ToRole="TB_SOLICITUD_SEGUIMIENTO" />
+    <NavigationProperty Name="TBC_ACTIVIDAD_INICIATIVA" Relationship="Self.FK_ACTIVIDAD_INICIATIVA_USUARIO1" FromRole="TB_USUARIO" ToRole="TBC_ACTIVIDAD_INICIATIVA" />
+    <NavigationProperty Name="TBC_ACTIVIDAD_INICIATIVA1" Relationship="Self.FK_ACTIVIDAD_INICIATIVA_USUARIO2" FromRole="TB_USUARIO" ToRole="TBC_ACTIVIDAD_INICIATIVA" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_USUARIO_USUARIO1" FromRole="TB_USUARIO" ToRole="TB_USUARIO1" />
+    <NavigationProperty Name="TB_USUARIO2" Relationship="Self.FK_USUARIO_USUARIO1" FromRole="TB_USUARIO1" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO11" Relationship="Self.FK_USUARIO_USUARIO2" FromRole="TB_USUARIO" ToRole="TB_USUARIO1" />
+    <NavigationProperty Name="TB_USUARIO3" Relationship="Self.FK_USUARIO_USUARIO2" FromRole="TB_USUARIO1" ToRole="TB_USUARIO" />
+  </EntityType>
+  <EntityType Name="TBC_ACTIVIDAD_INICIATIVA">
+    <Key>
+      <PropertyRef Name="ID_ACTIVIDAD_INICIATIVA" />
+    </Key>
+    <Property Name="ID_ACTIVIDAD_INICIATIVA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPO_INICIATIVA" Type="Int32" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="Int32" />
+    <Property Name="USUARIO_ACTUALIZA" Type="Int32" />
+    <Property Name="COD_ACTIVIDAD_PROY" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="4096" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_ACTUALIZA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_BORRADO" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PROYECTO_ACTIVIDAD" Relationship="Self.FK_ACTIVIDAD_INICIATIVA_ACTIVIDAD_PROYECTO" FromRole="TBC_ACTIVIDAD_INICIATIVA" ToRole="TB_PROYECTO_ACTIVIDAD" />
+    <NavigationProperty Name="TB_USUARIO" Relationship="Self.FK_ACTIVIDAD_INICIATIVA_USUARIO1" FromRole="TBC_ACTIVIDAD_INICIATIVA" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TB_USUARIO1" Relationship="Self.FK_ACTIVIDAD_INICIATIVA_USUARIO2" FromRole="TBC_ACTIVIDAD_INICIATIVA" ToRole="TB_USUARIO" />
+    <NavigationProperty Name="TBC_TIPO_INICIATIVA" Relationship="Self.FK_ACTIVIDAD_PROYECTO_TIPO_INICIATIVA" FromRole="TBC_ACTIVIDAD_INICIATIVA" ToRole="TBC_TIPO_INICIATIVA" />
+  </EntityType>
+  <EntityType Name="TBC_DEPARTAMENTO">
+    <Key>
+      <PropertyRef Name="ID_DEPARTAMENTO" />
+    </Key>
+    <Property Name="ID_DEPARTAMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_DEPARTAMENTO" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRE_DEPTO" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TBC_MUNICIPIO" Relationship="Self.FK_MUNICIPIO_DEPARTAMENTO" FromRole="TBC_DEPARTAMENTO" ToRole="TBC_MUNICIPIO" />
+  </EntityType>
+  <EntityType Name="TBC_ESTADO_PROCESO">
+    <Key>
+      <PropertyRef Name="ID_ESTADO_PROCESO" />
+    </Key>
+    <Property Name="ID_ESTADO_PROCESO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROCESO" Type="Int32" />
+    <Property Name="CODIGO_ESTADO_PROCESO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TB_BENEFICIARIO" Relationship="Self.FK_BENEFICIARIO_ESTADO_PROCESO" FromRole="TBC_ESTADO_PROCESO" ToRole="TB_BENEFICIARIO" />
+    <NavigationProperty Name="TB_PROBLEMA" Relationship="Self.FK_PROBLEMA_ESTADO_PROCESO" FromRole="TBC_ESTADO_PROCESO" ToRole="TB_PROBLEMA" />
+    <NavigationProperty Name="TB_PROPUESTA" Relationship="Self.FK_PROPUESTA_ESTADO_PROCESO" FromRole="TBC_ESTADO_PROCESO" ToRole="TB_PROPUESTA" />
+    <NavigationProperty Name="TBC_PROCESO" Relationship="Self.FK_ESTADO_PROCESO_PROCESO" FromRole="TBC_ESTADO_PROCESO" ToRole="TBC_PROCESO" />
+  </EntityType>
+  <EntityType Name="TBC_MUNICIPIO">
+    <Key>
+      <PropertyRef Name="ID_MUNICIPIO" />
+    </Key>
+    <Property Name="ID_MUNICIPIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_DEPARTAMENTO" Type="Int32" />
+    <Property Name="COD_MUNICIPIO" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRE_MUNIC" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TB_PERSONA" Relationship="Self.FK_PERSONA_MUNICIPIO" FromRole="TBC_MUNICIPIO" ToRole="TB_PERSONA" />
+    <NavigationProperty Name="TBC_DEPARTAMENTO" Relationship="Self.FK_MUNICIPIO_DEPARTAMENTO" FromRole="TBC_MUNICIPIO" ToRole="TBC_DEPARTAMENTO" />
+  </EntityType>
+  <EntityType Name="TBC_PROCESO">
+    <Key>
+      <PropertyRef Name="ID_PROCESO" />
+    </Key>
+    <Property Name="ID_PROCESO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODIGO_PROCESO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TBC_ESTADO_PROCESO" Relationship="Self.FK_ESTADO_PROCESO_PROCESO" FromRole="TBC_PROCESO" ToRole="TBC_ESTADO_PROCESO" />
+  </EntityType>
+  <EntityType Name="TBC_SECTOR_ECONOMICO">
+    <Key>
+      <PropertyRef Name="ID_SECTOR_ECONOMICO" />
+    </Key>
+    <Property Name="ID_SECTOR_ECONOMICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_SECTOR_ECONOMICO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRE_SECTOR" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TB_BENEFICIARIO" Relationship="Self.FK_BENEFICIARIO_SECTOR_ECONOMICA" FromRole="TBC_SECTOR_ECONOMICO" ToRole="TB_BENEFICIARIO" />
+  </EntityType>
+  <EntityType Name="TBC_TIPO_DOCUMENTO">
+    <Key>
+      <PropertyRef Name="ID_TIPO_DOCUMENTO" />
+    </Key>
+    <Property Name="ID_TIPO_DOCUMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TB_DOCUMENTO" Relationship="Self.FK_DOCUMENTO_TIPO_DOCUMENTO" FromRole="TBC_TIPO_DOCUMENTO" ToRole="TB_DOCUMENTO" />
+  </EntityType>
+  <EntityType Name="TBC_TIPO_INICIATIVA">
+    <Key>
+      <PropertyRef Name="ID_TIPO_INICIATIVA" />
+    </Key>
+    <Property Name="ID_TIPO_INICIATIVA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODIGO_TIPO_INICIATVA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TB_PROPUESTA" Relationship="Self.FK_PROPUESTA_TIPO_INICIATIVA" FromRole="TBC_TIPO_INICIATIVA" ToRole="TB_PROPUESTA" />
+    <NavigationProperty Name="TB_PROYECTO" Relationship="Self.FK_PROYECTO_TIPO_INICIATIVA" FromRole="TBC_TIPO_INICIATIVA" ToRole="TB_PROYECTO" />
+    <NavigationProperty Name="TBC_ACTIVIDAD_INICIATIVA" Relationship="Self.FK_ACTIVIDAD_PROYECTO_TIPO_INICIATIVA" FromRole="TBC_TIPO_INICIATIVA" ToRole="TBC_ACTIVIDAD_INICIATIVA" />
+  </EntityType>
+  <EntityType Name="TBC_TIPO_NOTIFICACION">
+    <Key>
+      <PropertyRef Name="ID_TIPO_NOTIFICACION" />
+    </Key>
+    <Property Name="ID_TIPO_NOTIFICACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COLOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ICONO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TITULO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TB_NOTIFICACION" Relationship="Self.FK_TB_NOTIF_REFERENCE_TBC_TIPO" FromRole="TBC_TIPO_NOTIFICACION" ToRole="TB_NOTIFICACION" />
+  </EntityType>
+  <Association Name="FK_ACTIVIDAD_USUARIO">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_ACTIVIDAD" Type="Self.TB_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_ACTIVIDAD">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_ACTIVIDAD" Type="Self.TB_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_ACTIVIDAD">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_ESTADO_PROCESO">
+    <End Role="TBC_ESTADO_PROCESO" Type="Self.TBC_ESTADO_PROCESO" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_ESTADO_PROCESO">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_PERSONA">
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PERSONA">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_SECTOR_ECONOMICA">
+    <End Role="TBC_SECTOR_ECONOMICO" Type="Self.TBC_SECTOR_ECONOMICO" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_SECTOR_ECONOMICO">
+        <PropertyRef Name="ID_SECTOR_ECONOMICO" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_SECTOR_ECONOMICO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCUMENTO_BENEFICIARIO">
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="1" />
+    <End Role="TB_DOCUMENTO" Type="Self.TB_DOCUMENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_BENEFICIARIO" />
+      </Principal>
+      <Dependent Role="TB_DOCUMENTO">
+        <PropertyRef Name="ID_BENEFICIARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROBLEMA_BENEFICIARIO">
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="1" />
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_BENEFICIARIO" />
+      </Principal>
+      <Dependent Role="TB_PROBLEMA">
+        <PropertyRef Name="ID_BENEFICIARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCUMENTO_TIPO_DOCUMENTO">
+    <End Role="TBC_TIPO_DOCUMENTO" Type="Self.TBC_TIPO_DOCUMENTO" Multiplicity="1" />
+    <End Role="TB_DOCUMENTO" Type="Self.TB_DOCUMENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_DOCUMENTO">
+        <PropertyRef Name="ID_TIPO_DOCUMENTO" />
+      </Principal>
+      <Dependent Role="TB_DOCUMENTO">
+        <PropertyRef Name="ID_TIPO_DOCUMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EJECUCION_PROYECTO_ACTIVIDAD">
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="1" />
+    <End Role="TB_EJECUCION" Type="Self.TB_EJECUCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="ID_PROYECTO_ACTIVIDAD" />
+      </Principal>
+      <Dependent Role="TB_EJECUCION">
+        <PropertyRef Name="ID_PROYECTO_ACTIVIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NOTIFICACION_USUARIO">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_NOTIFICACION" Type="Self.TB_NOTIFICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_NOTIFICACION">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_NOTIF_REFERENCE_TB_USUAR">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_NOTIFICACION" Type="Self.TB_NOTIFICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_NOTIFICACION">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_NOTIF_REFERENCE_TBC_TIPO">
+    <End Role="TBC_TIPO_NOTIFICACION" Type="Self.TBC_TIPO_NOTIFICACION" Multiplicity="0..1" />
+    <End Role="TB_NOTIFICACION" Type="Self.TB_NOTIFICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_NOTIFICACION">
+        <PropertyRef Name="ID_TIPO_NOTIFICACION" />
+      </Principal>
+      <Dependent Role="TB_NOTIFICACION">
+        <PropertyRef Name="ID_TIPO_NOTIFICACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERMISO_RECURSO">
+    <End Role="TB_RECURSO" Type="Self.TB_RECURSO" Multiplicity="1" />
+    <End Role="TB_PERMISO" Type="Self.TB_PERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_RECURSO">
+        <PropertyRef Name="ID_RECURSO" />
+      </Principal>
+      <Dependent Role="TB_PERMISO">
+        <PropertyRef Name="ID_RECURSO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERMISO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PERMISO" Type="Self.TB_PERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PERMISO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERMISO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PERMISO" Type="Self.TB_PERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PERMISO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSMISO_ROL">
+    <End Role="TB_ROL" Type="Self.TB_ROL" Multiplicity="1" />
+    <End Role="TB_PERMISO" Type="Self.TB_PERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ROL">
+        <PropertyRef Name="ID_ROL" />
+      </Principal>
+      <Dependent Role="TB_PERMISO">
+        <PropertyRef Name="ID_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSONA_MUNICIPIO">
+    <End Role="TBC_MUNICIPIO" Type="Self.TBC_MUNICIPIO" Multiplicity="0..1" />
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_MUNICIPIO">
+        <PropertyRef Name="ID_MUNICIPIO" />
+      </Principal>
+      <Dependent Role="TB_PERSONA">
+        <PropertyRef Name="ID_MUNICIPIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSONA_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PERSONA">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSONA_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PERSONA">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_PERSONA">
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="0..1" />
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PERSONA">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="TB_USUARIO">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROBLEMA_ESTADO_PROCESO">
+    <End Role="TBC_ESTADO_PROCESO" Type="Self.TBC_ESTADO_PROCESO" Multiplicity="0..1" />
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_ESTADO_PROCESO">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Principal>
+      <Dependent Role="TB_PROBLEMA">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPUESTA_PROBLEMA">
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="1" />
+    <End Role="TB_PROPUESTA" Type="Self.TB_PROPUESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROBLEMA">
+        <PropertyRef Name="ID_PROBLEMA" />
+      </Principal>
+      <Dependent Role="TB_PROPUESTA">
+        <PropertyRef Name="ID_PROBLEMA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_PROBLEMA">
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="1" />
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROBLEMA">
+        <PropertyRef Name="ID_PROBLEMA" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO">
+        <PropertyRef Name="ID_PROBLEMA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PROBL_REFERENCE_TB_USUAR">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROBLEMA">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPUESTA_ESTADO_PROCESO">
+    <End Role="TBC_ESTADO_PROCESO" Type="Self.TBC_ESTADO_PROCESO" Multiplicity="0..1" />
+    <End Role="TB_PROPUESTA" Type="Self.TB_PROPUESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_ESTADO_PROCESO">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Principal>
+      <Dependent Role="TB_PROPUESTA">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPUESTA_TIPO_INICIATIVA">
+    <End Role="TBC_TIPO_INICIATIVA" Type="Self.TBC_TIPO_INICIATIVA" Multiplicity="0..1" />
+    <End Role="TB_PROPUESTA" Type="Self.TB_PROPUESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_INICIATIVA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Principal>
+      <Dependent Role="TB_PROPUESTA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPUESTA_USUARIO">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="1" />
+    <End Role="TB_PROPUESTA" Type="Self.TB_PROPUESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROPUESTA">
+        <PropertyRef Name="ID_USUARIO_FORMULA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_ACTIVIDAD_PROYECTO">
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="1" />
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_TIPO_INICIATIVA">
+    <End Role="TBC_TIPO_INICIATIVA" Type="Self.TBC_TIPO_INICIATIVA" Multiplicity="1" />
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_INICIATIVA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLICITUD_SEGUIMIENTO_PROYECTO">
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="0..1" />
+    <End Role="TB_SOLICITUD_SEGUIMIENTO" Type="Self.TB_SOLICITUD_SEGUIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="TB_SOLICITUD_SEGUIMIENTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_INICIATIVA_ACTIVIDAD_PROYECTO">
+    <End Role="TBC_ACTIVIDAD_INICIATIVA" Type="Self.TBC_ACTIVIDAD_INICIATIVA" Multiplicity="1" />
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_ACTIVIDAD_INICIATIVA">
+        <PropertyRef Name="ID_ACTIVIDAD_INICIATIVA" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="ID_ACTIVIDAD_INICIATIVA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_ACTIVIDAD_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_ACTIVIDAD_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RECURSO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_RECURSO" Type="Self.TB_RECURSO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_RECURSO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RECURSO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_RECURSO" Type="Self.TB_RECURSO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_RECURSO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROL_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_ROL" Type="Self.TB_ROL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_ROL">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROL_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_ROL" Type="Self.TB_ROL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_ROL">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_ROL">
+    <End Role="TB_ROL" Type="Self.TB_ROL" Multiplicity="1" />
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ROL">
+        <PropertyRef Name="ID_ROL" />
+      </Principal>
+      <Dependent Role="TB_USUARIO">
+        <PropertyRef Name="ID_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLICITUD_SEGUIMIENTO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_SOLICITUD_SEGUIMIENTO" Type="Self.TB_SOLICITUD_SEGUIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_SOLICITUD_SEGUIMIENTO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLICITUD_SEGUIMIENTO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_SOLICITUD_SEGUIMIENTO" Type="Self.TB_SOLICITUD_SEGUIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_SOLICITUD_SEGUIMIENTO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_INICIATIVA_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TBC_ACTIVIDAD_INICIATIVA" Type="Self.TBC_ACTIVIDAD_INICIATIVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TBC_ACTIVIDAD_INICIATIVA">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_INICIATIVA_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TBC_ACTIVIDAD_INICIATIVA" Type="Self.TBC_ACTIVIDAD_INICIATIVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TBC_ACTIVIDAD_INICIATIVA">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_USUARIO1" Type="Self.TB_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_USUARIO1">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_USUARIO1" Type="Self.TB_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_USUARIO1">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_PROYECTO_TIPO_INICIATIVA">
+    <End Role="TBC_TIPO_INICIATIVA" Type="Self.TBC_TIPO_INICIATIVA" Multiplicity="1" />
+    <End Role="TBC_ACTIVIDAD_INICIATIVA" Type="Self.TBC_ACTIVIDAD_INICIATIVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_INICIATIVA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Principal>
+      <Dependent Role="TBC_ACTIVIDAD_INICIATIVA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MUNICIPIO_DEPARTAMENTO">
+    <End Role="TBC_DEPARTAMENTO" Type="Self.TBC_DEPARTAMENTO" Multiplicity="0..1" />
+    <End Role="TBC_MUNICIPIO" Type="Self.TBC_MUNICIPIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_DEPARTAMENTO">
+        <PropertyRef Name="ID_DEPARTAMENTO" />
+      </Principal>
+      <Dependent Role="TBC_MUNICIPIO">
+        <PropertyRef Name="ID_DEPARTAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ESTADO_PROCESO_PROCESO">
+    <End Role="TBC_PROCESO" Type="Self.TBC_PROCESO" Multiplicity="0..1" />
+    <End Role="TBC_ESTADO_PROCESO" Type="Self.TBC_ESTADO_PROCESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_PROCESO">
+        <PropertyRef Name="ID_PROCESO" />
+      </Principal>
+      <Dependent Role="TBC_ESTADO_PROCESO">
+        <PropertyRef Name="ID_PROCESO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PISIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_ACTIVIDAD" EntityType="Self.TB_ACTIVIDAD" />
+    <EntitySet Name="TB_BENEFICIARIO" EntityType="Self.TB_BENEFICIARIO" />
+    <EntitySet Name="TB_DOCUMENTO" EntityType="Self.TB_DOCUMENTO" />
+    <EntitySet Name="TB_EJECUCION" EntityType="Self.TB_EJECUCION" />
+    <EntitySet Name="TB_NOTIFICACION" EntityType="Self.TB_NOTIFICACION" />
+    <EntitySet Name="TB_PERMISO" EntityType="Self.TB_PERMISO" />
+    <EntitySet Name="TB_PERSONA" EntityType="Self.TB_PERSONA" />
+    <EntitySet Name="TB_PROBLEMA" EntityType="Self.TB_PROBLEMA" />
+    <EntitySet Name="TB_PROPUESTA" EntityType="Self.TB_PROPUESTA" />
+    <EntitySet Name="TB_PROYECTO" EntityType="Self.TB_PROYECTO" />
+    <EntitySet Name="TB_PROYECTO_ACTIVIDAD" EntityType="Self.TB_PROYECTO_ACTIVIDAD" />
+    <EntitySet Name="TB_RECURSO" EntityType="Self.TB_RECURSO" />
+    <EntitySet Name="TB_ROL" EntityType="Self.TB_ROL" />
+    <EntitySet Name="TB_SOLICITUD_SEGUIMIENTO" EntityType="Self.TB_SOLICITUD_SEGUIMIENTO" />
+    <EntitySet Name="TB_USUARIO" EntityType="Self.TB_USUARIO" />
+    <EntitySet Name="TBC_ACTIVIDAD_INICIATIVA" EntityType="Self.TBC_ACTIVIDAD_INICIATIVA" />
+    <EntitySet Name="TBC_DEPARTAMENTO" EntityType="Self.TBC_DEPARTAMENTO" />
+    <EntitySet Name="TBC_ESTADO_PROCESO" EntityType="Self.TBC_ESTADO_PROCESO" />
+    <EntitySet Name="TBC_MUNICIPIO" EntityType="Self.TBC_MUNICIPIO" />
+    <EntitySet Name="TBC_PROCESO" EntityType="Self.TBC_PROCESO" />
+    <EntitySet Name="TBC_SECTOR_ECONOMICO" EntityType="Self.TBC_SECTOR_ECONOMICO" />
+    <EntitySet Name="TBC_TIPO_DOCUMENTO" EntityType="Self.TBC_TIPO_DOCUMENTO" />
+    <EntitySet Name="TBC_TIPO_INICIATIVA" EntityType="Self.TBC_TIPO_INICIATIVA" />
+    <EntitySet Name="TBC_TIPO_NOTIFICACION" EntityType="Self.TBC_TIPO_NOTIFICACION" />
+    <AssociationSet Name="FK_ACTIVIDAD_USUARIO" Association="Self.FK_ACTIVIDAD_USUARIO">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_ACTIVIDAD" EntitySet="TB_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_USUARIO1" Association="Self.FK_ACTIVIDAD_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_ACTIVIDAD" EntitySet="TB_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_ESTADO_PROCESO" Association="Self.FK_BENEFICIARIO_ESTADO_PROCESO">
+      <End Role="TBC_ESTADO_PROCESO" EntitySet="TBC_ESTADO_PROCESO" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_PERSONA" Association="Self.FK_BENEFICIARIO_PERSONA">
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_SECTOR_ECONOMICA" Association="Self.FK_BENEFICIARIO_SECTOR_ECONOMICA">
+      <End Role="TBC_SECTOR_ECONOMICO" EntitySet="TBC_SECTOR_ECONOMICO" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_USUARIO1" Association="Self.FK_BENEFICIARIO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_USUARIO2" Association="Self.FK_BENEFICIARIO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCUMENTO_BENEFICIARIO" Association="Self.FK_DOCUMENTO_BENEFICIARIO">
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+      <End Role="TB_DOCUMENTO" EntitySet="TB_DOCUMENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROBLEMA_BENEFICIARIO" Association="Self.FK_PROBLEMA_BENEFICIARIO">
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCUMENTO_TIPO_DOCUMENTO" Association="Self.FK_DOCUMENTO_TIPO_DOCUMENTO">
+      <End Role="TBC_TIPO_DOCUMENTO" EntitySet="TBC_TIPO_DOCUMENTO" />
+      <End Role="TB_DOCUMENTO" EntitySet="TB_DOCUMENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EJECUCION_PROYECTO_ACTIVIDAD" Association="Self.FK_EJECUCION_PROYECTO_ACTIVIDAD">
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+      <End Role="TB_EJECUCION" EntitySet="TB_EJECUCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NOTIFICACION_USUARIO" Association="Self.FK_NOTIFICACION_USUARIO">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_NOTIFICACION" EntitySet="TB_NOTIFICACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_NOTIF_REFERENCE_TB_USUAR" Association="Self.FK_TB_NOTIF_REFERENCE_TB_USUAR">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_NOTIFICACION" EntitySet="TB_NOTIFICACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_NOTIF_REFERENCE_TBC_TIPO" Association="Self.FK_TB_NOTIF_REFERENCE_TBC_TIPO">
+      <End Role="TBC_TIPO_NOTIFICACION" EntitySet="TBC_TIPO_NOTIFICACION" />
+      <End Role="TB_NOTIFICACION" EntitySet="TB_NOTIFICACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERMISO_RECURSO" Association="Self.FK_PERMISO_RECURSO">
+      <End Role="TB_RECURSO" EntitySet="TB_RECURSO" />
+      <End Role="TB_PERMISO" EntitySet="TB_PERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERMISO_USUARIO1" Association="Self.FK_PERMISO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PERMISO" EntitySet="TB_PERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERMISO_USUARIO2" Association="Self.FK_PERMISO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PERMISO" EntitySet="TB_PERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSMISO_ROL" Association="Self.FK_PERSMISO_ROL">
+      <End Role="TB_ROL" EntitySet="TB_ROL" />
+      <End Role="TB_PERMISO" EntitySet="TB_PERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSONA_MUNICIPIO" Association="Self.FK_PERSONA_MUNICIPIO">
+      <End Role="TBC_MUNICIPIO" EntitySet="TBC_MUNICIPIO" />
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSONA_USUARIO1" Association="Self.FK_PERSONA_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSONA_USUARIO2" Association="Self.FK_PERSONA_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_PERSONA" Association="Self.FK_USUARIO_PERSONA">
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROBLEMA_ESTADO_PROCESO" Association="Self.FK_PROBLEMA_ESTADO_PROCESO">
+      <End Role="TBC_ESTADO_PROCESO" EntitySet="TBC_ESTADO_PROCESO" />
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPUESTA_PROBLEMA" Association="Self.FK_PROPUESTA_PROBLEMA">
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+      <End Role="TB_PROPUESTA" EntitySet="TB_PROPUESTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_PROBLEMA" Association="Self.FK_PROYECTO_PROBLEMA">
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PROBL_REFERENCE_TB_USUAR" Association="Self.FK_TB_PROBL_REFERENCE_TB_USUAR">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPUESTA_ESTADO_PROCESO" Association="Self.FK_PROPUESTA_ESTADO_PROCESO">
+      <End Role="TBC_ESTADO_PROCESO" EntitySet="TBC_ESTADO_PROCESO" />
+      <End Role="TB_PROPUESTA" EntitySet="TB_PROPUESTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPUESTA_TIPO_INICIATIVA" Association="Self.FK_PROPUESTA_TIPO_INICIATIVA">
+      <End Role="TBC_TIPO_INICIATIVA" EntitySet="TBC_TIPO_INICIATIVA" />
+      <End Role="TB_PROPUESTA" EntitySet="TB_PROPUESTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPUESTA_USUARIO" Association="Self.FK_PROPUESTA_USUARIO">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROPUESTA" EntitySet="TB_PROPUESTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_ACTIVIDAD_PROYECTO" Association="Self.FK_PROYECTO_ACTIVIDAD_PROYECTO">
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_TIPO_INICIATIVA" Association="Self.FK_PROYECTO_TIPO_INICIATIVA">
+      <End Role="TBC_TIPO_INICIATIVA" EntitySet="TBC_TIPO_INICIATIVA" />
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_USUARIO1" Association="Self.FK_PROYECTO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_USUARIO2" Association="Self.FK_PROYECTO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLICITUD_SEGUIMIENTO_PROYECTO" Association="Self.FK_SOLICITUD_SEGUIMIENTO_PROYECTO">
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+      <End Role="TB_SOLICITUD_SEGUIMIENTO" EntitySet="TB_SOLICITUD_SEGUIMIENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_INICIATIVA_ACTIVIDAD_PROYECTO" Association="Self.FK_ACTIVIDAD_INICIATIVA_ACTIVIDAD_PROYECTO">
+      <End Role="TBC_ACTIVIDAD_INICIATIVA" EntitySet="TBC_ACTIVIDAD_INICIATIVA" />
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_ACTIVIDAD_USUARIO1" Association="Self.FK_PROYECTO_ACTIVIDAD_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_ACTIVIDAD_USUARIO2" Association="Self.FK_PROYECTO_ACTIVIDAD_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RECURSO_USUARIO1" Association="Self.FK_RECURSO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_RECURSO" EntitySet="TB_RECURSO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RECURSO_USUARIO2" Association="Self.FK_RECURSO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_RECURSO" EntitySet="TB_RECURSO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROL_USUARIO1" Association="Self.FK_ROL_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_ROL" EntitySet="TB_ROL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROL_USUARIO2" Association="Self.FK_ROL_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_ROL" EntitySet="TB_ROL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_ROL" Association="Self.FK_USUARIO_ROL">
+      <End Role="TB_ROL" EntitySet="TB_ROL" />
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLICITUD_SEGUIMIENTO_USUARIO1" Association="Self.FK_SOLICITUD_SEGUIMIENTO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_SOLICITUD_SEGUIMIENTO" EntitySet="TB_SOLICITUD_SEGUIMIENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLICITUD_SEGUIMIENTO_USUARIO2" Association="Self.FK_SOLICITUD_SEGUIMIENTO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_SOLICITUD_SEGUIMIENTO" EntitySet="TB_SOLICITUD_SEGUIMIENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_INICIATIVA_USUARIO1" Association="Self.FK_ACTIVIDAD_INICIATIVA_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TBC_ACTIVIDAD_INICIATIVA" EntitySet="TBC_ACTIVIDAD_INICIATIVA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_INICIATIVA_USUARIO2" Association="Self.FK_ACTIVIDAD_INICIATIVA_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TBC_ACTIVIDAD_INICIATIVA" EntitySet="TBC_ACTIVIDAD_INICIATIVA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_USUARIO1" Association="Self.FK_USUARIO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_USUARIO1" EntitySet="TB_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_USUARIO2" Association="Self.FK_USUARIO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_USUARIO1" EntitySet="TB_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_PROYECTO_TIPO_INICIATIVA" Association="Self.FK_ACTIVIDAD_PROYECTO_TIPO_INICIATIVA">
+      <End Role="TBC_TIPO_INICIATIVA" EntitySet="TBC_TIPO_INICIATIVA" />
+      <End Role="TBC_ACTIVIDAD_INICIATIVA" EntitySet="TBC_ACTIVIDAD_INICIATIVA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MUNICIPIO_DEPARTAMENTO" Association="Self.FK_MUNICIPIO_DEPARTAMENTO">
+      <End Role="TBC_DEPARTAMENTO" EntitySet="TBC_DEPARTAMENTO" />
+      <End Role="TBC_MUNICIPIO" EntitySet="TBC_MUNICIPIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ESTADO_PROCESO_PROCESO" Association="Self.FK_ESTADO_PROCESO_PROCESO">
+      <End Role="TBC_PROCESO" EntitySet="TBC_PROCESO" />
+      <End Role="TBC_ESTADO_PROCESO" EntitySet="TBC_ESTADO_PROCESO" />
+    </AssociationSet>
+    <FunctionImport Name="SP_Autenticar" ReturnType="Collection(Int32)">
+      <Parameter Name="CORREO_E" Mode="In" Type="String" />
+      <Parameter Name="CONTRASENA" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DETALLE_USUARIO" ReturnType="Collection(PISIModel.SP_DETALLE_USUARIO_Result)">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ROL_HAS_RECURSO" ReturnType="Collection(Int32)">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_ACTIVIDAD_InsertCita">
+      <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="Hora" Mode="In" Type="DateTime" />
+      <Parameter Name="Direccion" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_CREA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_BENEFICIARIO_CambiarCodigo">
+      <Parameter Name="CodBene" Mode="In" Type="String" />
+      <Parameter Name="IdBeneficiario" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_BENEFICIARIO_CambiarEstado">
+      <Parameter Name="CodProceso" Mode="In" Type="String" />
+      <Parameter Name="IdBeneficiario" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_BENEFICIARIO_GetById" ReturnType="Collection(PISIModel.SP_TB_BENEFICIARIO_GetById_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_BENEFICIARIO_GetByIdPersona" ReturnType="Collection(PISIModel.SP_TB_BENEFICIARIO_GetByIdPersona_Result)">
+      <Parameter Name="ID_PERSONA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_BENEFICIARIO_InsertBeneficiario">
+      <Parameter Name="IdSector" Mode="In" Type="Int32" />
+      <Parameter Name="IdPersona" Mode="In" Type="Int32" />
+      <Parameter Name="CODIGO_BENEFICIARIO" Mode="In" Type="String" />
+      <Parameter Name="TipoPersona" Mode="In" Type="Int16" />
+      <Parameter Name="Dui" Mode="In" Type="String" />
+      <Parameter Name="Nit" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_CREA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_BENEFICIARIO_ObterPorEstadoProceso" ReturnType="Collection(PISIModel.SP_TB_BENEFICIARIO_ObterPorEstadoProceso_Result)">
+      <Parameter Name="CodEstadoProceso" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_NOTIFICACION_GetAll" ReturnType="Collection(PISIModel.SP_TB_NOTIFICACION_GetAll_Result)" />
+    <FunctionImport Name="SP_TB_NOTIFICACION_GetAllNoLeidas" ReturnType="Collection(PISIModel.SP_TB_NOTIFICACION_GetAllNoLeidas_Result)" />
+    <FunctionImport Name="SP_TB_NOTIFICACION_GetByIdUsuario" ReturnType="Collection(PISIModel.SP_TB_NOTIFICACION_GetByIdUsuario_Result)">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_NOTIFICACION_GetLeidasByIdUsuario" ReturnType="Collection(PISIModel.SP_TB_NOTIFICACION_GetLeidasByIdUsuario_Result)">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_NOTIFICACION_INSERT">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+      <Parameter Name="ID_TIPO_NOTIFICACION" Mode="In" Type="Int32" />
+      <Parameter Name="DESCRIPCION" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_NOTIFICACION_UPDATE_LEIDO">
+      <Parameter Name="ID_NOTIFICACION" Mode="In" Type="Int32" />
+      <Parameter Name="ESTADO" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERMISO_DELETE_HARD">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERMISO_DELETE_SOFT">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERMISO_GetAll" ReturnType="Collection(PISIModel.SP_TB_PERMISO_GetAll_Result)" />
+    <FunctionImport Name="SP_TB_PERMISO_GetAllWithDeleted" ReturnType="Collection(PISIModel.SP_TB_PERMISO_GetAllWithDeleted_Result)" />
+    <FunctionImport Name="SP_TB_PERMISO_GetByRecurso" ReturnType="Collection(PISIModel.SP_TB_PERMISO_GetByRecurso_Result)">
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERMISO_GetByRol" ReturnType="Collection(PISIModel.SP_TB_PERMISO_GetByRol_Result)">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERMISO_GetByRolRecurso" ReturnType="Collection(PISIModel.SP_TB_PERMISO_GetByRolRecurso_Result)">
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERMISO_GetDeleted" ReturnType="Collection(PISIModel.SP_TB_PERMISO_GetDeleted_Result)" />
+    <FunctionImport Name="SP_TB_PERMISO_INSERT">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_CREA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERMISO_RestoreById">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERSONA_DELETE_HARD">
+      <Parameter Name="ID_PERSONA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERSONA_DELETE_SOFT">
+      <Parameter Name="ID_PERSONA" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERSONA_EsCorreoUnico" ReturnType="Collection(Int32)">
+      <Parameter Name="CORREO_E" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERSONA_GetAll" ReturnType="Collection(PISIModel.SP_TB_PERSONA_GetAll_Result)" />
+    <FunctionImport Name="SP_TB_PERSONA_GetAllWithDeleted" ReturnType="Collection(PISIModel.SP_TB_PERSONA_GetAllWithDeleted_Result)" />
+    <FunctionImport Name="SP_TB_PERSONA_GetByCorreoE" ReturnType="Collection(PISIModel.SP_TB_PERSONA_GetByCorreoE_Result)">
+      <Parameter Name="CORREO_E" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERSONA_GetByIdPersona" ReturnType="Collection(PISIModel.SP_TB_PERSONA_GetByIdPersona_Result)">
+      <Parameter Name="ID_PERSONA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERSONA_GetDeleted" ReturnType="Collection(PISIModel.SP_TB_PERSONA_GetDeleted_Result)" />
+    <FunctionImport Name="SP_TB_PERSONA_InsertPersona">
+      <Parameter Name="NOMBRES" Mode="In" Type="String" />
+      <Parameter Name="APELLIDOS" Mode="In" Type="String" />
+      <Parameter Name="CORREO_E" Mode="In" Type="String" />
+      <Parameter Name="TEL_FIJO" Mode="In" Type="String" />
+      <Parameter Name="TEL_CEL" Mode="In" Type="String" />
+      <Parameter Name="ID_MUNICIPIO" Mode="In" Type="Int32" />
+      <Parameter Name="DIRECCION" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_CREA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERSONA_RestoreById">
+      <Parameter Name="ID_PERSONA" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PERSONA_UPDATE">
+      <Parameter Name="ID_PERSONA" Mode="In" Type="Int32" />
+      <Parameter Name="ID_MUNICIPIO" Mode="In" Type="Int32" />
+      <Parameter Name="NOMBRES" Mode="In" Type="String" />
+      <Parameter Name="TEL_FIJO" Mode="In" Type="String" />
+      <Parameter Name="TEL_CEL" Mode="In" Type="String" />
+      <Parameter Name="APELLIDOS" Mode="In" Type="String" />
+      <Parameter Name="CORREO_E" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PROBLEMA_ConsultarProblema" ReturnType="Collection(PISIModel.SP_TB_PROBLEMA_ConsultarProblema_Result)">
+      <Parameter Name="IdProblema" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PROBLEMA_InsertProblema">
+      <Parameter Name="IdBeneficiario" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstadoProceso" Mode="In" Type="Int32" />
+      <Parameter Name="Mercado" Mode="In" Type="String" />
+      <Parameter Name="CantEmpleados" Mode="In" Type="Int32" />
+      <Parameter Name="RequiereApoyo" Mode="In" Type="Boolean" />
+      <Parameter Name="NombreProblema" Mode="In" Type="String" />
+      <Parameter Name="DescripcionNegocio" Mode="In" Type="String" />
+      <Parameter Name="VentaDia" Mode="In" Type="String" />
+      <Parameter Name="VentaMes" Mode="In" Type="Decimal" />
+      <Parameter Name="DescripcionProblema" Mode="In" Type="String" />
+      <Parameter Name="DescripcionOtroProblema" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_PROBLEMA_TieneBeneficiarioAsociado" ReturnType="Collection(Int32)">
+      <Parameter Name="IdBeneficiario" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_RECURSO_DELETE_HARD">
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_RECURSO_DELETE_SOFT">
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_RECURSO_GetAll" ReturnType="Collection(PISIModel.SP_TB_RECURSO_GetAll_Result)" />
+    <FunctionImport Name="SP_TB_RECURSO_GetAllWithDeleted" ReturnType="Collection(PISIModel.SP_TB_RECURSO_GetAllWithDeleted_Result)" />
+    <FunctionImport Name="SP_TB_RECURSO_GetById" ReturnType="Collection(PISIModel.SP_TB_RECURSO_GetById_Result)">
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_RECURSO_GetByUrlRecurso" ReturnType="Collection(PISIModel.SP_TB_RECURSO_GetByUrlRecurso_Result)">
+      <Parameter Name="URL_RECURSO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_RECURSO_GetDeleted" ReturnType="Collection(PISIModel.SP_TB_RECURSO_GetDeleted_Result)" />
+    <FunctionImport Name="SP_TB_RECURSO_INSERT">
+      <Parameter Name="URL_RECURSO" Mode="In" Type="String" />
+      <Parameter Name="NOMBRE" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_CREA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_RECURSO_RestoreById">
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_RECURSO_UPDATE">
+      <Parameter Name="ID_RECURSO" Mode="In" Type="Int32" />
+      <Parameter Name="URL_RECURSO" Mode="In" Type="String" />
+      <Parameter Name="NOMBRE" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_ROL_DELETE_HARD">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_ROL_DELETE_SOFT">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_ROL_GetAll" ReturnType="Collection(PISIModel.SP_TB_ROL_GetAll_Result)" />
+    <FunctionImport Name="SP_TB_ROL_GetAllWithDeleted" ReturnType="Collection(PISIModel.SP_TB_ROL_GetAllWithDeleted_Result)" />
+    <FunctionImport Name="SP_TB_ROL_GetByIdRol" ReturnType="Collection(PISIModel.SP_TB_ROL_GetByIdRol_Result)">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_ROL_GetByNombre" ReturnType="Collection(PISIModel.SP_TB_ROL_GetByNombre_Result)">
+      <Parameter Name="NOMBRE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_ROL_GetDeleted" ReturnType="Collection(PISIModel.SP_TB_ROL_GetDeleted_Result)" />
+    <FunctionImport Name="SP_TB_ROL_INSERT">
+      <Parameter Name="NOMBRE" Mode="In" Type="String" />
+      <Parameter Name="DESCRIPCION" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_CREA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_ROL_RestoreById">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_ROL_UPDATE">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="NOMBRE" Mode="In" Type="String" />
+      <Parameter Name="DESCRIPCION" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_USUARIO_DELETE_HARD">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_USUARIO_DELETE_SOFT">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_USUARIO_GetAll" ReturnType="Collection(PISIModel.SP_TB_USUARIO_GetAll_Result)" />
+    <FunctionImport Name="SP_TB_USUARIO_GetAllWithDeleted" ReturnType="Collection(PISIModel.SP_TB_USUARIO_GetAllWithDeleted_Result)" />
+    <FunctionImport Name="SP_TB_USUARIO_GetByIdPersona" ReturnType="Collection(PISIModel.SP_TB_USUARIO_GetByIdPersona_Result)">
+      <Parameter Name="ID_PERSONA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_USUARIO_GetByIdUsuario" ReturnType="Collection(PISIModel.SP_TB_USUARIO_GetByIdUsuario_Result)">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_USUARIO_GetDeleted" ReturnType="Collection(PISIModel.SP_TB_USUARIO_GetDeleted_Result)" />
+    <FunctionImport Name="SP_TB_USUARIO_GetIdSesion" ReturnType="Collection(String)">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_USUARIO_INSERT">
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="ID_PERSONA" Mode="In" Type="Int32" />
+      <Parameter Name="NOMBRE_USUARIO" Mode="In" Type="String" />
+      <Parameter Name="CONTRASENA" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_CREA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_USUARIO_RestoreById">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_USUARIO_UPDATE">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+      <Parameter Name="ID_ROL" Mode="In" Type="Int32" />
+      <Parameter Name="ID_PERSONA" Mode="In" Type="Int32" />
+      <Parameter Name="NOMBRE_USUARIO" Mode="In" Type="String" />
+      <Parameter Name="CONTRASENA" Mode="In" Type="String" />
+      <Parameter Name="USUARIO_ACTUALIZA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TB_USUARIO_UPDATE_AUTENTICADO">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+      <Parameter Name="ID_SESION" Mode="In" Type="String" />
+      <Parameter Name="ESTADO" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TBC_DEPARTAMENTO_GetDepartamentos" ReturnType="Collection(PISIModel.SP_TBC_DEPARTAMENTO_GetDepartamentos_Result)" />
+    <FunctionImport Name="SP_TBC_ESTADO_PROCESO_GetAll" ReturnType="Collection(PISIModel.SP_TBC_ESTADO_PROCESO_GetAll_Result)" />
+    <FunctionImport Name="SP_TBC_ESTADO_PROCESO_GetByIdEstadoProceso" ReturnType="Collection(PISIModel.SP_TBC_ESTADO_PROCESO_GetByIdEstadoProceso_Result)">
+      <Parameter Name="ID_ESTADO_PROCESO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TBC_ESTADO_PROCESO_GetByIdProceso" ReturnType="Collection(PISIModel.SP_TBC_ESTADO_PROCESO_GetByIdProceso_Result)">
+      <Parameter Name="ID_PROCESO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TBC_MUNICIPIO_GetDepartamentoByIdMunicipio" ReturnType="Collection(PISIModel.SP_TBC_MUNICIPIO_GetDepartamentoByIdMunicipio_Result)">
+      <Parameter Name="ID_MUNICIPIO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TBC_MUNICIPIO_GetMunicipiosXDepartamento" ReturnType="Collection(PISIModel.SP_TBC_MUNICIPIO_GetMunicipiosXDepartamento_Result)">
+      <Parameter Name="DepartamentoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TBC_SECTOR_ECONOMICO_GetSectores" ReturnType="Collection(PISIModel.SP_TBC_SECTOR_ECONOMICO_GetSectores_Result)" />
+    <FunctionImport Name="SP_TBC_TIPO_NOTIFICACION_GetByIdTipoNotificacion" ReturnType="Collection(PISIModel.SP_TBC_TIPO_NOTIFICACION_GetByIdTipoNotificacion_Result)">
+      <Parameter Name="ID_TIPO_NOTIFICACION" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TBC_TIPO_NOTIFICACION_INSERT">
+      <Parameter Name="COLOR" Mode="In" Type="String" />
+      <Parameter Name="ICONO" Mode="In" Type="String" />
+      <Parameter Name="TITULO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TBC_TIPO_NOTIFICACION_UPDATE">
+      <Parameter Name="ID_TIPO_NOTIFICACION" Mode="In" Type="Int32" />
+      <Parameter Name="COLOR" Mode="In" Type="String" />
+      <Parameter Name="ICONO" Mode="In" Type="String" />
+      <Parameter Name="TITULO" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_DETALLE_USUARIO_Result">
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="true" />
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_ROL" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="ID_SESION" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_BENEFICIARIO_GetById_Result">
+    <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="DIRECCION" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="CORREO_E" Nullable="false" MaxLength="32" />
+    <Property Type="Int16" Name="TIPO_PERSONA" Nullable="false" />
+    <Property Type="String" Name="TEL_FIJO" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="TEL_CEL" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="DUI" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="NIT" Nullable="false" MaxLength="14" />
+    <Property Type="String" Name="NOMBRE_DEPTO" Nullable="false" MaxLength="16" />
+    <Property Type="Int32" Name="ID_DEPARTAMENTO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_MUNIC" Nullable="false" MaxLength="32" />
+    <Property Type="Int32" Name="ID_MUNICIPIO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_SECTOR" Nullable="false" MaxLength="16" />
+    <Property Type="Int32" Name="ID_SECTOR_ECONOMICO" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_BENEFICIARIO_GetByIdPersona_Result">
+    <Property Type="Int32" Name="ID_BENEFICIARIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_SECTOR_ECONOMICO" Nullable="true" />
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="true" />
+    <Property Type="Int32" Name="ID_ESTADO_PROCESO" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="CODIGO_BENEFICIARIO" Nullable="false" MaxLength="25" />
+    <Property Type="Int16" Name="TIPO_PERSONA" Nullable="false" />
+    <Property Type="String" Name="DUI" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="NIT" Nullable="false" MaxLength="14" />
+    <Property Type="Decimal" Name="LAT" Nullable="true" Precision="14" Scale="0" />
+    <Property Type="Decimal" Name="LONG" Nullable="true" Precision="14" Scale="0" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EXISTEN_ACTIVOS" Nullable="true" />
+    <Property Type="Boolean" Name="MAS_ANIOS_EN_LUGAR" Nullable="true" />
+    <Property Type="Boolean" Name="PUEDE_COMPROBAR_VENTAS" Nullable="true" />
+    <Property Type="String" Name="MEDIO_CONTACTO" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="INFO_COMPLEMENTARIA" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_BENEFICIARIO_ObterPorEstadoProceso_Result">
+    <Property Type="Int32" Name="ID_BENEFICIARIO" Nullable="false" />
+    <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="TEL_CEL" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="TEL_FIJO" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="NOMBRE_DEPTO" Nullable="false" MaxLength="16" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_NOTIFICACION_GetAll_Result">
+    <Property Type="Int32" Name="ID_NOTIFICACION" Nullable="false" />
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="true" />
+    <Property Type="Int32" Name="ID_TIPO_NOTIFICACION" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="2048" />
+    <Property Type="Int16" Name="LEIDO" Nullable="false" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_NOTIFICACION_GetAllNoLeidas_Result">
+    <Property Type="Int32" Name="ID_NOTIFICACION" Nullable="false" />
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="true" />
+    <Property Type="Int32" Name="ID_TIPO_NOTIFICACION" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="2048" />
+    <Property Type="Int16" Name="LEIDO" Nullable="false" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_NOTIFICACION_GetByIdUsuario_Result">
+    <Property Type="Int32" Name="ID_NOTIFICACION" Nullable="false" />
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="true" />
+    <Property Type="Int32" Name="ID_TIPO_NOTIFICACION" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="2048" />
+    <Property Type="Int16" Name="LEIDO" Nullable="false" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_NOTIFICACION_GetLeidasByIdUsuario_Result">
+    <Property Type="Int32" Name="ID_NOTIFICACION" Nullable="false" />
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="true" />
+    <Property Type="Int32" Name="ID_TIPO_NOTIFICACION" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="2048" />
+    <Property Type="Int16" Name="LEIDO" Nullable="false" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERMISO_GetAll_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERMISO_GetAllWithDeleted_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERMISO_GetByRecurso_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERMISO_GetByRol_Result">
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="URL_RECURSO" Nullable="false" MaxLength="512" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERMISO_GetByRolRecurso_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERMISO_GetDeleted_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERSONA_GetAll_Result">
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="Int32" Name="ID_MUNICIPIO" Nullable="true" />
+    <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="CORREO_E" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DIRECCION" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="TEL_FIJO" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="TEL_CEL" Nullable="true" MaxLength="9" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERSONA_GetAllWithDeleted_Result">
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="Int32" Name="ID_MUNICIPIO" Nullable="true" />
+    <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="CORREO_E" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DIRECCION" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="TEL_FIJO" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="TEL_CEL" Nullable="true" MaxLength="9" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERSONA_GetByCorreoE_Result">
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="Int32" Name="ID_MUNICIPIO" Nullable="true" />
+    <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="CORREO_E" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DIRECCION" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="TEL_FIJO" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="TEL_CEL" Nullable="true" MaxLength="9" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERSONA_GetByIdPersona_Result">
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="Int32" Name="ID_MUNICIPIO" Nullable="true" />
+    <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="CORREO_E" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DIRECCION" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="TEL_FIJO" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="TEL_CEL" Nullable="true" MaxLength="9" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PERSONA_GetDeleted_Result">
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="Int32" Name="ID_MUNICIPIO" Nullable="true" />
+    <Property Type="String" Name="NOMBRES" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="APELLIDOS" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="CORREO_E" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DIRECCION" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="TEL_FIJO" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="TEL_CEL" Nullable="true" MaxLength="9" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_PROBLEMA_ConsultarProblema_Result">
+    <Property Type="Int32" Name="ID_PROBLEMA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="NOMBRE_BENEFICIARIO" Nullable="false" MaxLength="129" />
+    <Property Type="Int32" Name="DIAS_ACTUALIZA" Nullable="true" />
+    <Property Type="Int32" Name="DIAS_CREA" Nullable="true" />
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="false" />
+    <Property Type="Int32" Name="ID_BENEFICIARIO" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_RECURSO_GetAll_Result">
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="URL_RECURSO" Nullable="false" MaxLength="512" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_RECURSO_GetAllWithDeleted_Result">
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="URL_RECURSO" Nullable="false" MaxLength="512" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_RECURSO_GetById_Result">
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="URL_RECURSO" Nullable="false" MaxLength="512" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_RECURSO_GetByUrlRecurso_Result">
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="URL_RECURSO" Nullable="false" MaxLength="512" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_RECURSO_GetDeleted_Result">
+    <Property Type="Int32" Name="ID_RECURSO" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="URL_RECURSO" Nullable="false" MaxLength="512" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_ROL_GetAll_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_ROL_GetAllWithDeleted_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_ROL_GetByIdRol_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_ROL_GetByNombre_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_ROL_GetDeleted_Result">
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="64" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_USUARIO_GetAll_Result">
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="CONTRASENA" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="ID_SESION" Nullable="true" MaxLength="80" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_USUARIO_GetAllWithDeleted_Result">
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="CONTRASENA" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="ID_SESION" Nullable="true" MaxLength="80" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_USUARIO_GetByIdPersona_Result">
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="CONTRASENA" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="ID_SESION" Nullable="true" MaxLength="80" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_USUARIO_GetByIdUsuario_Result">
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="CONTRASENA" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="ID_SESION" Nullable="true" MaxLength="80" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TB_USUARIO_GetDeleted_Result">
+    <Property Type="Int32" Name="ID_USUARIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_ROL" Nullable="false" />
+    <Property Type="Int32" Name="ID_PERSONA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_CREA" Nullable="true" />
+    <Property Type="Int32" Name="USUARIO_ACTUALIZA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE_USUARIO" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="CONTRASENA" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="ID_SESION" Nullable="true" MaxLength="80" />
+    <Property Type="DateTime" Name="FECHA_CREA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_ACTUALIZA" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_BORRADO" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_TBC_DEPARTAMENTO_GetDepartamentos_Result">
+    <Property Type="Int32" Name="ID_DEPARTAMENTO" Nullable="false" />
+    <Property Type="String" Name="COD_DEPARTAMENTO" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="NOMBRE_DEPTO" Nullable="false" MaxLength="16" />
+  </ComplexType>
+  <ComplexType Name="SP_TBC_ESTADO_PROCESO_GetAll_Result">
+    <Property Type="Int32" Name="ID_ESTADO_PROCESO" Nullable="false" />
+    <Property Type="Int32" Name="ID_PROCESO" Nullable="true" />
+    <Property Type="String" Name="CODIGO_ESTADO_PROCESO" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+  </ComplexType>
+  <ComplexType Name="SP_TBC_ESTADO_PROCESO_GetByIdEstadoProceso_Result">
+    <Property Type="Int32" Name="ID_ESTADO_PROCESO" Nullable="false" />
+    <Property Type="Int32" Name="ID_PROCESO" Nullable="true" />
+    <Property Type="String" Name="CODIGO_ESTADO_PROCESO" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+  </ComplexType>
+  <ComplexType Name="SP_TBC_ESTADO_PROCESO_GetByIdProceso_Result">
+    <Property Type="Int32" Name="ID_ESTADO_PROCESO" Nullable="false" />
+    <Property Type="Int32" Name="ID_PROCESO" Nullable="true" />
+    <Property Type="String" Name="CODIGO_ESTADO_PROCESO" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="64" />
+  </ComplexType>
+  <ComplexType Name="SP_TBC_MUNICIPIO_GetDepartamentoByIdMunicipio_Result">
+    <Property Type="Int32" Name="ID_DEPARTAMENTO" Nullable="false" />
+    <Property Type="String" Name="COD_DEPARTAMENTO" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="NOMBRE_DEPTO" Nullable="false" MaxLength="16" />
+  </ComplexType>
+  <ComplexType Name="SP_TBC_MUNICIPIO_GetMunicipiosXDepartamento_Result">
+    <Property Type="Int32" Name="ID_MUNICIPIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_DEPARTAMENTO" Nullable="true" />
+    <Property Type="String" Name="COD_MUNICIPIO" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="NOMBRE_MUNIC" Nullable="false" MaxLength="32" />
+  </ComplexType>
+  <ComplexType Name="SP_TBC_SECTOR_ECONOMICO_GetSectores_Result">
+    <Property Type="Int32" Name="ID_SECTOR_ECONOMICO" Nullable="false" />
+    <Property Type="String" Name="COD_SECTOR_ECONOMICO" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="NOMBRE_SECTOR" Nullable="false" MaxLength="16" />
+  </ComplexType>
+  <ComplexType Name="SP_TBC_TIPO_NOTIFICACION_GetByIdTipoNotificacion_Result">
+    <Property Type="Int32" Name="ID_TIPO_NOTIFICACION" Nullable="false" />
+    <Property Type="String" Name="COLOR" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ICONO" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TITULO" Nullable="false" MaxLength="100" />
+  </ComplexType>
+</Schema>

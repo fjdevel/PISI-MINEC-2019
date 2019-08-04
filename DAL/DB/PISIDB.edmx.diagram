@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82995f86299f4bf4ba064f6c9c6c5dfa" Name="Diagram1">
+        <EntityTypeShape EntityType="PISIModel.TB_ACTIVIDAD" Width="1.5" PointX="12.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_BENEFICIARIO" Width="1.5" PointX="7.5" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_DOCUMENTO" Width="1.5" PointX="12.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_EJECUCION" Width="1.5" PointX="26.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_NOTIFICACION" Width="1.5" PointX="15.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_PERMISO" Width="1.5" PointX="15" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_PERSONA" Width="1.5" PointX="5.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_PROBLEMA" Width="1.5" PointX="15.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_PROPUESTA" Width="1.5" PointX="21" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_PROYECTO" Width="1.5" PointX="18" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_PROYECTO_ACTIVIDAD" Width="1.5" PointX="24" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_RECURSO" Width="1.5" PointX="12.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_ROL" Width="1.5" PointX="12.75" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_SOLICITUD_SEGUIMIENTO" Width="1.5" PointX="20.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TB_USUARIO" Width="1.5" PointX="10.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TBC_ACTIVIDAD_INICIATIVA" Width="1.5" PointX="18.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TBC_DEPARTAMENTO" Width="1.5" PointX="0.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TBC_ESTADO_PROCESO" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TBC_MUNICIPIO" Width="1.5" PointX="3" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TBC_PROCESO" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TBC_SECTOR_ECONOMICO" Width="1.5" PointX="5.25" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TBC_TIPO_DOCUMENTO" Width="1.5" PointX="10.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TBC_TIPO_INICIATIVA" Width="1.5" PointX="15.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PISIModel.TBC_TIPO_NOTIFICACION" Width="1.5" PointX="13.5" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="PISIModel.FK_ACTIVIDAD_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_ACTIVIDAD_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_BENEFICIARIO_ESTADO_PROCESO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_BENEFICIARIO_PERSONA" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_BENEFICIARIO_SECTOR_ECONOMICA" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_BENEFICIARIO_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_BENEFICIARIO_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_DOCUMENTO_BENEFICIARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROBLEMA_BENEFICIARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_DOCUMENTO_TIPO_DOCUMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_EJECUCION_PROYECTO_ACTIVIDAD" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_NOTIFICACION_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_TB_NOTIF_REFERENCE_TB_USUAR" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_TB_NOTIF_REFERENCE_TBC_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PERMISO_RECURSO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PERMISO_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PERMISO_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PERSMISO_ROL" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PERSONA_MUNICIPIO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PERSONA_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PERSONA_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_USUARIO_PERSONA" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROBLEMA_ESTADO_PROCESO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROPUESTA_PROBLEMA" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROYECTO_PROBLEMA" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_TB_PROBL_REFERENCE_TB_USUAR" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROPUESTA_ESTADO_PROCESO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROPUESTA_TIPO_INICIATIVA" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROPUESTA_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROYECTO_ACTIVIDAD_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROYECTO_TIPO_INICIATIVA" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROYECTO_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROYECTO_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_SOLICITUD_SEGUIMIENTO_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_ACTIVIDAD_INICIATIVA_ACTIVIDAD_PROYECTO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROYECTO_ACTIVIDAD_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_PROYECTO_ACTIVIDAD_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_RECURSO_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_RECURSO_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_ROL_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_ROL_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_USUARIO_ROL" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_SOLICITUD_SEGUIMIENTO_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_SOLICITUD_SEGUIMIENTO_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_ACTIVIDAD_INICIATIVA_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_ACTIVIDAD_INICIATIVA_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_USUARIO_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_USUARIO_USUARIO2" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_ACTIVIDAD_PROYECTO_TIPO_INICIATIVA" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_MUNICIPIO_DEPARTAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="PISIModel.FK_ESTADO_PROCESO_PROCESO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

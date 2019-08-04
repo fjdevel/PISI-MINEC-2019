@@ -1,0 +1,110 @@
+******************** 24/07/2019 13:30:17 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:30:53 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:31:28 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_BENEFICIARIO.cs
+Stack Trace: 
+   en BLL.Acciones.A_BENEFICIARIO.CambiarEstadoProceso(String codProceso, Int32 idBeneficiario, Int32 id_usuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_BENEFICIARIO.cs:línea 241
+
+******************** 24/07/2019 13:31:28 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:31:40 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_BENEFICIARIO.cs
+Stack Trace: 
+   en BLL.Acciones.A_BENEFICIARIO.CambiarEstadoProceso(String codProceso, Int32 idBeneficiario, Int32 id_usuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_BENEFICIARIO.cs:línea 241
+
+******************** 24/07/2019 13:31:40 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:32:04 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:33:21 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:33:45 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:33:45 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:34:06 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:34:16 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:35:37 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 24/07/2019 13:35:37 ********************
+Exception Tipo: System.Data.SqlClient.SqlException
+Exception: No se puede quitar el procedimiento 'SP_TBC_CAMPOS_INICIATIVA_OBTENER_POR_ID' porque no existe o el usuario no tiene permiso.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs
+Stack Trace: 
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   en System.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   en System.Data.SqlClient.SqlDataReader.NextResult()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderSession`1.CheckNextResults()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderBase`1.Read()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReader`2.MoveNext()
+   en System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   en BLL.Acciones.A_PROYECTO.CambiarEstadoProceso(Int32 idProceso, Int32 idProyecto, Int32 idUsuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs:línea 21
+

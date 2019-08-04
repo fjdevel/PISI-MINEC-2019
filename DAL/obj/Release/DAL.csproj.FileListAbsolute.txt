@@ -1,0 +1,5 @@
+C:\Users\Frederick\Source\Repos\Innova\DAL\bin\Release\DAL.dll
+C:\Users\Frederick\Source\Repos\Innova\DAL\bin\Release\DAL.pdb
+C:\Users\Frederick\Source\Repos\Innova\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Frederick\Source\Repos\Innova\DAL\obj\Release\DAL.dll
+C:\Users\Frederick\Source\Repos\Innova\DAL\obj\Release\DAL.pdb

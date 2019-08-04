@@ -1,0 +1,9 @@
+C:\Users\Frederick\Source\Repos\Innova\BLL\obj\Release\BLL.csprojAssemblyReference.cache
+C:\Users\Frederick\Source\Repos\Innova\BLL\obj\Release\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Frederick\Source\Repos\Innova\BLL\bin\Release\BLL.dll
+C:\Users\Frederick\Source\Repos\Innova\BLL\bin\Release\BLL.pdb
+C:\Users\Frederick\Source\Repos\Innova\BLL\bin\Release\DAL.dll
+C:\Users\Frederick\Source\Repos\Innova\BLL\bin\Release\DAL.pdb
+C:\Users\Frederick\Source\Repos\Innova\BLL\obj\Release\BLL.csproj.CopyComplete
+C:\Users\Frederick\Source\Repos\Innova\BLL\obj\Release\BLL.dll
+C:\Users\Frederick\Source\Repos\Innova\BLL\obj\Release\BLL.pdb

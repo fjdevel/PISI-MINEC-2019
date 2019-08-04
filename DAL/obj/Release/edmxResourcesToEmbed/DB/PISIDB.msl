@@ -1,0 +1,987 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PISIModelStoreContainer" CdmEntityContainer="PISIEntities">
+    <EntitySetMapping Name="TB_ACTIVIDAD">
+      <EntityTypeMapping TypeName="PISIModel.TB_ACTIVIDAD">
+        <MappingFragment StoreEntitySet="TB_ACTIVIDAD">
+          <ScalarProperty Name="ID_ACTIVIDAD" ColumnName="ID_ACTIVIDAD" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="HORA" ColumnName="HORA" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_BENEFICIARIO">
+      <EntityTypeMapping TypeName="PISIModel.TB_BENEFICIARIO">
+        <MappingFragment StoreEntitySet="TB_BENEFICIARIO">
+          <ScalarProperty Name="ID_BENEFICIARIO" ColumnName="ID_BENEFICIARIO" />
+          <ScalarProperty Name="ID_SECTOR_ECONOMICO" ColumnName="ID_SECTOR_ECONOMICO" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="ID_ESTADO_PROCESO" ColumnName="ID_ESTADO_PROCESO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="CODIGO_BENEFICIARIO" ColumnName="CODIGO_BENEFICIARIO" />
+          <ScalarProperty Name="TIPO_PERSONA" ColumnName="TIPO_PERSONA" />
+          <ScalarProperty Name="DUI" ColumnName="DUI" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+          <ScalarProperty Name="LAT" ColumnName="LAT" />
+          <ScalarProperty Name="LONG" ColumnName="LONG" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+          <ScalarProperty Name="EXISTEN_ACTIVOS" ColumnName="EXISTEN_ACTIVOS" />
+          <ScalarProperty Name="MAS_ANIOS_EN_LUGAR" ColumnName="MAS_ANIOS_EN_LUGAR" />
+          <ScalarProperty Name="PUEDE_COMPROBAR_VENTAS" ColumnName="PUEDE_COMPROBAR_VENTAS" />
+          <ScalarProperty Name="MEDIO_CONTACTO" ColumnName="MEDIO_CONTACTO" />
+          <ScalarProperty Name="INFO_COMPLEMENTARIA" ColumnName="INFO_COMPLEMENTARIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_DOCUMENTO">
+      <EntityTypeMapping TypeName="PISIModel.TB_DOCUMENTO">
+        <MappingFragment StoreEntitySet="TB_DOCUMENTO">
+          <ScalarProperty Name="ID_DOCUMENTO" ColumnName="ID_DOCUMENTO" />
+          <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+          <ScalarProperty Name="ID_BENEFICIARIO" ColumnName="ID_BENEFICIARIO" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_EJECUCION">
+      <EntityTypeMapping TypeName="PISIModel.TB_EJECUCION">
+        <MappingFragment StoreEntitySet="TB_EJECUCION">
+          <ScalarProperty Name="ID_EJECUCION" ColumnName="ID_EJECUCION" />
+          <ScalarProperty Name="ID_PROYECTO_ACTIVIDAD" ColumnName="ID_PROYECTO_ACTIVIDAD" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_NOTIFICACION">
+      <EntityTypeMapping TypeName="PISIModel.TB_NOTIFICACION">
+        <MappingFragment StoreEntitySet="TB_NOTIFICACION">
+          <ScalarProperty Name="ID_NOTIFICACION" ColumnName="ID_NOTIFICACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_TIPO_NOTIFICACION" ColumnName="ID_TIPO_NOTIFICACION" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="LEIDO" ColumnName="LEIDO" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PERMISO">
+      <EntityTypeMapping TypeName="PISIModel.TB_PERMISO">
+        <MappingFragment StoreEntitySet="TB_PERMISO">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PERSONA">
+      <EntityTypeMapping TypeName="PISIModel.TB_PERSONA">
+        <MappingFragment StoreEntitySet="TB_PERSONA">
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="CORREO_E" ColumnName="CORREO_E" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TEL_FIJO" ColumnName="TEL_FIJO" />
+          <ScalarProperty Name="TEL_CEL" ColumnName="TEL_CEL" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PROBLEMA">
+      <EntityTypeMapping TypeName="PISIModel.TB_PROBLEMA">
+        <MappingFragment StoreEntitySet="TB_PROBLEMA">
+          <ScalarProperty Name="ID_PROBLEMA" ColumnName="ID_PROBLEMA" />
+          <ScalarProperty Name="ID_BENEFICIARIO" ColumnName="ID_BENEFICIARIO" />
+          <ScalarProperty Name="ID_ESTADO_PROCESO" ColumnName="ID_ESTADO_PROCESO" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="MERCADO" ColumnName="MERCADO" />
+          <ScalarProperty Name="CANT_EMPLEADOS" ColumnName="CANT_EMPLEADOS" />
+          <ScalarProperty Name="REQUIERE_APOYO" ColumnName="REQUIERE_APOYO" />
+          <ScalarProperty Name="NOMBRE_PROBLEMA" ColumnName="NOMBRE_PROBLEMA" />
+          <ScalarProperty Name="DESCRIPCION_NEGOCIO" ColumnName="DESCRIPCION_NEGOCIO" />
+          <ScalarProperty Name="VENTA_DIA" ColumnName="VENTA_DIA" />
+          <ScalarProperty Name="VENTA_MES" ColumnName="VENTA_MES" />
+          <ScalarProperty Name="DESCRIPCION_PROBLEMA" ColumnName="DESCRIPCION_PROBLEMA" />
+          <ScalarProperty Name="DESCRIPCION_OTRO_PROBLEMA" ColumnName="DESCRIPCION_OTRO_PROBLEMA" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PROPUESTA">
+      <EntityTypeMapping TypeName="PISIModel.TB_PROPUESTA">
+        <MappingFragment StoreEntitySet="TB_PROPUESTA">
+          <ScalarProperty Name="ID_PROPUESTA" ColumnName="ID_PROPUESTA" />
+          <ScalarProperty Name="ID_PROBLEMA" ColumnName="ID_PROBLEMA" />
+          <ScalarProperty Name="ID_USUARIO_FORMULA" ColumnName="ID_USUARIO_FORMULA" />
+          <ScalarProperty Name="ID_ESTADO_PROCESO" ColumnName="ID_ESTADO_PROCESO" />
+          <ScalarProperty Name="ID_TIPO_INICIATIVA" ColumnName="ID_TIPO_INICIATIVA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PROYECTO">
+      <EntityTypeMapping TypeName="PISIModel.TB_PROYECTO">
+        <MappingFragment StoreEntitySet="TB_PROYECTO">
+          <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
+          <ScalarProperty Name="COD_PROYECTO" ColumnName="COD_PROYECTO" />
+          <ScalarProperty Name="ID_PROBLEMA" ColumnName="ID_PROBLEMA" />
+          <ScalarProperty Name="ID_TIPO_INICIATIVA" ColumnName="ID_TIPO_INICIATIVA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PROYECTO_ACTIVIDAD">
+      <EntityTypeMapping TypeName="PISIModel.TB_PROYECTO_ACTIVIDAD">
+        <MappingFragment StoreEntitySet="TB_PROYECTO_ACTIVIDAD">
+          <ScalarProperty Name="ID_PROYECTO_ACTIVIDAD" ColumnName="ID_PROYECTO_ACTIVIDAD" />
+          <ScalarProperty Name="ID_ACTIVIDAD_INICIATIVA" ColumnName="ID_ACTIVIDAD_INICIATIVA" />
+          <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="SEMANA_INICIO" ColumnName="SEMANA_INICIO" />
+          <ScalarProperty Name="SEMANA_FIN" ColumnName="SEMANA_FIN" />
+          <ScalarProperty Name="PORCENTAJE_AVANCE" ColumnName="PORCENTAJE_AVANCE" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_RECURSO">
+      <EntityTypeMapping TypeName="PISIModel.TB_RECURSO">
+        <MappingFragment StoreEntitySet="TB_RECURSO">
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="URL_RECURSO" ColumnName="URL_RECURSO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ROL">
+      <EntityTypeMapping TypeName="PISIModel.TB_ROL">
+        <MappingFragment StoreEntitySet="TB_ROL">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_SOLICITUD_SEGUIMIENTO">
+      <EntityTypeMapping TypeName="PISIModel.TB_SOLICITUD_SEGUIMIENTO">
+        <MappingFragment StoreEntitySet="TB_SOLICITUD_SEGUIMIENTO">
+          <ScalarProperty Name="ID_SOLICITUD_SEGUIMIENTO" ColumnName="ID_SOLICITUD_SEGUIMIENTO" />
+          <ScalarProperty Name="ID_PROYECTO" ColumnName="ID_PROYECTO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_USUARIO">
+      <EntityTypeMapping TypeName="PISIModel.TB_USUARIO">
+        <MappingFragment StoreEntitySet="TB_USUARIO">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="ID_SESION" ColumnName="ID_SESION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBC_ACTIVIDAD_INICIATIVA">
+      <EntityTypeMapping TypeName="PISIModel.TBC_ACTIVIDAD_INICIATIVA">
+        <MappingFragment StoreEntitySet="TBC_ACTIVIDAD_INICIATIVA">
+          <ScalarProperty Name="ID_ACTIVIDAD_INICIATIVA" ColumnName="ID_ACTIVIDAD_INICIATIVA" />
+          <ScalarProperty Name="ID_TIPO_INICIATIVA" ColumnName="ID_TIPO_INICIATIVA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="COD_ACTIVIDAD_PROY" ColumnName="COD_ACTIVIDAD_PROY" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBC_DEPARTAMENTO">
+      <EntityTypeMapping TypeName="PISIModel.TBC_DEPARTAMENTO">
+        <MappingFragment StoreEntitySet="TBC_DEPARTAMENTO">
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="COD_DEPARTAMENTO" ColumnName="COD_DEPARTAMENTO" />
+          <ScalarProperty Name="NOMBRE_DEPTO" ColumnName="NOMBRE_DEPTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBC_ESTADO_PROCESO">
+      <EntityTypeMapping TypeName="PISIModel.TBC_ESTADO_PROCESO">
+        <MappingFragment StoreEntitySet="TBC_ESTADO_PROCESO">
+          <ScalarProperty Name="ID_ESTADO_PROCESO" ColumnName="ID_ESTADO_PROCESO" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="CODIGO_ESTADO_PROCESO" ColumnName="CODIGO_ESTADO_PROCESO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBC_MUNICIPIO">
+      <EntityTypeMapping TypeName="PISIModel.TBC_MUNICIPIO">
+        <MappingFragment StoreEntitySet="TBC_MUNICIPIO">
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="COD_MUNICIPIO" ColumnName="COD_MUNICIPIO" />
+          <ScalarProperty Name="NOMBRE_MUNIC" ColumnName="NOMBRE_MUNIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBC_PROCESO">
+      <EntityTypeMapping TypeName="PISIModel.TBC_PROCESO">
+        <MappingFragment StoreEntitySet="TBC_PROCESO">
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="CODIGO_PROCESO" ColumnName="CODIGO_PROCESO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBC_SECTOR_ECONOMICO">
+      <EntityTypeMapping TypeName="PISIModel.TBC_SECTOR_ECONOMICO">
+        <MappingFragment StoreEntitySet="TBC_SECTOR_ECONOMICO">
+          <ScalarProperty Name="ID_SECTOR_ECONOMICO" ColumnName="ID_SECTOR_ECONOMICO" />
+          <ScalarProperty Name="COD_SECTOR_ECONOMICO" ColumnName="COD_SECTOR_ECONOMICO" />
+          <ScalarProperty Name="NOMBRE_SECTOR" ColumnName="NOMBRE_SECTOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBC_TIPO_DOCUMENTO">
+      <EntityTypeMapping TypeName="PISIModel.TBC_TIPO_DOCUMENTO">
+        <MappingFragment StoreEntitySet="TBC_TIPO_DOCUMENTO">
+          <ScalarProperty Name="ID_TIPO_DOCUMENTO" ColumnName="ID_TIPO_DOCUMENTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBC_TIPO_INICIATIVA">
+      <EntityTypeMapping TypeName="PISIModel.TBC_TIPO_INICIATIVA">
+        <MappingFragment StoreEntitySet="TBC_TIPO_INICIATIVA">
+          <ScalarProperty Name="ID_TIPO_INICIATIVA" ColumnName="ID_TIPO_INICIATIVA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="CODIGO_TIPO_INICIATVA" ColumnName="CODIGO_TIPO_INICIATVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBC_TIPO_NOTIFICACION">
+      <EntityTypeMapping TypeName="PISIModel.TBC_TIPO_NOTIFICACION">
+        <MappingFragment StoreEntitySet="TBC_TIPO_NOTIFICACION">
+          <ScalarProperty Name="ID_TIPO_NOTIFICACION" ColumnName="ID_TIPO_NOTIFICACION" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="ICONO" ColumnName="ICONO" />
+          <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_Autenticar" FunctionName="PISIModel.Store.SP_Autenticar" />
+    <FunctionImportMapping FunctionImportName="SP_DETALLE_USUARIO" FunctionName="PISIModel.Store.SP_DETALLE_USUARIO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_DETALLE_USUARIO_Result">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="NOMBRE_ROL" ColumnName="NOMBRE_ROL" />
+          <ScalarProperty Name="ID_SESION" ColumnName="ID_SESION" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ROL_HAS_RECURSO" FunctionName="PISIModel.Store.SP_ROL_HAS_RECURSO" />
+    <FunctionImportMapping FunctionImportName="SP_TB_ACTIVIDAD_InsertCita" FunctionName="PISIModel.Store.SP_TB_ACTIVIDAD_InsertCita" />
+    <FunctionImportMapping FunctionImportName="SP_TB_BENEFICIARIO_CambiarCodigo" FunctionName="PISIModel.Store.SP_TB_BENEFICIARIO_CambiarCodigo" />
+    <FunctionImportMapping FunctionImportName="SP_TB_BENEFICIARIO_CambiarEstado" FunctionName="PISIModel.Store.SP_TB_BENEFICIARIO_CambiarEstado" />
+    <FunctionImportMapping FunctionImportName="SP_TB_BENEFICIARIO_GetById" FunctionName="PISIModel.Store.SP_TB_BENEFICIARIO_GetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_BENEFICIARIO_GetById_Result">
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CORREO_E" ColumnName="CORREO_E" />
+          <ScalarProperty Name="TIPO_PERSONA" ColumnName="TIPO_PERSONA" />
+          <ScalarProperty Name="TEL_FIJO" ColumnName="TEL_FIJO" />
+          <ScalarProperty Name="TEL_CEL" ColumnName="TEL_CEL" />
+          <ScalarProperty Name="DUI" ColumnName="DUI" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+          <ScalarProperty Name="NOMBRE_DEPTO" ColumnName="NOMBRE_DEPTO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="NOMBRE_MUNIC" ColumnName="NOMBRE_MUNIC" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="NOMBRE_SECTOR" ColumnName="NOMBRE_SECTOR" />
+          <ScalarProperty Name="ID_SECTOR_ECONOMICO" ColumnName="ID_SECTOR_ECONOMICO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_BENEFICIARIO_GetByIdPersona" FunctionName="PISIModel.Store.SP_TB_BENEFICIARIO_GetByIdPersona">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_BENEFICIARIO_GetByIdPersona_Result">
+          <ScalarProperty Name="ID_BENEFICIARIO" ColumnName="ID_BENEFICIARIO" />
+          <ScalarProperty Name="ID_SECTOR_ECONOMICO" ColumnName="ID_SECTOR_ECONOMICO" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="ID_ESTADO_PROCESO" ColumnName="ID_ESTADO_PROCESO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="CODIGO_BENEFICIARIO" ColumnName="CODIGO_BENEFICIARIO" />
+          <ScalarProperty Name="TIPO_PERSONA" ColumnName="TIPO_PERSONA" />
+          <ScalarProperty Name="DUI" ColumnName="DUI" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+          <ScalarProperty Name="LAT" ColumnName="LAT" />
+          <ScalarProperty Name="LONG" ColumnName="LONG" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+          <ScalarProperty Name="EXISTEN_ACTIVOS" ColumnName="EXISTEN_ACTIVOS" />
+          <ScalarProperty Name="MAS_ANIOS_EN_LUGAR" ColumnName="MAS_ANIOS_EN_LUGAR" />
+          <ScalarProperty Name="PUEDE_COMPROBAR_VENTAS" ColumnName="PUEDE_COMPROBAR_VENTAS" />
+          <ScalarProperty Name="MEDIO_CONTACTO" ColumnName="MEDIO_CONTACTO" />
+          <ScalarProperty Name="INFO_COMPLEMENTARIA" ColumnName="INFO_COMPLEMENTARIA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_BENEFICIARIO_InsertBeneficiario" FunctionName="PISIModel.Store.SP_TB_BENEFICIARIO_InsertBeneficiario" />
+    <FunctionImportMapping FunctionImportName="SP_TB_BENEFICIARIO_ObterPorEstadoProceso" FunctionName="PISIModel.Store.SP_TB_BENEFICIARIO_ObterPorEstadoProceso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_BENEFICIARIO_ObterPorEstadoProceso_Result">
+          <ScalarProperty Name="ID_BENEFICIARIO" ColumnName="ID_BENEFICIARIO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="TEL_CEL" ColumnName="TEL_CEL" />
+          <ScalarProperty Name="TEL_FIJO" ColumnName="TEL_FIJO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="NOMBRE_DEPTO" ColumnName="NOMBRE_DEPTO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_NOTIFICACION_GetAll" FunctionName="PISIModel.Store.SP_TB_NOTIFICACION_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_NOTIFICACION_GetAll_Result">
+          <ScalarProperty Name="ID_NOTIFICACION" ColumnName="ID_NOTIFICACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_TIPO_NOTIFICACION" ColumnName="ID_TIPO_NOTIFICACION" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="LEIDO" ColumnName="LEIDO" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_NOTIFICACION_GetAllNoLeidas" FunctionName="PISIModel.Store.SP_TB_NOTIFICACION_GetAllNoLeidas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_NOTIFICACION_GetAllNoLeidas_Result">
+          <ScalarProperty Name="ID_NOTIFICACION" ColumnName="ID_NOTIFICACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_TIPO_NOTIFICACION" ColumnName="ID_TIPO_NOTIFICACION" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="LEIDO" ColumnName="LEIDO" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_NOTIFICACION_GetByIdUsuario" FunctionName="PISIModel.Store.SP_TB_NOTIFICACION_GetByIdUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_NOTIFICACION_GetByIdUsuario_Result">
+          <ScalarProperty Name="ID_NOTIFICACION" ColumnName="ID_NOTIFICACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_TIPO_NOTIFICACION" ColumnName="ID_TIPO_NOTIFICACION" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="LEIDO" ColumnName="LEIDO" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_NOTIFICACION_GetLeidasByIdUsuario" FunctionName="PISIModel.Store.SP_TB_NOTIFICACION_GetLeidasByIdUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_NOTIFICACION_GetLeidasByIdUsuario_Result">
+          <ScalarProperty Name="ID_NOTIFICACION" ColumnName="ID_NOTIFICACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_TIPO_NOTIFICACION" ColumnName="ID_TIPO_NOTIFICACION" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="LEIDO" ColumnName="LEIDO" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_NOTIFICACION_INSERT" FunctionName="PISIModel.Store.SP_TB_NOTIFICACION_INSERT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_NOTIFICACION_UPDATE_LEIDO" FunctionName="PISIModel.Store.SP_TB_NOTIFICACION_UPDATE_LEIDO" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_DELETE_HARD" FunctionName="PISIModel.Store.SP_TB_PERMISO_DELETE_HARD" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_DELETE_SOFT" FunctionName="PISIModel.Store.SP_TB_PERMISO_DELETE_SOFT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_GetAll" FunctionName="PISIModel.Store.SP_TB_PERMISO_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERMISO_GetAll_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_GetAllWithDeleted" FunctionName="PISIModel.Store.SP_TB_PERMISO_GetAllWithDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERMISO_GetAllWithDeleted_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_GetByRecurso" FunctionName="PISIModel.Store.SP_TB_PERMISO_GetByRecurso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERMISO_GetByRecurso_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_GetByRol" FunctionName="PISIModel.Store.SP_TB_PERMISO_GetByRol">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERMISO_GetByRol_Result">
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="URL_RECURSO" ColumnName="URL_RECURSO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_GetByRolRecurso" FunctionName="PISIModel.Store.SP_TB_PERMISO_GetByRolRecurso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERMISO_GetByRolRecurso_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_GetDeleted" FunctionName="PISIModel.Store.SP_TB_PERMISO_GetDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERMISO_GetDeleted_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_INSERT" FunctionName="PISIModel.Store.SP_TB_PERMISO_INSERT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERMISO_RestoreById" FunctionName="PISIModel.Store.SP_TB_PERMISO_RestoreById" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_DELETE_HARD" FunctionName="PISIModel.Store.SP_TB_PERSONA_DELETE_HARD" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_DELETE_SOFT" FunctionName="PISIModel.Store.SP_TB_PERSONA_DELETE_SOFT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_EsCorreoUnico" FunctionName="PISIModel.Store.SP_TB_PERSONA_EsCorreoUnico" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_GetAll" FunctionName="PISIModel.Store.SP_TB_PERSONA_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERSONA_GetAll_Result">
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="CORREO_E" ColumnName="CORREO_E" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TEL_FIJO" ColumnName="TEL_FIJO" />
+          <ScalarProperty Name="TEL_CEL" ColumnName="TEL_CEL" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_GetAllWithDeleted" FunctionName="PISIModel.Store.SP_TB_PERSONA_GetAllWithDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERSONA_GetAllWithDeleted_Result">
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="CORREO_E" ColumnName="CORREO_E" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TEL_FIJO" ColumnName="TEL_FIJO" />
+          <ScalarProperty Name="TEL_CEL" ColumnName="TEL_CEL" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_GetByCorreoE" FunctionName="PISIModel.Store.SP_TB_PERSONA_GetByCorreoE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERSONA_GetByCorreoE_Result">
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="CORREO_E" ColumnName="CORREO_E" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TEL_FIJO" ColumnName="TEL_FIJO" />
+          <ScalarProperty Name="TEL_CEL" ColumnName="TEL_CEL" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_GetByIdPersona" FunctionName="PISIModel.Store.SP_TB_PERSONA_GetByIdPersona">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERSONA_GetByIdPersona_Result">
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="CORREO_E" ColumnName="CORREO_E" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TEL_FIJO" ColumnName="TEL_FIJO" />
+          <ScalarProperty Name="TEL_CEL" ColumnName="TEL_CEL" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_GetDeleted" FunctionName="PISIModel.Store.SP_TB_PERSONA_GetDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PERSONA_GetDeleted_Result">
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="CORREO_E" ColumnName="CORREO_E" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TEL_FIJO" ColumnName="TEL_FIJO" />
+          <ScalarProperty Name="TEL_CEL" ColumnName="TEL_CEL" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_InsertPersona" FunctionName="PISIModel.Store.SP_TB_PERSONA_InsertPersona" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_RestoreById" FunctionName="PISIModel.Store.SP_TB_PERSONA_RestoreById" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PERSONA_UPDATE" FunctionName="PISIModel.Store.SP_TB_PERSONA_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PROBLEMA_ConsultarProblema" FunctionName="PISIModel.Store.SP_TB_PROBLEMA_ConsultarProblema">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_PROBLEMA_ConsultarProblema_Result">
+          <ScalarProperty Name="ID_PROBLEMA" ColumnName="ID_PROBLEMA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="NOMBRE_BENEFICIARIO" ColumnName="NOMBRE_BENEFICIARIO" />
+          <ScalarProperty Name="DIAS_ACTUALIZA" ColumnName="DIAS_ACTUALIZA" />
+          <ScalarProperty Name="DIAS_CREA" ColumnName="DIAS_CREA" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="ID_BENEFICIARIO" ColumnName="ID_BENEFICIARIO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_PROBLEMA_InsertProblema" FunctionName="PISIModel.Store.SP_TB_PROBLEMA_InsertProblema" />
+    <FunctionImportMapping FunctionImportName="SP_TB_PROBLEMA_TieneBeneficiarioAsociado" FunctionName="PISIModel.Store.SP_TB_PROBLEMA_TieneBeneficiarioAsociado" />
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_DELETE_HARD" FunctionName="PISIModel.Store.SP_TB_RECURSO_DELETE_HARD" />
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_DELETE_SOFT" FunctionName="PISIModel.Store.SP_TB_RECURSO_DELETE_SOFT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_GetAll" FunctionName="PISIModel.Store.SP_TB_RECURSO_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_RECURSO_GetAll_Result">
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="URL_RECURSO" ColumnName="URL_RECURSO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_GetAllWithDeleted" FunctionName="PISIModel.Store.SP_TB_RECURSO_GetAllWithDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_RECURSO_GetAllWithDeleted_Result">
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="URL_RECURSO" ColumnName="URL_RECURSO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_GetById" FunctionName="PISIModel.Store.SP_TB_RECURSO_GetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_RECURSO_GetById_Result">
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="URL_RECURSO" ColumnName="URL_RECURSO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_GetByUrlRecurso" FunctionName="PISIModel.Store.SP_TB_RECURSO_GetByUrlRecurso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_RECURSO_GetByUrlRecurso_Result">
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="URL_RECURSO" ColumnName="URL_RECURSO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_GetDeleted" FunctionName="PISIModel.Store.SP_TB_RECURSO_GetDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_RECURSO_GetDeleted_Result">
+          <ScalarProperty Name="ID_RECURSO" ColumnName="ID_RECURSO" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="URL_RECURSO" ColumnName="URL_RECURSO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_INSERT" FunctionName="PISIModel.Store.SP_TB_RECURSO_INSERT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_RestoreById" FunctionName="PISIModel.Store.SP_TB_RECURSO_RestoreById" />
+    <FunctionImportMapping FunctionImportName="SP_TB_RECURSO_UPDATE" FunctionName="PISIModel.Store.SP_TB_RECURSO_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_DELETE_HARD" FunctionName="PISIModel.Store.SP_TB_ROL_DELETE_HARD" />
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_DELETE_SOFT" FunctionName="PISIModel.Store.SP_TB_ROL_DELETE_SOFT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_GetAll" FunctionName="PISIModel.Store.SP_TB_ROL_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_ROL_GetAll_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_GetAllWithDeleted" FunctionName="PISIModel.Store.SP_TB_ROL_GetAllWithDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_ROL_GetAllWithDeleted_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_GetByIdRol" FunctionName="PISIModel.Store.SP_TB_ROL_GetByIdRol">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_ROL_GetByIdRol_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_GetByNombre" FunctionName="PISIModel.Store.SP_TB_ROL_GetByNombre">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_ROL_GetByNombre_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_GetDeleted" FunctionName="PISIModel.Store.SP_TB_ROL_GetDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_ROL_GetDeleted_Result">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_INSERT" FunctionName="PISIModel.Store.SP_TB_ROL_INSERT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_RestoreById" FunctionName="PISIModel.Store.SP_TB_ROL_RestoreById" />
+    <FunctionImportMapping FunctionImportName="SP_TB_ROL_UPDATE" FunctionName="PISIModel.Store.SP_TB_ROL_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_DELETE_HARD" FunctionName="PISIModel.Store.SP_TB_USUARIO_DELETE_HARD" />
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_DELETE_SOFT" FunctionName="PISIModel.Store.SP_TB_USUARIO_DELETE_SOFT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_GetAll" FunctionName="PISIModel.Store.SP_TB_USUARIO_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_USUARIO_GetAll_Result">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="ID_SESION" ColumnName="ID_SESION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_GetAllWithDeleted" FunctionName="PISIModel.Store.SP_TB_USUARIO_GetAllWithDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_USUARIO_GetAllWithDeleted_Result">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="ID_SESION" ColumnName="ID_SESION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_GetByIdPersona" FunctionName="PISIModel.Store.SP_TB_USUARIO_GetByIdPersona">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_USUARIO_GetByIdPersona_Result">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="ID_SESION" ColumnName="ID_SESION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_GetByIdUsuario" FunctionName="PISIModel.Store.SP_TB_USUARIO_GetByIdUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_USUARIO_GetByIdUsuario_Result">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="ID_SESION" ColumnName="ID_SESION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_GetDeleted" FunctionName="PISIModel.Store.SP_TB_USUARIO_GetDeleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TB_USUARIO_GetDeleted_Result">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="USUARIO_CREA" ColumnName="USUARIO_CREA" />
+          <ScalarProperty Name="USUARIO_ACTUALIZA" ColumnName="USUARIO_ACTUALIZA" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="ID_SESION" ColumnName="ID_SESION" />
+          <ScalarProperty Name="FECHA_CREA" ColumnName="FECHA_CREA" />
+          <ScalarProperty Name="FECHA_ACTUALIZA" ColumnName="FECHA_ACTUALIZA" />
+          <ScalarProperty Name="FECHA_BORRADO" ColumnName="FECHA_BORRADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_GetIdSesion" FunctionName="PISIModel.Store.SP_TB_USUARIO_GetIdSesion" />
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_INSERT" FunctionName="PISIModel.Store.SP_TB_USUARIO_INSERT" />
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_RestoreById" FunctionName="PISIModel.Store.SP_TB_USUARIO_RestoreById" />
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_UPDATE" FunctionName="PISIModel.Store.SP_TB_USUARIO_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SP_TB_USUARIO_UPDATE_AUTENTICADO" FunctionName="PISIModel.Store.SP_TB_USUARIO_UPDATE_AUTENTICADO" />
+    <FunctionImportMapping FunctionImportName="SP_TBC_DEPARTAMENTO_GetDepartamentos" FunctionName="PISIModel.Store.SP_TBC_DEPARTAMENTO_GetDepartamentos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TBC_DEPARTAMENTO_GetDepartamentos_Result">
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="COD_DEPARTAMENTO" ColumnName="COD_DEPARTAMENTO" />
+          <ScalarProperty Name="NOMBRE_DEPTO" ColumnName="NOMBRE_DEPTO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TBC_ESTADO_PROCESO_GetAll" FunctionName="PISIModel.Store.SP_TBC_ESTADO_PROCESO_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TBC_ESTADO_PROCESO_GetAll_Result">
+          <ScalarProperty Name="ID_ESTADO_PROCESO" ColumnName="ID_ESTADO_PROCESO" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="CODIGO_ESTADO_PROCESO" ColumnName="CODIGO_ESTADO_PROCESO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TBC_ESTADO_PROCESO_GetByIdEstadoProceso" FunctionName="PISIModel.Store.SP_TBC_ESTADO_PROCESO_GetByIdEstadoProceso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TBC_ESTADO_PROCESO_GetByIdEstadoProceso_Result">
+          <ScalarProperty Name="ID_ESTADO_PROCESO" ColumnName="ID_ESTADO_PROCESO" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="CODIGO_ESTADO_PROCESO" ColumnName="CODIGO_ESTADO_PROCESO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TBC_ESTADO_PROCESO_GetByIdProceso" FunctionName="PISIModel.Store.SP_TBC_ESTADO_PROCESO_GetByIdProceso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TBC_ESTADO_PROCESO_GetByIdProceso_Result">
+          <ScalarProperty Name="ID_ESTADO_PROCESO" ColumnName="ID_ESTADO_PROCESO" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="CODIGO_ESTADO_PROCESO" ColumnName="CODIGO_ESTADO_PROCESO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TBC_MUNICIPIO_GetDepartamentoByIdMunicipio" FunctionName="PISIModel.Store.SP_TBC_MUNICIPIO_GetDepartamentoByIdMunicipio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TBC_MUNICIPIO_GetDepartamentoByIdMunicipio_Result">
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="COD_DEPARTAMENTO" ColumnName="COD_DEPARTAMENTO" />
+          <ScalarProperty Name="NOMBRE_DEPTO" ColumnName="NOMBRE_DEPTO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TBC_MUNICIPIO_GetMunicipiosXDepartamento" FunctionName="PISIModel.Store.SP_TBC_MUNICIPIO_GetMunicipiosXDepartamento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TBC_MUNICIPIO_GetMunicipiosXDepartamento_Result">
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="COD_MUNICIPIO" ColumnName="COD_MUNICIPIO" />
+          <ScalarProperty Name="NOMBRE_MUNIC" ColumnName="NOMBRE_MUNIC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TBC_SECTOR_ECONOMICO_GetSectores" FunctionName="PISIModel.Store.SP_TBC_SECTOR_ECONOMICO_GetSectores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TBC_SECTOR_ECONOMICO_GetSectores_Result">
+          <ScalarProperty Name="ID_SECTOR_ECONOMICO" ColumnName="ID_SECTOR_ECONOMICO" />
+          <ScalarProperty Name="COD_SECTOR_ECONOMICO" ColumnName="COD_SECTOR_ECONOMICO" />
+          <ScalarProperty Name="NOMBRE_SECTOR" ColumnName="NOMBRE_SECTOR" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TBC_TIPO_NOTIFICACION_GetByIdTipoNotificacion" FunctionName="PISIModel.Store.SP_TBC_TIPO_NOTIFICACION_GetByIdTipoNotificacion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PISIModel.SP_TBC_TIPO_NOTIFICACION_GetByIdTipoNotificacion_Result">
+          <ScalarProperty Name="ID_TIPO_NOTIFICACION" ColumnName="ID_TIPO_NOTIFICACION" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="ICONO" ColumnName="ICONO" />
+          <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_TBC_TIPO_NOTIFICACION_INSERT" FunctionName="PISIModel.Store.SP_TBC_TIPO_NOTIFICACION_INSERT" />
+    <FunctionImportMapping FunctionImportName="SP_TBC_TIPO_NOTIFICACION_UPDATE" FunctionName="PISIModel.Store.SP_TBC_TIPO_NOTIFICACION_UPDATE" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout1.master.cs" Inherits="MinecPISI.Views.Layouts.Layout1" %>
+
+<!DOCTYPE html>
+
+<html>
+    <head runat="server">
+        <title></title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="<%= ResolveClientUrl("~/Views/vendor/fontawesome-free/css/all.min.css") %>" rel="stylesheet" type="text/css">
+        <link href="<%= ResolveClientUrl("~/Views/css/fuente.css") %>" rel="stylesheet" />
+        <link href="<%= ResolveClientUrl("~/Views/css/sb-admin-2.min.css") %>" rel="stylesheet">
+        <link href="<%= ResolveUrl("~/Views/css/minec.css")  %>" rel="stylesheet" />
+        <asp:ContentPlaceHolder ID="cssextra" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </head>
+    <body class="bg-gradient-primary">
+        <asp:ContentPlaceHolder ID="bodyContent" runat="server">
+
+        </asp:ContentPlaceHolder>
+        <script src="<%= ResolveClientUrl("~/Views/vendor/jquery/jquery.min.js") %>"></script>
+        <script src="<%= ResolveClientUrl("~/Views/vendor/bootstrap/js/bootstrap.bundle.min.js") %>"></script>
+        <script src="<%= ResolveClientUrl("~/Views/vendor/jquery-easing/jquery.easing.min.js") %>"></script>
+        <script src="<%= ResolveClientUrl("~/Views/js/sb-admin-2.min.js") %>"></script>
+        <script src="<%= ResolveClientUrl("~/Views/js/jspdf.min.js") %>"></script>
+        <asp:ContentPlaceHolder ID="jsextra" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </body>
+</html>

@@ -1,0 +1,294 @@
+******************** 30/07/2019 4:05:20 ********************
+Exception Tipo: System.Data.SqlClient.SqlException
+Exception: No se puede quitar el procedimiento 'SP_TBC_CAMPOS_INICIATIVA_OBTENER_POR_ID' porque no existe o el usuario no tiene permiso.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs
+Stack Trace: 
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   en System.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   en System.Data.SqlClient.SqlDataReader.NextResult()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderSession`1.CheckNextResults()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderBase`1.Read()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReader`2.MoveNext()
+   en System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   en BLL.Acciones.A_PROYECTO.CambiarEstadoProceso(Int32 idProceso, Int32 idProyecto, Int32 idUsuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs:línea 21
+
+******************** 30/07/2019 4:13:21 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 4:13:37 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 4:13:37 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 4:19:05 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 4:19:15 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:32:24 ********************
+Exception Tipo: System.Data.SqlClient.SqlException
+Exception: No se puede quitar el procedimiento 'SP_TBC_CAMPOS_INICIATIVA_OBTENER_POR_ID' porque no existe o el usuario no tiene permiso.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs
+Stack Trace: 
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   en System.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   en System.Data.SqlClient.SqlDataReader.NextResult()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderSession`1.CheckNextResults()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderBase`1.Read()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReader`2.MoveNext()
+   en System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   en BLL.Acciones.A_PROYECTO.CambiarEstadoProceso(Int32 idProceso, Int32 idProyecto, Int32 idUsuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs:línea 21
+
+******************** 30/07/2019 5:38:08 ********************
+Exception Tipo: System.Data.SqlClient.SqlException
+Exception: No se puede quitar el procedimiento 'SP_TBC_CAMPOS_INICIATIVA_OBTENER_POR_ID' porque no existe o el usuario no tiene permiso.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs
+Stack Trace: 
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   en System.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   en System.Data.SqlClient.SqlDataReader.NextResult()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderSession`1.CheckNextResults()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderBase`1.Read()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReader`2.MoveNext()
+   en System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   en BLL.Acciones.A_PROYECTO.CambiarEstadoProceso(Int32 idProceso, Int32 idProyecto, Int32 idUsuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs:línea 21
+
+******************** 30/07/2019 5:38:08 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:38:08 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:38:08 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:38:26 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:38:26 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:38:26 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:38:26 ********************
+Exception Tipo: System.Data.SqlClient.SqlException
+Exception: No se puede quitar el procedimiento 'SP_TBC_CAMPOS_INICIATIVA_OBTENER_POR_ID' porque no existe o el usuario no tiene permiso.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs
+Stack Trace: 
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   en System.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   en System.Data.SqlClient.SqlDataReader.NextResult()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderSession`1.CheckNextResults()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderBase`1.Read()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReader`2.MoveNext()
+   en System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   en BLL.Acciones.A_PROYECTO.CambiarEstadoProceso(Int32 idProceso, Int32 idProyecto, Int32 idUsuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs:línea 21
+
+******************** 30/07/2019 5:38:56 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:38:56 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:38:56 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:40:55 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:41:07 ********************
+Exception Tipo: System.Data.SqlClient.SqlException
+Exception: No se puede quitar el procedimiento 'SP_TBC_CAMPOS_INICIATIVA_OBTENER_POR_ID' porque no existe o el usuario no tiene permiso.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs
+Stack Trace: 
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   en System.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   en System.Data.SqlClient.SqlDataReader.NextResult()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderSession`1.CheckNextResults()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderBase`1.Read()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReader`2.MoveNext()
+   en System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   en BLL.Acciones.A_PROYECTO.CambiarEstadoProceso(Int32 idProceso, Int32 idProyecto, Int32 idUsuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs:línea 21
+
+******************** 30/07/2019 5:41:07 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:41:07 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:41:37 ********************
+Exception Tipo: System.Data.SqlClient.SqlException
+Exception: No se puede quitar el procedimiento 'SP_TBC_CAMPOS_INICIATIVA_OBTENER_POR_ID' porque no existe o el usuario no tiene permiso.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs
+Stack Trace: 
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   en System.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   en System.Data.SqlClient.SqlDataReader.NextResult()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderSession`1.CheckNextResults()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderBase`1.Read()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReader`2.MoveNext()
+   en System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   en BLL.Acciones.A_PROYECTO.CambiarEstadoProceso(Int32 idProceso, Int32 idProyecto, Int32 idUsuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs:línea 21
+
+******************** 30/07/2019 5:41:37 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO_ACTIVIDAD.cs
+Stack Trace: 
+   en BLL.Acciones.A_PROYECTO_ACTIVIDAD.GuardarActividadProyecto(TB_PROYECTO_ACTIVIDAD actividad, Int32 idUsuarioCrea) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO_ACTIVIDAD.cs:línea 72
+
+******************** 30/07/2019 5:41:37 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO_ACTIVIDAD.cs
+Stack Trace: 
+   en BLL.Acciones.A_PROYECTO_ACTIVIDAD.GuardarActividadProyecto(TB_PROYECTO_ACTIVIDAD actividad, Int32 idUsuarioCrea) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO_ACTIVIDAD.cs:línea 72
+
+******************** 30/07/2019 5:41:37 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO_ACTIVIDAD.cs
+Stack Trace: 
+   en BLL.Acciones.A_PROYECTO_ACTIVIDAD.GuardarActividadProyecto(TB_PROYECTO_ACTIVIDAD actividad, Int32 idUsuarioCrea) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO_ACTIVIDAD.cs:línea 72
+
+******************** 30/07/2019 5:41:37 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO_ACTIVIDAD.cs
+Stack Trace: 
+   en BLL.Acciones.A_PROYECTO_ACTIVIDAD.GuardarActividadProyecto(TB_PROYECTO_ACTIVIDAD actividad, Int32 idUsuarioCrea) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO_ACTIVIDAD.cs:línea 72
+
+******************** 30/07/2019 5:41:37 ********************
+Exception Tipo: System.Data.SqlClient.SqlException
+Exception: No se puede quitar el procedimiento 'SP_TBC_CAMPOS_INICIATIVA_OBTENER_POR_ID' porque no existe o el usuario no tiene permiso.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs
+Stack Trace: 
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   en System.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   en System.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   en System.Data.SqlClient.SqlDataReader.NextResult()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderSession`1.CheckNextResults()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReaderBase`1.Read()
+   en System.Data.Linq.SqlClient.ObjectReaderCompiler.ObjectReader`2.MoveNext()
+   en System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   en BLL.Acciones.A_PROYECTO.CambiarEstadoProceso(Int32 idProceso, Int32 idProyecto, Int32 idUsuario) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_PROYECTO.cs:línea 21
+
+******************** 30/07/2019 5:41:37 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 30/07/2019 5:55:11 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+

@@ -1,0 +1,202 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout2.master.cs" Inherits="MinecPISI.Views.Layouts.Layout2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="<%= ResolveUrl("~/Views/vendor/fontawesome-free/css/all.min.css") %>" rel="stylesheet" type="text/css">
+    <link href="<%= ResolveUrl("~/Views/css/fuente.css")  %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Views/css/sb-admin-2.min.css") %>" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="cssextra" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon">
+                    <img src="<%= ResolveUrl("~/Views/img/minec.jpg") %>" class="img-thumbnail" width="80">
+                </div>
+            </a>
+            <li class="nav-item active">
+                <a class="nav-link text-center" href="index.html">
+                    <span>Proyecto Especial de Pequeñas Inversiones para Soluciones Innovadoras</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <asp:ContentPlaceHolder ID="contenidoNavegacion" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <a id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </a>
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+
+                        </li>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-bell fa-fw"></i>
+                                        <!-- Counter - Alerts -->
+                                        <span class="badge badge-danger badge-counter">7+</span>
+                                    </a>
+                                    <!-- Notificaciones -->
+                                    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                        <h6 class="dropdown-header">Notificaciones 
+                                        </h6>
+                                        <!-- Notifica al Beneficiario que se solicita informacion adicional para Precalificarlo -->
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="mr-3">
+                                                <div class="icon-circle bg-warning">
+                                                    <i class="fa fa-plus text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="small text-gray-500">20 de Febrero de 2019</div>
+                                                <span>Debes ingresar documentación adicional para Precalificarte</span>
+                                            </div>
+                                        </a>
+                                        <!-- Notifica al Beneficiario que es elegible -->
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="mr-3">
+                                                <div class="icon-circle bg-success">
+                                                    <i class="fas fa-check text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="small text-gray-500">22 de Febrero de 2019</div>
+                                                <span class="font-weight-bold">¡Felicidades! Eres elegible para continuar en el Proceso</span>
+                                            </div>
+                                        </a>
+                                        <!-- Notifica al Beneficiario que el Problema ha cambiado de estado -->
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="mr-3">
+                                                <div class="icon-circle bg-success">
+                                                    <i class="fa fa-bullhorn text-white"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="small text-gray-500">24 Febrero de 2019</div>
+                                                Tu Problema ha cambiado de estado
+                 
+                                            </div>
+                                        </a>
+                                        <!-- Notifica la iniciativa ha sido aprobada -->
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="mr-3">
+                                                <div class="icon-circle bg-primary">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="small text-gray-500">24 Febrero de 2019</div>
+                                                <span class="font-weight-bold">¡Excelente! tu iniciativa ha sido aprobada</span>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item text-center small text-gray-500" href="AdministracionNotificaciones">Mostrar todas las Notificaciones</a>
+                                    </div>
+                                </li>
+                        </li>
+
+                        <!-- CERRAR SESION Y NOMBRE DE USUARIO -->
+                        <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <asp:Label ID="lbl_tipo_usuario" runat="server" Text="" class="mr-2 d-none d-lg-inline text-gray-600 small"></asp:Label>
+        </a>
+        <!-- Dropdown - User Information -->
+        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+
+                <a href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/logout" class="dropdown-item">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Cerrar Sesión
+                </a>
+                
+
+        </div>
+
+     </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <asp:ContentPlaceHolder ID="bodyContentBlank" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Ministerio de Economia 2019</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <script src="<%= ResolveUrl("~/Views/vendor/jquery/jquery.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Views/vendor/bootstrap/js/bootstrap.bundle.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Views/vendor/jquery-easing/jquery.easing.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Views/js/sb-admin-2.min.js") %>"></script>
+    <asp:ContentPlaceHolder ID="jsextra" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

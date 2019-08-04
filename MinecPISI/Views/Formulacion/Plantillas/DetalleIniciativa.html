@@ -1,0 +1,57 @@
+﻿<style>
+    #table {
+        border: 1px solid #e3e6f0;
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #858796;
+    }
+
+    #bodypdf {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    }
+
+    .thpdf, .tdpdf {
+        text-align: inherit;
+        border: 0.3px solid gray !important;
+        padding: .75rem;
+        vertical-align: bottom;
+    }
+
+    .t {
+        max-width: 40%;
+    }
+
+    .mb--3 {
+        margin-bottom: 30px;
+    }
+    #datos {
+        border: 1px solid #e3e6f0;
+        max-width:200px;
+    }
+    #datos2 {
+        max-width: 200px;
+    }
+</style>
+
+<div id="datos" class="mb--3">
+    <p>Nombre del Beneficiario:......................... [nombreBeneficiario]</p>
+    <p>Nombre del Formulador:........................... [nombreFormulador]</p>
+    <p>Nombre del Consultor:............................ [nombreConsultor]</p>
+    <p>Tipo de Iniciativa:............................ [nombreTipoIniciativa]</p>
+    <p>Codigo del proyecto:............................. [codProyecto] -------- Identificador del proyecto: [idProyecto]</p>
+    <p>Presentado:[fechaCreacion] ---------------------- Reporte creado: [fechaCreacionReporte]</p>
+</div>
+
+<table width="100%" style="font-size:9px;" id="table">
+    <thead>
+        <tr>
+            <th class="thpdf" scope="col">Campo de la iniciativa</th>
+            <th class="thpdf" scope="col">Detalle</th>
+        </tr>
+    </thead>
+    <tbody>
+        [detalle]
+    </tbody>
+</table>
+</body>

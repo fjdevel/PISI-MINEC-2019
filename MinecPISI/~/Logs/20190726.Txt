@@ -1,0 +1,35 @@
+******************** 26/07/2019 22:00:42 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 26/07/2019 22:01:00 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 26/07/2019 22:01:00 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 26/07/2019 22:01:35 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+
+******************** 26/07/2019 22:01:46 ********************
+Exception Tipo: System.Exception
+Exception: Se produjo una excepción de tipo 'System.Exception'.
+Source: C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs
+Stack Trace: 
+   en BLL.Acciones.A_NOTIFICACION.GuardarNotificacion(Int32 usuarioOwner, Int32 usuarioCrea, String _codigo) en C:\Users\Frederick\Source\Repos\Innova\BLL\Acciones\A_NOTIFICACION.cs:línea 22
+

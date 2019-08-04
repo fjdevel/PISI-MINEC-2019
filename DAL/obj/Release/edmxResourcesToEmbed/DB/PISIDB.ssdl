@@ -1,0 +1,1442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PISIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_ACTIVIDAD">
+    <Key>
+      <PropertyRef Name="ID_ACTIVIDAD" />
+    </Key>
+    <Property Name="ID_ACTIVIDAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="FECHA" Type="datetime" Nullable="false" />
+    <Property Name="HORA" Type="datetime" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="1024" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="2048" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_BENEFICIARIO">
+    <Key>
+      <PropertyRef Name="ID_BENEFICIARIO" />
+    </Key>
+    <Property Name="ID_BENEFICIARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SECTOR_ECONOMICO" Type="int" />
+    <Property Name="ID_PERSONA" Type="int" />
+    <Property Name="ID_ESTADO_PROCESO" Type="int" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="CODIGO_BENEFICIARIO" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="TIPO_PERSONA" Type="smallint" Nullable="false" />
+    <Property Name="DUI" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="NIT" Type="char" MaxLength="14" Nullable="false" />
+    <Property Name="LAT" Type="numeric" Precision="14" Scale="0" />
+    <Property Name="LONG" Type="numeric" Precision="14" Scale="0" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+    <Property Name="EXISTEN_ACTIVOS" Type="bit" />
+    <Property Name="MAS_ANIOS_EN_LUGAR" Type="bit" />
+    <Property Name="PUEDE_COMPROBAR_VENTAS" Type="bit" />
+    <Property Name="MEDIO_CONTACTO" Type="varchar" MaxLength="25" />
+    <Property Name="INFO_COMPLEMENTARIA" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="TB_DOCUMENTO">
+    <Key>
+      <PropertyRef Name="ID_DOCUMENTO" />
+    </Key>
+    <Property Name="ID_DOCUMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TIPO_DOCUMENTO" Type="int" Nullable="false" />
+    <Property Name="ID_BENEFICIARIO" Type="int" Nullable="false" />
+    <Property Name="URL" Type="varchar" MaxLength="2048" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_EJECUCION">
+    <Key>
+      <PropertyRef Name="ID_EJECUCION" />
+    </Key>
+    <Property Name="ID_EJECUCION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROYECTO_ACTIVIDAD" Type="int" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="4096" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_NOTIFICACION">
+    <Key>
+      <PropertyRef Name="ID_NOTIFICACION" />
+    </Key>
+    <Property Name="ID_NOTIFICACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" />
+    <Property Name="ID_TIPO_NOTIFICACION" Type="int" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="2048" Nullable="false" />
+    <Property Name="LEIDO" Type="smallint" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_PERMISO">
+    <Key>
+      <PropertyRef Name="ID_ROL" />
+      <PropertyRef Name="ID_RECURSO" />
+    </Key>
+    <Property Name="ID_ROL" Type="int" Nullable="false" />
+    <Property Name="ID_RECURSO" Type="int" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_PERSONA">
+    <Key>
+      <PropertyRef Name="ID_PERSONA" />
+    </Key>
+    <Property Name="ID_PERSONA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="ID_MUNICIPIO" Type="int" />
+    <Property Name="NOMBRES" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="APELLIDOS" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="CORREO_E" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="200" />
+    <Property Name="TEL_FIJO" Type="char" MaxLength="9" />
+    <Property Name="TEL_CEL" Type="char" MaxLength="9" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_PROBLEMA">
+    <Key>
+      <PropertyRef Name="ID_PROBLEMA" />
+    </Key>
+    <Property Name="ID_PROBLEMA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_BENEFICIARIO" Type="int" Nullable="false" />
+    <Property Name="ID_ESTADO_PROCESO" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="MERCADO" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="CANT_EMPLEADOS" Type="int" Nullable="false" />
+    <Property Name="REQUIERE_APOYO" Type="bit" Nullable="false" />
+    <Property Name="NOMBRE_PROBLEMA" Type="varchar" MaxLength="500" />
+    <Property Name="DESCRIPCION_NEGOCIO" Type="varchar" MaxLength="2000" />
+    <Property Name="VENTA_DIA" Type="varchar" MaxLength="200" />
+    <Property Name="VENTA_MES" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="DESCRIPCION_PROBLEMA" Type="varchar" MaxLength="2000" />
+    <Property Name="DESCRIPCION_OTRO_PROBLEMA" Type="varchar" MaxLength="2000" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_PROPUESTA">
+    <Key>
+      <PropertyRef Name="ID_PROPUESTA" />
+    </Key>
+    <Property Name="ID_PROPUESTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROBLEMA" Type="int" Nullable="false" />
+    <Property Name="ID_USUARIO_FORMULA" Type="int" Nullable="false" />
+    <Property Name="ID_ESTADO_PROCESO" Type="int" />
+    <Property Name="ID_TIPO_INICIATIVA" Type="int" />
+    <Property Name="DESCRIPCION" Type="text" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_PROYECTO">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO" />
+    </Key>
+    <Property Name="ID_PROYECTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COD_PROYECTO" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="ID_PROBLEMA" Type="int" Nullable="false" />
+    <Property Name="ID_TIPO_INICIATIVA" Type="int" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_PROYECTO_ACTIVIDAD">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO_ACTIVIDAD" />
+    </Key>
+    <Property Name="ID_PROYECTO_ACTIVIDAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ACTIVIDAD_INICIATIVA" Type="int" Nullable="false" />
+    <Property Name="ID_PROYECTO" Type="int" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="SEMANA_INICIO" Type="smallint" Nullable="false" />
+    <Property Name="SEMANA_FIN" Type="smallint" Nullable="false" />
+    <Property Name="PORCENTAJE_AVANCE" Type="int" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_RECURSO">
+    <Key>
+      <PropertyRef Name="ID_RECURSO" />
+    </Key>
+    <Property Name="ID_RECURSO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="URL_RECURSO" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_ROL">
+    <Key>
+      <PropertyRef Name="ID_ROL" />
+    </Key>
+    <Property Name="ID_ROL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_SOLICITUD_SEGUIMIENTO">
+    <Key>
+      <PropertyRef Name="ID_SOLICITUD_SEGUIMIENTO" />
+    </Key>
+    <Property Name="ID_SOLICITUD_SEGUIMIENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROYECTO" Type="int" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="FECHA" Type="datetime" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="4096" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ROL" Type="int" Nullable="false" />
+    <Property Name="ID_PERSONA" Type="int" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="NOMBRE_USUARIO" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="CONTRASENA" Type="varchar" MaxLength="64" />
+    <Property Name="ID_SESION" Type="varchar" MaxLength="80" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBC_ACTIVIDAD_INICIATIVA">
+    <Key>
+      <PropertyRef Name="ID_ACTIVIDAD_INICIATIVA" />
+    </Key>
+    <Property Name="ID_ACTIVIDAD_INICIATIVA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TIPO_INICIATIVA" Type="int" Nullable="false" />
+    <Property Name="USUARIO_CREA" Type="int" />
+    <Property Name="USUARIO_ACTUALIZA" Type="int" />
+    <Property Name="COD_ACTIVIDAD_PROY" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="4096" Nullable="false" />
+    <Property Name="FECHA_CREA" Type="datetime" />
+    <Property Name="FECHA_ACTUALIZA" Type="datetime" />
+    <Property Name="FECHA_BORRADO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBC_DEPARTAMENTO">
+    <Key>
+      <PropertyRef Name="ID_DEPARTAMENTO" />
+    </Key>
+    <Property Name="ID_DEPARTAMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COD_DEPARTAMENTO" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="NOMBRE_DEPTO" Type="varchar" MaxLength="16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBC_ESTADO_PROCESO">
+    <Key>
+      <PropertyRef Name="ID_ESTADO_PROCESO" />
+    </Key>
+    <Property Name="ID_ESTADO_PROCESO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROCESO" Type="int" />
+    <Property Name="CODIGO_ESTADO_PROCESO" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBC_MUNICIPIO">
+    <Key>
+      <PropertyRef Name="ID_MUNICIPIO" />
+    </Key>
+    <Property Name="ID_MUNICIPIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_DEPARTAMENTO" Type="int" />
+    <Property Name="COD_MUNICIPIO" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="NOMBRE_MUNIC" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBC_PROCESO">
+    <Key>
+      <PropertyRef Name="ID_PROCESO" />
+    </Key>
+    <Property Name="ID_PROCESO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="CODIGO_PROCESO" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBC_SECTOR_ECONOMICO">
+    <Key>
+      <PropertyRef Name="ID_SECTOR_ECONOMICO" />
+    </Key>
+    <Property Name="ID_SECTOR_ECONOMICO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COD_SECTOR_ECONOMICO" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="NOMBRE_SECTOR" Type="varchar" MaxLength="16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBC_TIPO_DOCUMENTO">
+    <Key>
+      <PropertyRef Name="ID_TIPO_DOCUMENTO" />
+    </Key>
+    <Property Name="ID_TIPO_DOCUMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBC_TIPO_INICIATIVA">
+    <Key>
+      <PropertyRef Name="ID_TIPO_INICIATIVA" />
+    </Key>
+    <Property Name="ID_TIPO_INICIATIVA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="CODIGO_TIPO_INICIATVA" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBC_TIPO_NOTIFICACION">
+    <Key>
+      <PropertyRef Name="ID_TIPO_NOTIFICACION" />
+    </Key>
+    <Property Name="ID_TIPO_NOTIFICACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COLOR" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ICONO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TITULO" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ACTIVIDAD_INICIATIVA_ACTIVIDAD_PROYECTO">
+    <End Role="TBC_ACTIVIDAD_INICIATIVA" Type="Self.TBC_ACTIVIDAD_INICIATIVA" Multiplicity="1" />
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_ACTIVIDAD_INICIATIVA">
+        <PropertyRef Name="ID_ACTIVIDAD_INICIATIVA" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="ID_ACTIVIDAD_INICIATIVA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_INICIATIVA_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TBC_ACTIVIDAD_INICIATIVA" Type="Self.TBC_ACTIVIDAD_INICIATIVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TBC_ACTIVIDAD_INICIATIVA">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_INICIATIVA_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TBC_ACTIVIDAD_INICIATIVA" Type="Self.TBC_ACTIVIDAD_INICIATIVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TBC_ACTIVIDAD_INICIATIVA">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_PROYECTO_TIPO_INICIATIVA">
+    <End Role="TBC_TIPO_INICIATIVA" Type="Self.TBC_TIPO_INICIATIVA" Multiplicity="1" />
+    <End Role="TBC_ACTIVIDAD_INICIATIVA" Type="Self.TBC_ACTIVIDAD_INICIATIVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_INICIATIVA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Principal>
+      <Dependent Role="TBC_ACTIVIDAD_INICIATIVA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_USUARIO">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_ACTIVIDAD" Type="Self.TB_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_ACTIVIDAD">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVIDAD_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_ACTIVIDAD" Type="Self.TB_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_ACTIVIDAD">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_ESTADO PROCESO">
+    <End Role="TBC_ESTADO_PROCESO" Type="Self.TBC_ESTADO_PROCESO" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_ESTADO_PROCESO">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_PERSONA">
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PERSONA">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_SECTOR_ECONOMICA">
+    <End Role="TBC_SECTOR_ECONOMICO" Type="Self.TBC_SECTOR_ECONOMICO" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_SECTOR_ECONOMICO">
+        <PropertyRef Name="ID_SECTOR_ECONOMICO" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_SECTOR_ECONOMICO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BENEFICIARIO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_BENEFICIARIO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCUMENTO_BENEFICIARIO">
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="1" />
+    <End Role="TB_DOCUMENTO" Type="Self.TB_DOCUMENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_BENEFICIARIO" />
+      </Principal>
+      <Dependent Role="TB_DOCUMENTO">
+        <PropertyRef Name="ID_BENEFICIARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOCUMENTO_TIPO_DOCUMENTO">
+    <End Role="TBC_TIPO_DOCUMENTO" Type="Self.TBC_TIPO_DOCUMENTO" Multiplicity="1" />
+    <End Role="TB_DOCUMENTO" Type="Self.TB_DOCUMENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_DOCUMENTO">
+        <PropertyRef Name="ID_TIPO_DOCUMENTO" />
+      </Principal>
+      <Dependent Role="TB_DOCUMENTO">
+        <PropertyRef Name="ID_TIPO_DOCUMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EJECUCION_PROYECTO_ACTIVIDAD">
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="1" />
+    <End Role="TB_EJECUCION" Type="Self.TB_EJECUCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="ID_PROYECTO_ACTIVIDAD" />
+      </Principal>
+      <Dependent Role="TB_EJECUCION">
+        <PropertyRef Name="ID_PROYECTO_ACTIVIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ESTADO_PROCESO_PROCESO">
+    <End Role="TBC_PROCESO" Type="Self.TBC_PROCESO" Multiplicity="0..1" />
+    <End Role="TBC_ESTADO_PROCESO" Type="Self.TBC_ESTADO_PROCESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_PROCESO">
+        <PropertyRef Name="ID_PROCESO" />
+      </Principal>
+      <Dependent Role="TBC_ESTADO_PROCESO">
+        <PropertyRef Name="ID_PROCESO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MUNICIPIO_DEPARTAMENTO">
+    <End Role="TBC_DEPARTAMENTO" Type="Self.TBC_DEPARTAMENTO" Multiplicity="0..1" />
+    <End Role="TBC_MUNICIPIO" Type="Self.TBC_MUNICIPIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_DEPARTAMENTO">
+        <PropertyRef Name="ID_DEPARTAMENTO" />
+      </Principal>
+      <Dependent Role="TBC_MUNICIPIO">
+        <PropertyRef Name="ID_DEPARTAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NOTIFICACION_USUARIO">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_NOTIFICACION" Type="Self.TB_NOTIFICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_NOTIFICACION">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERMISO_RECURSO">
+    <End Role="TB_RECURSO" Type="Self.TB_RECURSO" Multiplicity="1" />
+    <End Role="TB_PERMISO" Type="Self.TB_PERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_RECURSO">
+        <PropertyRef Name="ID_RECURSO" />
+      </Principal>
+      <Dependent Role="TB_PERMISO">
+        <PropertyRef Name="ID_RECURSO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERMISO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PERMISO" Type="Self.TB_PERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PERMISO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERMISO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PERMISO" Type="Self.TB_PERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PERMISO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSMISO_ROL">
+    <End Role="TB_ROL" Type="Self.TB_ROL" Multiplicity="1" />
+    <End Role="TB_PERMISO" Type="Self.TB_PERMISO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ROL">
+        <PropertyRef Name="ID_ROL" />
+      </Principal>
+      <Dependent Role="TB_PERMISO">
+        <PropertyRef Name="ID_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSONA_MUNICIPIO">
+    <End Role="TBC_MUNICIPIO" Type="Self.TBC_MUNICIPIO" Multiplicity="0..1" />
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_MUNICIPIO">
+        <PropertyRef Name="ID_MUNICIPIO" />
+      </Principal>
+      <Dependent Role="TB_PERSONA">
+        <PropertyRef Name="ID_MUNICIPIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSONA_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PERSONA">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSONA_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PERSONA">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROBLEMA_BENEFICIARIO">
+    <End Role="TB_BENEFICIARIO" Type="Self.TB_BENEFICIARIO" Multiplicity="1" />
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_BENEFICIARIO">
+        <PropertyRef Name="ID_BENEFICIARIO" />
+      </Principal>
+      <Dependent Role="TB_PROBLEMA">
+        <PropertyRef Name="ID_BENEFICIARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROBLEMA_ESTADO_PROCESO">
+    <End Role="TBC_ESTADO_PROCESO" Type="Self.TBC_ESTADO_PROCESO" Multiplicity="0..1" />
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_ESTADO_PROCESO">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Principal>
+      <Dependent Role="TB_PROBLEMA">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPUESTA_ESTADO_PROCESO">
+    <End Role="TBC_ESTADO_PROCESO" Type="Self.TBC_ESTADO_PROCESO" Multiplicity="0..1" />
+    <End Role="TB_PROPUESTA" Type="Self.TB_PROPUESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_ESTADO_PROCESO">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Principal>
+      <Dependent Role="TB_PROPUESTA">
+        <PropertyRef Name="ID_ESTADO_PROCESO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPUESTA_PROBLEMA">
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="1" />
+    <End Role="TB_PROPUESTA" Type="Self.TB_PROPUESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROBLEMA">
+        <PropertyRef Name="ID_PROBLEMA" />
+      </Principal>
+      <Dependent Role="TB_PROPUESTA">
+        <PropertyRef Name="ID_PROBLEMA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPUESTA_TIPO_INICIATIVA">
+    <End Role="TBC_TIPO_INICIATIVA" Type="Self.TBC_TIPO_INICIATIVA" Multiplicity="0..1" />
+    <End Role="TB_PROPUESTA" Type="Self.TB_PROPUESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_INICIATIVA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Principal>
+      <Dependent Role="TB_PROPUESTA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPUESTA_USUARIO">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="1" />
+    <End Role="TB_PROPUESTA" Type="Self.TB_PROPUESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROPUESTA">
+        <PropertyRef Name="ID_USUARIO_FORMULA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_ACTIVIDAD_PROYECTO">
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="1" />
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_ACTIVIDAD_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_ACTIVIDAD_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROYECTO_ACTIVIDAD" Type="Self.TB_PROYECTO_ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO_ACTIVIDAD">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_PROBLEMA">
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="1" />
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROBLEMA">
+        <PropertyRef Name="ID_PROBLEMA" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO">
+        <PropertyRef Name="ID_PROBLEMA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_TIPO_INICIATIVA">
+    <End Role="TBC_TIPO_INICIATIVA" Type="Self.TBC_TIPO_INICIATIVA" Multiplicity="1" />
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_INICIATIVA">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO">
+        <PropertyRef Name="ID_TIPO_INICIATIVA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROYECTO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROYECTO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RECURSO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_RECURSO" Type="Self.TB_RECURSO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_RECURSO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RECURSO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_RECURSO" Type="Self.TB_RECURSO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_RECURSO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROL_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_ROL" Type="Self.TB_ROL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_ROL">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROL_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_ROL" Type="Self.TB_ROL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_ROL">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLICITUD_SEGUIMIENTO_PROYECTO">
+    <End Role="TB_PROYECTO" Type="Self.TB_PROYECTO" Multiplicity="0..1" />
+    <End Role="TB_SOLICITUD_SEGUIMIENTO" Type="Self.TB_SOLICITUD_SEGUIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PROYECTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Principal>
+      <Dependent Role="TB_SOLICITUD_SEGUIMIENTO">
+        <PropertyRef Name="ID_PROYECTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLICITUD_SEGUIMIENTO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_SOLICITUD_SEGUIMIENTO" Type="Self.TB_SOLICITUD_SEGUIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_SOLICITUD_SEGUIMIENTO">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLICITUD_SEGUIMIENTO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_SOLICITUD_SEGUIMIENTO" Type="Self.TB_SOLICITUD_SEGUIMIENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_SOLICITUD_SEGUIMIENTO">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_NOTIF_REFERENCE_TB_USUAR">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_NOTIFICACION" Type="Self.TB_NOTIFICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_NOTIFICACION">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_NOTIF_REFERENCE_TBC_TIPO">
+    <End Role="TBC_TIPO_NOTIFICACION" Type="Self.TBC_TIPO_NOTIFICACION" Multiplicity="0..1" />
+    <End Role="TB_NOTIFICACION" Type="Self.TB_NOTIFICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBC_TIPO_NOTIFICACION">
+        <PropertyRef Name="ID_TIPO_NOTIFICACION" />
+      </Principal>
+      <Dependent Role="TB_NOTIFICACION">
+        <PropertyRef Name="ID_TIPO_NOTIFICACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_PROBL_REFERENCE_TB_USUAR">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_PROBLEMA" Type="Self.TB_PROBLEMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_PROBLEMA">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_PERSONA">
+    <End Role="TB_PERSONA" Type="Self.TB_PERSONA" Multiplicity="0..1" />
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PERSONA">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="TB_USUARIO">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_ROL">
+    <End Role="TB_ROL" Type="Self.TB_ROL" Multiplicity="1" />
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ROL">
+        <PropertyRef Name="ID_ROL" />
+      </Principal>
+      <Dependent Role="TB_USUARIO">
+        <PropertyRef Name="ID_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_USUARIO1">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_USUARIO1" Type="Self.TB_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_USUARIO1">
+        <PropertyRef Name="USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_USUARIO2">
+    <End Role="TB_USUARIO" Type="Self.TB_USUARIO" Multiplicity="0..1" />
+    <End Role="TB_USUARIO1" Type="Self.TB_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TB_USUARIO1">
+        <PropertyRef Name="USUARIO_ACTUALIZA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_Autenticar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CORREO_E" Type="varchar" Mode="In" />
+    <Parameter Name="CONTRASENA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DETALLE_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_ROL_HAS_RECURSO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_ACTIVIDAD_InsertCita" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+    <Parameter Name="Fecha" Type="datetime" Mode="In" />
+    <Parameter Name="Hora" Type="datetime" Mode="In" />
+    <Parameter Name="Direccion" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="USUARIO_CREA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_BENEFICIARIO_CambiarCodigo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodBene" Type="char" Mode="In" />
+    <Parameter Name="IdBeneficiario" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_BENEFICIARIO_CambiarEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodProceso" Type="varchar" Mode="In" />
+    <Parameter Name="IdBeneficiario" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_BENEFICIARIO_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_BENEFICIARIO_GetByIdPersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PERSONA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_BENEFICIARIO_InsertBeneficiario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdSector" Type="int" Mode="In" />
+    <Parameter Name="IdPersona" Type="int" Mode="In" />
+    <Parameter Name="CODIGO_BENEFICIARIO" Type="char" Mode="In" />
+    <Parameter Name="TipoPersona" Type="smallint" Mode="In" />
+    <Parameter Name="Dui" Type="char" Mode="In" />
+    <Parameter Name="Nit" Type="char" Mode="In" />
+    <Parameter Name="USUARIO_CREA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_BENEFICIARIO_ObterPorEstadoProceso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodEstadoProceso" Type="char" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_NOTIFICACION_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_NOTIFICACION_GetAllNoLeidas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_NOTIFICACION_GetByIdUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_NOTIFICACION_GetLeidasByIdUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_NOTIFICACION_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+    <Parameter Name="ID_TIPO_NOTIFICACION" Type="int" Mode="In" />
+    <Parameter Name="DESCRIPCION" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_NOTIFICACION_UPDATE_LEIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NOTIFICACION" Type="int" Mode="In" />
+    <Parameter Name="ESTADO" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERMISO_DELETE_HARD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERMISO_DELETE_SOFT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERMISO_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_PERMISO_GetAllWithDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_PERMISO_GetByRecurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERMISO_GetByRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERMISO_GetByRolRecurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERMISO_GetDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_PERMISO_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_CREA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERMISO_RestoreById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERSONA_DELETE_HARD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PERSONA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERSONA_DELETE_SOFT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PERSONA" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERSONA_EsCorreoUnico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CORREO_E" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERSONA_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_PERSONA_GetAllWithDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_PERSONA_GetByCorreoE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CORREO_E" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERSONA_GetByIdPersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PERSONA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERSONA_GetDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_PERSONA_InsertPersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NOMBRES" Type="varchar" Mode="In" />
+    <Parameter Name="APELLIDOS" Type="varchar" Mode="In" />
+    <Parameter Name="CORREO_E" Type="varchar" Mode="In" />
+    <Parameter Name="TEL_FIJO" Type="char" Mode="In" />
+    <Parameter Name="TEL_CEL" Type="char" Mode="In" />
+    <Parameter Name="ID_MUNICIPIO" Type="int" Mode="In" />
+    <Parameter Name="DIRECCION" Type="varchar" Mode="In" />
+    <Parameter Name="USUARIO_CREA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERSONA_RestoreById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PERSONA" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PERSONA_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PERSONA" Type="int" Mode="In" />
+    <Parameter Name="ID_MUNICIPIO" Type="int" Mode="In" />
+    <Parameter Name="NOMBRES" Type="varchar" Mode="In" />
+    <Parameter Name="TEL_FIJO" Type="char" Mode="In" />
+    <Parameter Name="TEL_CEL" Type="char" Mode="In" />
+    <Parameter Name="APELLIDOS" Type="varchar" Mode="In" />
+    <Parameter Name="CORREO_E" Type="varchar" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PROBLEMA_ConsultarProblema" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdProblema" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PROBLEMA_InsertProblema" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdBeneficiario" Type="int" Mode="In" />
+    <Parameter Name="IdEstadoProceso" Type="int" Mode="In" />
+    <Parameter Name="Mercado" Type="varchar" Mode="In" />
+    <Parameter Name="CantEmpleados" Type="int" Mode="In" />
+    <Parameter Name="RequiereApoyo" Type="bit" Mode="In" />
+    <Parameter Name="NombreProblema" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionNegocio" Type="varchar" Mode="In" />
+    <Parameter Name="VentaDia" Type="varchar" Mode="In" />
+    <Parameter Name="VentaMes" Type="decimal" Mode="In" />
+    <Parameter Name="DescripcionProblema" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionOtroProblema" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_PROBLEMA_TieneBeneficiarioAsociado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdBeneficiario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_RECURSO_DELETE_HARD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_RECURSO_DELETE_SOFT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_RECURSO_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_RECURSO_GetAllWithDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_RECURSO_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_RECURSO_GetByUrlRecurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="URL_RECURSO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_RECURSO_GetDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_RECURSO_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="URL_RECURSO" Type="varchar" Mode="In" />
+    <Parameter Name="NOMBRE" Type="varchar" Mode="In" />
+    <Parameter Name="USUARIO_CREA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_RECURSO_RestoreById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_RECURSO_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_RECURSO" Type="int" Mode="In" />
+    <Parameter Name="URL_RECURSO" Type="varchar" Mode="In" />
+    <Parameter Name="NOMBRE" Type="varchar" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_ROL_DELETE_HARD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_ROL_DELETE_SOFT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_ROL_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_ROL_GetAllWithDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_ROL_GetByIdRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_ROL_GetByNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NOMBRE" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_ROL_GetDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_ROL_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NOMBRE" Type="varchar" Mode="In" />
+    <Parameter Name="DESCRIPCION" Type="varchar" Mode="In" />
+    <Parameter Name="USUARIO_CREA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_ROL_RestoreById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_ROL_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="NOMBRE" Type="varchar" Mode="In" />
+    <Parameter Name="DESCRIPCION" Type="varchar" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_USUARIO_DELETE_HARD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_USUARIO_DELETE_SOFT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_USUARIO_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_USUARIO_GetAllWithDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_USUARIO_GetByIdPersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PERSONA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_USUARIO_GetByIdUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_USUARIO_GetDeleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TB_USUARIO_GetIdSesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_USUARIO_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="ID_PERSONA" Type="int" Mode="In" />
+    <Parameter Name="NOMBRE_USUARIO" Type="varchar" Mode="In" />
+    <Parameter Name="CONTRASENA" Type="varchar" Mode="In" />
+    <Parameter Name="USUARIO_CREA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_USUARIO_RestoreById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_USUARIO_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+    <Parameter Name="ID_ROL" Type="int" Mode="In" />
+    <Parameter Name="ID_PERSONA" Type="int" Mode="In" />
+    <Parameter Name="NOMBRE_USUARIO" Type="varchar" Mode="In" />
+    <Parameter Name="CONTRASENA" Type="varchar" Mode="In" />
+    <Parameter Name="USUARIO_ACTUALIZA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TB_USUARIO_UPDATE_AUTENTICADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+    <Parameter Name="ID_SESION" Type="varchar" Mode="In" />
+    <Parameter Name="ESTADO" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="SP_TBC_DEPARTAMENTO_GetDepartamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TBC_ESTADO_PROCESO_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TBC_ESTADO_PROCESO_GetByIdEstadoProceso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_ESTADO_PROCESO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TBC_ESTADO_PROCESO_GetByIdProceso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PROCESO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TBC_MUNICIPIO_GetDepartamentoByIdMunicipio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_MUNICIPIO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TBC_MUNICIPIO_GetMunicipiosXDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DepartamentoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TBC_SECTOR_ECONOMICO_GetSectores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_TBC_TIPO_NOTIFICACION_GetByIdTipoNotificacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_TIPO_NOTIFICACION" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_TBC_TIPO_NOTIFICACION_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COLOR" Type="varchar" Mode="In" />
+    <Parameter Name="ICONO" Type="varchar" Mode="In" />
+    <Parameter Name="TITULO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_TBC_TIPO_NOTIFICACION_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_TIPO_NOTIFICACION" Type="int" Mode="In" />
+    <Parameter Name="COLOR" Type="varchar" Mode="In" />
+    <Parameter Name="ICONO" Type="varchar" Mode="In" />
+    <Parameter Name="TITULO" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="PISIModelStoreContainer">
+    <EntitySet Name="TB_ACTIVIDAD" EntityType="Self.TB_ACTIVIDAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_BENEFICIARIO" EntityType="Self.TB_BENEFICIARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_DOCUMENTO" EntityType="Self.TB_DOCUMENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_EJECUCION" EntityType="Self.TB_EJECUCION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_NOTIFICACION" EntityType="Self.TB_NOTIFICACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_PERMISO" EntityType="Self.TB_PERMISO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_PERSONA" EntityType="Self.TB_PERSONA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_PROBLEMA" EntityType="Self.TB_PROBLEMA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_PROPUESTA" EntityType="Self.TB_PROPUESTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_PROYECTO" EntityType="Self.TB_PROYECTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_PROYECTO_ACTIVIDAD" EntityType="Self.TB_PROYECTO_ACTIVIDAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_RECURSO" EntityType="Self.TB_RECURSO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_ROL" EntityType="Self.TB_ROL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_SOLICITUD_SEGUIMIENTO" EntityType="Self.TB_SOLICITUD_SEGUIMIENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_USUARIO" EntityType="Self.TB_USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBC_ACTIVIDAD_INICIATIVA" EntityType="Self.TBC_ACTIVIDAD_INICIATIVA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBC_DEPARTAMENTO" EntityType="Self.TBC_DEPARTAMENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBC_ESTADO_PROCESO" EntityType="Self.TBC_ESTADO_PROCESO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBC_MUNICIPIO" EntityType="Self.TBC_MUNICIPIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBC_PROCESO" EntityType="Self.TBC_PROCESO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBC_SECTOR_ECONOMICO" EntityType="Self.TBC_SECTOR_ECONOMICO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBC_TIPO_DOCUMENTO" EntityType="Self.TBC_TIPO_DOCUMENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBC_TIPO_INICIATIVA" EntityType="Self.TBC_TIPO_INICIATIVA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBC_TIPO_NOTIFICACION" EntityType="Self.TBC_TIPO_NOTIFICACION" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ACTIVIDAD_INICIATIVA_ACTIVIDAD_PROYECTO" Association="Self.FK_ACTIVIDAD_INICIATIVA_ACTIVIDAD_PROYECTO">
+      <End Role="TBC_ACTIVIDAD_INICIATIVA" EntitySet="TBC_ACTIVIDAD_INICIATIVA" />
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_INICIATIVA_USUARIO1" Association="Self.FK_ACTIVIDAD_INICIATIVA_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TBC_ACTIVIDAD_INICIATIVA" EntitySet="TBC_ACTIVIDAD_INICIATIVA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_INICIATIVA_USUARIO2" Association="Self.FK_ACTIVIDAD_INICIATIVA_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TBC_ACTIVIDAD_INICIATIVA" EntitySet="TBC_ACTIVIDAD_INICIATIVA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_PROYECTO_TIPO_INICIATIVA" Association="Self.FK_ACTIVIDAD_PROYECTO_TIPO_INICIATIVA">
+      <End Role="TBC_TIPO_INICIATIVA" EntitySet="TBC_TIPO_INICIATIVA" />
+      <End Role="TBC_ACTIVIDAD_INICIATIVA" EntitySet="TBC_ACTIVIDAD_INICIATIVA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_USUARIO" Association="Self.FK_ACTIVIDAD_USUARIO">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_ACTIVIDAD" EntitySet="TB_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVIDAD_USUARIO1" Association="Self.FK_ACTIVIDAD_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_ACTIVIDAD" EntitySet="TB_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_ESTADO PROCESO" Association="Self.FK_BENEFICIARIO_ESTADO PROCESO">
+      <End Role="TBC_ESTADO_PROCESO" EntitySet="TBC_ESTADO_PROCESO" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_PERSONA" Association="Self.FK_BENEFICIARIO_PERSONA">
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_SECTOR_ECONOMICA" Association="Self.FK_BENEFICIARIO_SECTOR_ECONOMICA">
+      <End Role="TBC_SECTOR_ECONOMICO" EntitySet="TBC_SECTOR_ECONOMICO" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_USUARIO1" Association="Self.FK_BENEFICIARIO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BENEFICIARIO_USUARIO2" Association="Self.FK_BENEFICIARIO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCUMENTO_BENEFICIARIO" Association="Self.FK_DOCUMENTO_BENEFICIARIO">
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+      <End Role="TB_DOCUMENTO" EntitySet="TB_DOCUMENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOCUMENTO_TIPO_DOCUMENTO" Association="Self.FK_DOCUMENTO_TIPO_DOCUMENTO">
+      <End Role="TBC_TIPO_DOCUMENTO" EntitySet="TBC_TIPO_DOCUMENTO" />
+      <End Role="TB_DOCUMENTO" EntitySet="TB_DOCUMENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EJECUCION_PROYECTO_ACTIVIDAD" Association="Self.FK_EJECUCION_PROYECTO_ACTIVIDAD">
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+      <End Role="TB_EJECUCION" EntitySet="TB_EJECUCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ESTADO_PROCESO_PROCESO" Association="Self.FK_ESTADO_PROCESO_PROCESO">
+      <End Role="TBC_PROCESO" EntitySet="TBC_PROCESO" />
+      <End Role="TBC_ESTADO_PROCESO" EntitySet="TBC_ESTADO_PROCESO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MUNICIPIO_DEPARTAMENTO" Association="Self.FK_MUNICIPIO_DEPARTAMENTO">
+      <End Role="TBC_DEPARTAMENTO" EntitySet="TBC_DEPARTAMENTO" />
+      <End Role="TBC_MUNICIPIO" EntitySet="TBC_MUNICIPIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NOTIFICACION_USUARIO" Association="Self.FK_NOTIFICACION_USUARIO">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_NOTIFICACION" EntitySet="TB_NOTIFICACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERMISO_RECURSO" Association="Self.FK_PERMISO_RECURSO">
+      <End Role="TB_RECURSO" EntitySet="TB_RECURSO" />
+      <End Role="TB_PERMISO" EntitySet="TB_PERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERMISO_USUARIO1" Association="Self.FK_PERMISO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PERMISO" EntitySet="TB_PERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERMISO_USUARIO2" Association="Self.FK_PERMISO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PERMISO" EntitySet="TB_PERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSMISO_ROL" Association="Self.FK_PERSMISO_ROL">
+      <End Role="TB_ROL" EntitySet="TB_ROL" />
+      <End Role="TB_PERMISO" EntitySet="TB_PERMISO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSONA_MUNICIPIO" Association="Self.FK_PERSONA_MUNICIPIO">
+      <End Role="TBC_MUNICIPIO" EntitySet="TBC_MUNICIPIO" />
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSONA_USUARIO1" Association="Self.FK_PERSONA_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSONA_USUARIO2" Association="Self.FK_PERSONA_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROBLEMA_BENEFICIARIO" Association="Self.FK_PROBLEMA_BENEFICIARIO">
+      <End Role="TB_BENEFICIARIO" EntitySet="TB_BENEFICIARIO" />
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROBLEMA_ESTADO_PROCESO" Association="Self.FK_PROBLEMA_ESTADO_PROCESO">
+      <End Role="TBC_ESTADO_PROCESO" EntitySet="TBC_ESTADO_PROCESO" />
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPUESTA_ESTADO_PROCESO" Association="Self.FK_PROPUESTA_ESTADO_PROCESO">
+      <End Role="TBC_ESTADO_PROCESO" EntitySet="TBC_ESTADO_PROCESO" />
+      <End Role="TB_PROPUESTA" EntitySet="TB_PROPUESTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPUESTA_PROBLEMA" Association="Self.FK_PROPUESTA_PROBLEMA">
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+      <End Role="TB_PROPUESTA" EntitySet="TB_PROPUESTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPUESTA_TIPO_INICIATIVA" Association="Self.FK_PROPUESTA_TIPO_INICIATIVA">
+      <End Role="TBC_TIPO_INICIATIVA" EntitySet="TBC_TIPO_INICIATIVA" />
+      <End Role="TB_PROPUESTA" EntitySet="TB_PROPUESTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPUESTA_USUARIO" Association="Self.FK_PROPUESTA_USUARIO">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROPUESTA" EntitySet="TB_PROPUESTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_ACTIVIDAD_PROYECTO" Association="Self.FK_PROYECTO_ACTIVIDAD_PROYECTO">
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_ACTIVIDAD_USUARIO1" Association="Self.FK_PROYECTO_ACTIVIDAD_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_ACTIVIDAD_USUARIO2" Association="Self.FK_PROYECTO_ACTIVIDAD_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROYECTO_ACTIVIDAD" EntitySet="TB_PROYECTO_ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_PROBLEMA" Association="Self.FK_PROYECTO_PROBLEMA">
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_TIPO_INICIATIVA" Association="Self.FK_PROYECTO_TIPO_INICIATIVA">
+      <End Role="TBC_TIPO_INICIATIVA" EntitySet="TBC_TIPO_INICIATIVA" />
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_USUARIO1" Association="Self.FK_PROYECTO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROYECTO_USUARIO2" Association="Self.FK_PROYECTO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RECURSO_USUARIO1" Association="Self.FK_RECURSO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_RECURSO" EntitySet="TB_RECURSO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RECURSO_USUARIO2" Association="Self.FK_RECURSO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_RECURSO" EntitySet="TB_RECURSO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROL_USUARIO1" Association="Self.FK_ROL_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_ROL" EntitySet="TB_ROL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROL_USUARIO2" Association="Self.FK_ROL_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_ROL" EntitySet="TB_ROL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLICITUD_SEGUIMIENTO_PROYECTO" Association="Self.FK_SOLICITUD_SEGUIMIENTO_PROYECTO">
+      <End Role="TB_PROYECTO" EntitySet="TB_PROYECTO" />
+      <End Role="TB_SOLICITUD_SEGUIMIENTO" EntitySet="TB_SOLICITUD_SEGUIMIENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLICITUD_SEGUIMIENTO_USUARIO1" Association="Self.FK_SOLICITUD_SEGUIMIENTO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_SOLICITUD_SEGUIMIENTO" EntitySet="TB_SOLICITUD_SEGUIMIENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLICITUD_SEGUIMIENTO_USUARIO2" Association="Self.FK_SOLICITUD_SEGUIMIENTO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_SOLICITUD_SEGUIMIENTO" EntitySet="TB_SOLICITUD_SEGUIMIENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_NOTIF_REFERENCE_TB_USUAR" Association="Self.FK_TB_NOTIF_REFERENCE_TB_USUAR">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_NOTIFICACION" EntitySet="TB_NOTIFICACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_NOTIF_REFERENCE_TBC_TIPO" Association="Self.FK_TB_NOTIF_REFERENCE_TBC_TIPO">
+      <End Role="TBC_TIPO_NOTIFICACION" EntitySet="TBC_TIPO_NOTIFICACION" />
+      <End Role="TB_NOTIFICACION" EntitySet="TB_NOTIFICACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_PROBL_REFERENCE_TB_USUAR" Association="Self.FK_TB_PROBL_REFERENCE_TB_USUAR">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_PROBLEMA" EntitySet="TB_PROBLEMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_PERSONA" Association="Self.FK_USUARIO_PERSONA">
+      <End Role="TB_PERSONA" EntitySet="TB_PERSONA" />
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_ROL" Association="Self.FK_USUARIO_ROL">
+      <End Role="TB_ROL" EntitySet="TB_ROL" />
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_USUARIO1" Association="Self.FK_USUARIO_USUARIO1">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_USUARIO1" EntitySet="TB_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_USUARIO2" Association="Self.FK_USUARIO_USUARIO2">
+      <End Role="TB_USUARIO" EntitySet="TB_USUARIO" />
+      <End Role="TB_USUARIO1" EntitySet="TB_USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

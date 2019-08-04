@@ -1,0 +1,478 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout2.master.cs" Inherits="MinecPISI.Views.Layouts.Layout2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="<%= ResolveUrl("~/Views/vendor/fontawesome-free/css/all.min.css") %>" rel="stylesheet" type="text/css">
+    <link href="<%= ResolveUrl("~/Views/css/fuente.css")  %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Views/css/sb-admin-2.min.css") %>" rel="stylesheet">
+    <link href="<%= ResolveUrl("~/Views/css/minec.css")  %>" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="cssextra" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center mt-5">
+                <div class="sidebar-brand-icon">
+                    <img src="<%= ResolveUrl("~/Views/img/corredor-productivo.jpg") %>" class="img-thumbnail" width="150">
+                </div>
+            </a>
+            <li class="nav-item active mt-3">
+                <a class="nav-link text-center">
+                    <h6>Proyecto Especial de Pequeñas Inversiones para Soluciones Innovadoras</h6>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <% if (Session["usuario"] == null) { Response.Clear(); return; }
+
+                switch (((BLL.Modelos.ModelosVistas.MV_DetalleUsuario)Session["usuario"]).ID_ROL)
+                {
+                    case 1: %>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/Usuarios">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Usuarios</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/Roles">
+                    <i class="fas fa-fw fa-user-tag"></i>
+                    <span>Roles y Permisos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/Recursos">
+                    <i class="fas fa-fw fa-key"></i>
+                    <span>Recursos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/Departamentos">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Departamentos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/EstadoProceso">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Estados Procesos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/Municipios">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Municipios</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/SectorEconomico">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Sector Economico</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/TipoIniciativas">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Tipo Iniciativa</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/ActividadIniciativa">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Actividad Iniciativa</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/CriteriosEvaluacion">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Criterios Evaluacion</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/EvaluacionTecnica">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Evaluacion Tecnica</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/CamposIniciativa">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Campos Iniciativas</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/ReporteIniciativa">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Reporte Iniciativas</span>
+                </a>
+            </li>
+            <% break;
+                case 2: %>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Beneficiario/Registro/Problema">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Registrar Problema</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Casos/Consulta/Propuestas">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Consultar Propuestas</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Formulacion/Consultar/MisIniciativas">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Consultar Iniciativas</span>
+                </a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Casos/Consulta">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Consultar mis Casos</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Calendario/Consultar">
+                    <i class="far fa-fw fa-calendar-alt"></i>
+                    <span>Consultar mis Citas</span>
+                </a>
+            </li>
+            <%  break;
+                case 3:%>
+            <!-- menu del consultor de vinculacion -->
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Beneficiario/Consultar/Beneficiario">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Consultar Cartera de Beneficiarios</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Casos/Consulta">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Consultar Casos </span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Beneficiario/Consultar/Persona">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Consultar Beneficiarios Asignados que Requieren Ayuda</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Formulacion/Consultar/Iniciativa">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Consultar Iniciativas</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Calendario/Consultar">
+                    <i class="far fa-fw fa-calendar-alt"></i>
+                    <span>Consultar mis Citas</span>
+                </a>
+            </li>
+            <%break;
+
+                case 4:%>
+            <!-- menu del Formulador -->
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Formulador/Experiencia">
+                    <i class="fas fa-fw fa-user-tie"></i>
+                    <span>Mi Perfil</span>
+                </a>
+            </li>
+            <%if (BLL.Acciones.A_FORMULADOR.ObtenerFormuladorPorIdPersona(((BLL.Modelos.ModelosVistas.MV_DetalleUsuario)Session["usuario"]).ID_PERSONA).ACTIVO)
+                { %>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Casos/Consulta/Publicados">
+                    <i class="fas fa-fw fa-file-alt"></i>
+                    <span>Casos Publicados</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Formulacion/Consultar/Iniciativa">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Consultar Iniciativas</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Casos/Consulta/Propuestas">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Consultar Propuestas</span>
+                </a>
+            </li>
+            <%} %>
+            <%break;
+                case 5:%>
+            <!-- menu del coordinador -->
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Beneficiario/Consultar/Beneficiario">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Verificar Beneficiarios</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Beneficiario/Consultar">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Consultar Cartera de Beneficiarios</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Casos/Consulta">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Consultar Casos Activos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Formulacion/Consultar/Iniciativa">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Consultar Iniciativas</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Beneficiario/Consultar/Persona">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Consultar Beneficiarios que Requieren Ayuda</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/Asignaciones">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Asignacion de consultores por municipio</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/Formuladores">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Administrar Formuladores</span>
+                </a>
+            </li>
+            <%break;
+                case 6:%>
+            <!-- menu del comite -->
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Formulacion/Consultar/Iniciativa">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Consultar Iniciativas</span>
+                </a>
+            </li>
+            <%break;
+                case 7:%>
+            <!-- menu del pte comite -->
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Formulacion/Consultar/Iniciativa">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Consultar Iniciativas</span>
+                </a>
+            </li>
+            <!-- menu del pte comite. Administrar evaluadores -->
+            <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/Evaluadores">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>Administrar Evaluadores</span>
+                </a>
+            </li>
+
+            <%break;
+
+                } %>
+             <li class="nav-item">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/ManualDeUsuario">
+                    <i class="fas fa-fw fa-archive"></i>
+                    <span>Manual de Usuario</span>
+                </a>
+            </li>
+
+            <asp:ContentPlaceHolder ID="contenidoNavegacion" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <a class="btn rounded-circle border-0" id="sidebarToggle"></a>
+            </div>
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <a id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </a>
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+
+                        </li>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="noti" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <% 
+                                    if (notificaciones.Count > 0)
+                                    { %>
+                                <span id="conteo" class="badge badge-danger badge-counter"><%=notificaciones.Count %></span>
+                                <% } %>
+                            </a>
+
+                            <!-- Notificaciones -->
+                            <div id="notificaciones_container" class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">Notificaciones
+                                </h6>
+                                <!-- Notifica al Beneficiario que se solicita informacion adicional para Precalificarlo -->
+
+                                <% foreach (dynamic notificacion in notificaciones)
+                                    { %>
+
+                                <a class="dropdown-item d-flex align-items-center" style="background-color: #4e73df0f" href="#">
+                                    <div class="mr-3">
+
+                                        <div class="icon-circle <%=notificacion.Color %>">
+                                            <i class="<%=notificacion.Icono %> fa-2x"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500"><%= notificacion.Fecha %></div>
+                                        <span><%=notificacion.Descripcion %></span>
+                                    </div>
+                                </a>
+                                <% } %>
+
+                                <%--<a class="dropdown-item text-center small text-gray-500" href="<%=Request.ApplicationPath %>/Administracion/Notificaciones">Ver todas las Notificaciones</a>--%>
+                            </div>
+                        </li>
+
+                        <!-- CERRAR SESION Y NOMBRE DE USUARIO -->
+                        <li class="nav-item dropdown no-arrow">
+
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user fa-fw"></i>
+                                <asp:Label ID="lbl_tipo_usuario" runat="server" Text="" class="mr-2 d-none d-lg-inline text-gray-600 small"></asp:Label>
+                                <i class="fa fa-caret-down fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+
+                                <a href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/logout" class="dropdown-item">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Cerrar Sesión
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid" id="divToAppend">
+
+                    <asp:ContentPlaceHolder ID="bodyContentBlank" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Ministerio de Economia 2019</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <script src="<%= ResolveUrl("~/Views/vendor/jquery/jquery.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Views/vendor/bootstrap/js/bootstrap.bundle.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Views/vendor/jquery-easing/jquery.easing.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Views/js/sb-admin-2.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Views/js/jspdf.min.js") %>"></script>
+    <script type="text/javascript">
+        $('#noti').click(() => {
+            $('#conteo').remove();
+        });
+        function ShowMessage(message, messagetype) {
+            debugger;
+            var cssclass;
+            switch (messagetype) {
+                case 'success':
+                    cssclass = 'alert-success';
+                    break;
+                case 'error':
+                    cssclass = 'alert-danger';
+                    break;
+                case 'warning':
+                    cssclass = 'alert-warning';
+                    break;
+                default:
+                    cssclass = 'alert-info';
+            }
+            $('#divToAppend').prepend('<div class="alert ' + cssclass + ' alert-dismissible fade show" role="alert" disposable>' + message + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+            setTimeout(function () {
+                $('div[role=alert][disposable]').fadeOut('slow');
+            }, 5000);
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="jsextra" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

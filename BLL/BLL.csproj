@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{045542EB-F5D4-4384-AB49-337201D14E42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MINECBaseDll.BL">
+      <HintPath>..\..\..\..\Desktop\MINECBaseDll.BL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acciones\A_ACTIVIDAD.cs" />
+    <Compile Include="Acciones\A_ACTIVIDAD_INICIATIVA.cs" />
+    <Compile Include="Acciones\A_ASIGNACION.cs" />
+    <Compile Include="Acciones\A_BENEFICIARIO.cs" />
+    <Compile Include="Acciones\A_CAMPOS_EVALUACION_TECNICA.cs" />
+    <Compile Include="Acciones\A_CAMPOS_INICIATIVA.cs" />
+    <Compile Include="Acciones\A_CAMPO_CRITERIO_EVALUACION.cs" />
+    <Compile Include="Acciones\A_CONFIGURACION.cs" />
+    <Compile Include="Acciones\A_CORREO.cs" />
+    <Compile Include="Acciones\A_CRITERIO_EVAL_TEC.cs" />
+    <Compile Include="Acciones\A_DEPARTAMENTO.cs" />
+    <Compile Include="Acciones\A_DOCUMENTO.cs" />
+    <Compile Include="Acciones\A_ESTADO_PROCESO.cs" />
+    <Compile Include="Acciones\A_EXPERIENCIA.cs" />
+    <Compile Include="Acciones\A_FORMULADOR.cs" />
+    <Compile Include="Acciones\A_GENERADOR_DOCUMENTOS.cs" />
+    <Compile Include="Acciones\A_MUNICIPIO.cs" />
+    <Compile Include="Acciones\A_NOTIFICACION.cs" />
+    <Compile Include="Acciones\A_OBSERVACION.cs" />
+    <Compile Include="Acciones\A_PERMISO.cs" />
+    <Compile Include="Acciones\A_PERSONA.cs" />
+    <Compile Include="Acciones\A_PROBLEMA.cs" />
+    <Compile Include="Acciones\A_PROCESO.cs" />
+    <Compile Include="Acciones\A_PROPUESTA.cs" />
+    <Compile Include="Acciones\A_PROYECTO.cs" />
+    <Compile Include="Acciones\A_PROYECTO_ACTIVIDAD.cs" />
+    <Compile Include="Acciones\A_RECURSO.cs" />
+    <Compile Include="Acciones\A_REPORTES.cs" />
+    <Compile Include="Acciones\A_ROL.cs" />
+    <Compile Include="Acciones\A_SECTOR_ECONOMICO.cs" />
+    <Compile Include="Acciones\A_TBC_CAMPOS_INICIATIVA.cs" />
+    <Compile Include="Acciones\A_TB_DETALLE_INICIATIVA.cs" />
+    <Compile Include="Acciones\A_TIPO_INICIATIVA.cs" />
+    <Compile Include="Acciones\A_USUARIO.cs" />
+    <Compile Include="Acciones\A_ASIG_CONSULTOR.cs" />
+    <Compile Include="Helpers\H_EstadosProcesos.cs" />
+    <Compile Include="Helpers\H_Json.cs" />
+    <Compile Include="Helpers\H_LogErrorEXC.cs" />
+    <Compile Include="Helpers\H_Objetos.cs" />
+    <Compile Include="Helpers\H_Usuario.cs" />
+    <Compile Include="Modelos\LogExcepciones.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_Beneficiarios.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_CantEvaluadores.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_ComiteEvaluacionCriterioCampo.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_ConsultarBeneficiarios.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_ConsultaReporteInciativa.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_ConsultarProblemas.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_ConsultarPropuesta.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_DetalleBeneficiario.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_DetalleFormulador.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_DetallePersonasConsultor.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_DetalleUsuario.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_EstadoProceso.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_Evaluadores.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_Exception.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_DetalleProblema.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_FiltroTecnicoCantCamposCriterio.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_FiltroTecnicoCriterioCampo.cs" />
+    <Compile Include="Modelos\ModelosVistas\MV_Propuesta_Por_Formulador.cs" />
+    <Compile Include="Modelos\REPORTE.cs" />
+    <Compile Include="Modelos\TBC_ACTIVIDAD_INICIATIVA.cs" />
+    <Compile Include="Modelos\TBC_CAMPOS_EVALUACION_TECNICA.cs" />
+    <Compile Include="Modelos\TBC_CAMPOS_INICIATIVA.cs" />
+    <Compile Include="Modelos\TBC_CAMPO_CRITERIO_EVALUACION.cs" />
+    <Compile Include="Modelos\TB_DETALLE_INICIATIVA.cs" />
+    <Compile Include="Modelos\TB_FORMULADOR.cs" />
+    <Compile Include="Modelos\TBC_DEPARTAMENTO.cs" />
+    <Compile Include="Modelos\TBC_ESTADO_PROCESO.cs" />
+    <Compile Include="Modelos\TBC_MUNICIPIO.cs" />
+    <Compile Include="Modelos\TBC_SECTOR_ECONOMICO.cs" />
+    <Compile Include="Modelos\TBC_TIPO_INICIATIVA.cs" />
+    <Compile Include="Modelos\TB_ACTIVIDAD.cs" />
+    <Compile Include="Modelos\TB_BENEFICIARIO.cs" />
+    <Compile Include="Modelos\TB_DOCUMENTO.cs" />
+    <Compile Include="Modelos\TB_EXPERIENCIA.cs" />
+    <Compile Include="Modelos\TB_NOTIFICACION.cs" />
+    <Compile Include="Modelos\TB_OBSERVACION.cs" />
+    <Compile Include="Modelos\TB_PERMISO.cs" />
+    <Compile Include="Modelos\TB_PERSONA.cs" />
+    <Compile Include="Modelos\TB_PROBLEMA.cs" />
+    <Compile Include="Modelos\TB_PROPUESTA.cs" />
+    <Compile Include="Modelos\TB_PROYECTO.cs" />
+    <Compile Include="Modelos\TB_PROYECTO_ACTIVIDAD.cs" />
+    <Compile Include="Modelos\TB_RECURSO.cs" />
+    <Compile Include="Modelos\TB_ROL.cs" />
+    <Compile Include="Modelos\TB_USUARIO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{bd72eb0d-32d5-44aa-81e7-a048d950f1b7}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
