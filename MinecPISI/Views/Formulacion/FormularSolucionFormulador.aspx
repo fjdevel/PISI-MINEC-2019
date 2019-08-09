@@ -87,6 +87,26 @@
                 
             </div>
 
+             <div class="col-sm-6 col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <asp:FileUpload
+                                        CssClass="custom-file-input"
+                                        ID="fl_factura"
+                                        runat="server"
+                                        accept=".png,.jpg,.jpeg,.pdf"
+                                        onchange="UploadFile(this)" />
+                                    <label class="custom-file-label">Otro</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <asp:Button ID="btn_upload_factura" runat="server" Text="Subir" CssClass="btn btn-secondary" OnClick="btn_upload_factura_Click" Style="display: none" />
+                                </div>
+                            </div>
+                            <asp:Label ID="lbl_factura" runat="server"></asp:Label>
+                        </div>
+                    </div>
+
             <asp:Button class="btn btn-info" Text="Presentar Propuesta de Solución" OnClick="enviar_solucion" runat="server" />
 
         </form>
@@ -96,5 +116,12 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="jsextra" runat="server">
     <script>
+        function UploadFile(fileUpload) {
+            debugger;
+            if (fileUpload.value != '') {
+                document.getElementById("bodyContentBlank_btn_upload_factura").click();
+
+            }
+        }
     </script>
 </asp:Content>

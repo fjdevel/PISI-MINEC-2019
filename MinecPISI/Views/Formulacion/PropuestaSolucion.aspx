@@ -8,6 +8,24 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="bodyContentBlank" runat="server">
     <form id="form1" runat="server">
+         <div class="col-xl-4 col-md-4 mb-4">
+                            <div class="card border-left-warning h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary mb-1">Documento de Propuesta</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" >
+                                                <asp:LinkButton Text="Descargar" runat="server" ID="lnk_factura" OnClick="lnk_factura_Click" />
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa fa-file-invoice fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
         <asp:ScriptManager runat="server" ID="sm1" />
 
         <asp:UpdatePanel runat="server">
@@ -31,6 +49,7 @@
                                 <p runat="server" id="p_fechaPresenta"></p>
                             </div>
                         </div>
+                       
                     </div>
                 </div>
                 <div class="card shadow mb-2">

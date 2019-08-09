@@ -3,6 +3,7 @@ using BLL.Modelos;
 using BLL.Modelos.ModelosVistas;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,6 +16,7 @@ namespace MinecPISI.Views.Formulacion
         protected MV_DetalleUsuario usuario;
         protected int idProyecto;
         protected List<TB_DETALLE_INICIATIVA> detalle;
+        protected MV_DetalleProblema problema;
         protected void Page_Load(object sender, EventArgs e)
         {
             idProyecto = Convert.ToInt32(Page.RouteData.Values["idIniciativa"].ToString());
@@ -96,6 +98,7 @@ namespace MinecPISI.Views.Formulacion
             montoEfectivo.Text = detalle.Find(x => x.ID_CAMPO == 181).VALOR;
             inputfecha.Text = detalle.Find(x => x.ID_CAMPO == 182).VALOR;
             semanasSelec.Text = detalle.Find(x => x.ID_CAMPO == 183).VALOR;
+            problema = A_PROBLEMA.getByIdProblema(A_PROYECTO.ObtenerProyectoPorId(idProyecto).ID_PROBLEMA);
         }
         protected void Btn_aprobar_Click(object sender, EventArgs e)
         {
@@ -148,6 +151,36 @@ namespace MinecPISI.Views.Formulacion
                     "alert('Has observado la iniciativa...');",
                     true);
 
+        }
+        public void DescargarArchivo(string fileName)
+        {
+            var documentos = A_DOCUMENTO.ObtenerXIdBeneficiario((int)problema.ID_BENEFICIARIO, fileName);
+
+            foreach (var doc in documentos)
+            {
+                var file = new FileInfo(doc.DIRECCION);
+                var ext = Path.GetExtension(doc.DIRECCION).ToLower();
+
+                if (!file.Exists) return;
+
+                Response.Clear();
+
+                if (ext == ".jpg" || ext == ".jpeg")
+                    Response.ContentType = "image/jpeg";
+                else if (ext == ".png")
+                    Response.ContentType = "image/png";
+                else
+                    Response.ContentType = "application/pdf";
+
+                Response.AppendHeader("Content-Disposition",
+                    "attachment; filename=" + file.Name);
+                Response.TransmitFile(doc.DIRECCION);
+                Response.End();
+            }
+        }
+        protected void lnk_factura_Click(object sender, EventArgs e)
+        {
+            DescargarArchivo("formulacion");
         }
     }
 }

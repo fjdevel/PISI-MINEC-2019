@@ -13,6 +13,15 @@ namespace MinecPISI.Views.Formulacion {
     public partial class DetalleIniciativaIntegral {
         
         /// <summary>
+        /// Control lnk_factura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnk_factura;
+        
+        /// <summary>
         /// Control ScriptManager1.
         /// </summary>
         /// <remarks>

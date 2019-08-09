@@ -8,3 +8,14 @@ C:\Users\Frederick\Source\Repos\Innova\BLL\obj\Debug\BLL.csproj.CoreCompileInput
 C:\Users\Frederick\Source\Repos\Innova\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\Frederick\Source\Repos\Innova\BLL\obj\Debug\BLL.dll
 C:\Users\Frederick\Source\Repos\Innova\BLL\obj\Debug\BLL.pdb
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\bin\Debug\BLL.dll
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\bin\Debug\BLL.pdb
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\bin\Debug\DAL.dll
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\bin\Debug\MINECBaseDll.BL.dll
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\bin\Debug\DAL.pdb
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\bin\Debug\DAL.dll.config
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\obj\Debug\BLL.dll
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\BLL\obj\Debug\BLL.pdb

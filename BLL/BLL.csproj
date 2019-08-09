@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MINECBaseDll.BL">
-      <HintPath>..\..\..\..\Desktop\MINECBaseDll.BL.dll</HintPath>
+      <HintPath>..\..\MINECBaseDll.BL\MINECBaseDll.BL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />

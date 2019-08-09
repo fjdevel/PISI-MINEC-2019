@@ -13,6 +13,33 @@ namespace MinecPISI.Views.Formulacion {
     public partial class FormularIniciativaIntegralFormulador {
         
         /// <summary>
+        /// Control fl_factura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fl_factura;
+        
+        /// <summary>
+        /// Control btn_upload_factura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_upload_factura;
+        
+        /// <summary>
+        /// Control lbl_factura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_factura;
+        
+        /// <summary>
         /// Control ScriptManager1.
         /// </summary>
         /// <remarks>

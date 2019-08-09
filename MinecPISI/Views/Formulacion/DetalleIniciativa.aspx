@@ -29,15 +29,34 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoNavegacion" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="bodyContentBlank" runat="server">
-    <form runat="server" onsubmit="topFunction(); return true">
+    <form runat="server">
+        <div class="col-xl-4 col-md-4 mb-4">
+            <div class="card border-left-warning h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary mb-1">Formulación</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <asp:LinkButton Text="Descargar" runat="server" ID="lnk_factura" OnClick="lnk_factura_Click" />
+
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa fa-file-invoice fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
             <ContentTemplate>
+
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="  font-weight-bold text-primary">Formulacion de iniciativa</h6>
-                                <a href="#" id="genPDF" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                        <a href="#" id="genPDF" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Generar Reporte</a>
 
                     </div>
                     <div class="card-body">
@@ -257,35 +276,35 @@
                     </div>
                 </div>
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Añadir Observación</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                          <div class="form-group">
-                              <label>Descripción de la iniciativa</label>
-                            <asp:TextBox runat="server" ID="detalleIniciativa" CssClass="form-control" ></asp:TextBox>
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Añadir Observación</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>Descripción de la iniciativa</label>
+                                    <asp:TextBox runat="server" ID="detalleIniciativa" CssClass="form-control"></asp:TextBox>
 
-                          </div>
+                                </div>
 
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <asp:Button runat="server" ID="ObservarIniciativa" Text="Observar Iniciativa" CssClass="btn btn-warning" OnClick="ObservarIniciativa_Click" />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <asp:Button runat="server" ID="ObservarIniciativa" Text="Observar Iniciativa" CssClass="btn btn-warning" OnClick="ObservarIniciativa_Click" />
 
-                      </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
 
-    <div  id="toPdf" class="d-none">
+    <div id="toPdf" class="d-none">
         <%= BLL.Acciones.A_GENERADOR_DOCUMENTOS.generarDetalleIniciativa(idProyecto,detalle) %>
     </div>
     <div id="elementH"></div>
@@ -297,7 +316,7 @@
     <script>
         $('#genPDF').click(() => {
             var doc = new jsPDF();
-           var elementHTML = $('#toPdf').html();
+            var elementHTML = $('#toPdf').html();
             var specialElementHandlers = {
                 '#elementH': function (element, renderer) {
                     return true;
@@ -309,11 +328,11 @@
                 left: 25,
                 width: 522
             };
-            doc.fromHTML(elementHTML,margins.left, // x coord
-            margins.top, { // y coord
-                'width': margins.width, // max width of content on PDF
-                'elementHandlers': specialElementHandlers
-            });
+            doc.fromHTML(elementHTML, margins.left, // x coord
+                margins.top, { // y coord
+                    'width': margins.width, // max width of content on PDF
+                    'elementHandlers': specialElementHandlers
+                });
 
             // Save the PDF
             doc.save('DetalleIniciativa<%=idProyecto%>-<%= DateTime.Now.Day %><%= DateTime.Now.Month %><%= DateTime.Now.Year %>.pdf');

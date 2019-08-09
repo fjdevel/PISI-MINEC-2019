@@ -30,14 +30,35 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="bodyContentBlank" runat="server">
     <form runat="server">
+        <div class="col-sm-6 col-md-6 col-xs-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="custom-file">
+                        <asp:FileUpload
+                            CssClass="custom-file-input"
+                            ID="fl_factura"
+                            runat="server"
+                            accept=".png,.jpg,.jpeg,.pdf"
+                            onchange="UploadFile(this)" />
+                        <label class="custom-file-label">Otro</label>
+                    </div>
+                    <div class="input-group-append">
+                        <asp:Button ID="btn_upload_factura" runat="server" Text="Subir" CssClass="btn btn-secondary" OnClick="btn_upload_factura_Click" Style="display: none" />
+                    </div>
+                </div>
+                <asp:Label ID="lbl_factura" runat="server"></asp:Label>
+            </div>
+        </div>
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+
             <ContentTemplate>
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="  font-weight-bold text-primary">Iniciativa de Adopción Tecnológica</h6>
+
                     </div>
                     <div class="card-body">
                         <nav>
@@ -251,8 +272,8 @@
                                 <asp:Button runat="server" ID="btnguardar" CssClass="btn btn-success" Text="Presentar Iniciativa" />
                                 <asp:Button runat="server" ID="btnProg" CssClass="btn btn-info" Text="Guardar Progreso" />
                                 <%}
-                                else
-                                {%>
+                                    else
+                                    {%>
                                 <asp:Button runat="server" ID="btnEditarProgreso" CssClass="btn btn-info" Text="Guardar Progreso" />
 
                                 <%}%>
@@ -296,11 +317,20 @@
                 </div>
 
             </ContentTemplate>
+
         </asp:UpdatePanel>
     </form>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="jsextra" runat="server">
     <script src="<%= ResolveClientUrl("~/Views/js/Cronograma.js") %>"></script>
+    <script>
+        function UploadFile(fileUpload) {
+            if (fileUpload.value != '') {
+                document.getElementById("bodyContentBlank_btn_upload_factura").click();
+
+            }
+        }
+    </script>
     <% if (edit == 0)
         { %>
     <script>
@@ -371,8 +401,8 @@
         });
     </script>
     <%}
-    else
-    {%>
+        else
+        {%>
     <script>
         $('.fondepro').change(() => {
             var psum = 0;

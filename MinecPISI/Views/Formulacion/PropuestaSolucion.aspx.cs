@@ -5,6 +5,7 @@ using BLL.Modelos.ModelosVistas;
 using BLL.Modelos;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 
 namespace MinecPISI.Views.Formulacion
 {
@@ -106,6 +107,39 @@ namespace MinecPISI.Views.Formulacion
                     "alert",
                     "alert('Has rechazado una propuesta de solución, intenta con otra propuesta...');window.location.href ='/dicapisitest/Casos/Consulta/Propuestas';",
                     true);
+        }
+        public void DescargarArchivo(string fileName)
+        {
+            var idPropuesta = Convert.ToInt32(Page.RouteData.Values["idProblema"].ToString());
+            var propuesta = A_PROPUESTA.BuscarPropuestaXId(idPropuesta);
+            var problema = A_PROBLEMA.getByIdProblema(propuesta.ID_PROBLEMA);
+            var documentos = A_DOCUMENTO.ObtenerXIdBeneficiario((int)problema.ID_BENEFICIARIO, fileName);
+
+            foreach (var doc in documentos)
+            {
+                var file = new FileInfo(doc.DIRECCION);
+                var ext = Path.GetExtension(doc.DIRECCION).ToLower();
+
+                if (!file.Exists) return;
+
+                Response.Clear();
+
+                if (ext == ".jpg" || ext == ".jpeg")
+                    Response.ContentType = "image/jpeg";
+                else if (ext == ".png")
+                    Response.ContentType = "image/png";
+                else
+                    Response.ContentType = "application/pdf";
+
+                Response.AppendHeader("Content-Disposition",
+                    "attachment; filename=" + file.Name);
+                Response.TransmitFile(doc.DIRECCION);
+                Response.End();
+            }
+        }
+        protected void lnk_factura_Click(object sender, EventArgs e)
+        {
+            DescargarArchivo("propuesta");
         }
     }
 }

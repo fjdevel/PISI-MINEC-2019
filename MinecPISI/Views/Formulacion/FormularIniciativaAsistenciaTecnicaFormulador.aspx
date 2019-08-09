@@ -36,6 +36,25 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="bodyContentBlank" runat="server">
     <form runat="server">
+        <div class="col-sm-6 col-md-6 col-xs-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="custom-file">
+                        <asp:FileUpload
+                            CssClass="custom-file-input"
+                            ID="fl_factura"
+                            runat="server"
+                            accept=".png,.jpg,.jpeg,.pdf"
+                            onchange="UploadFile(this)" />
+                        <label class="custom-file-label">Otro</label>
+                    </div>
+                    <div class="input-group-append">
+                        <asp:Button ID="btn_upload_factura" runat="server" Text="Subir" CssClass="btn btn-secondary" OnClick="btn_upload_factura_Click" Style="display: none" />
+                    </div>
+                </div>
+                <asp:Label ID="lbl_factura" runat="server"></asp:Label>
+            </div>
+        </div>
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
@@ -357,6 +376,14 @@
     <script src="<%= ResolveClientUrl("~/Views/js/leaflet.js") %>"></script>
     <script src="<%= ResolveClientUrl("~/Views/js/leafletSearch.js") %>"></script>
     <script src="<%= ResolveClientUrl("~/Views/js/Cronograma.js") %>"></script>
+    <script>
+        function UploadFile(fileUpload) {
+            if (fileUpload.value != '') {
+                document.getElementById("bodyContentBlank_btn_upload_factura").click();
+
+            }
+        }
+    </script>
     <% if (edit == 0)
         { %>
     <script>
