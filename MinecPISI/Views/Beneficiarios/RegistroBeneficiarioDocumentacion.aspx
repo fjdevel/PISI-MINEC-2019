@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div id="">
-                                    <h5 class="mt-4">Registro de Beneficiario / Postulante</h5>
+                                    <h5 class="mt-4">Registro de Postulante</h5>
                                 </div>
                                 <div class="progress mb-2" style="height: 30px;">
                                     <div id="progressbar" class="progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -77,6 +77,8 @@
                                                 </div>
                                                 <asp:Button Text="Anterior" CssClass="btn btn-info" runat="server" OnClick="OnAnteriorClick" ID="btn_anterior" />
                                                 <asp:Button Text="Finalizar" CssClass="btn btn-info" runat="server" OnClick="OnFinalizarClick" ID="btn_finalizar" />
+                                                <asp:Button Text="Inicio" CssClass="btn btn-info" runat="server" CausesValidation="false" UseSubmitBehavior="false" PostBackUrl="~/Views/Administracion/index.aspx"  />
+
                                             </fieldset>
                                         </ContentTemplate>
                                         <Triggers>

@@ -146,7 +146,7 @@ namespace MinecPISI.Views.Beneficiarios
                     ((MV_DetalleUsuario)Session["usuario"]).ID_USUARIO);
 
                 A_NOTIFICACION.GuardarNotificacion(usuarioBeneficiario.ID_USUARIO, usuario.ID_USUARIO, "B06");
-                //A_CORREO.BeneficiarioElegible(beneficiario.Correo);
+                A_CORREO.BeneficiarioElegible(beneficiario.Correo);
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Pop",
                     "ShowMessage('Beneficiario seleccionado como <strong>elegible</strong>', 'success');", true);
                 Response.RedirectToRoute("ConsultarBeneficiario");

@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="form-row">
                                         <asp:Button Text="Inicio" CssClass="btn btn-info" runat="server" CausesValidation="false" UseSubmitBehavior="false" PostBackUrl="~/Views/Administracion/index.aspx"  />
-                                        <asp:Button Text="Continuar" UseSubmitBehavior="True" OnClick="RegistrarFormuladorClick" CssClass="btn btn-success ml-3" runat="server"/>
+                                        <asp:Button Text="Continuar" UseSubmitBehavior="True" OnClick="RegistrarFormuladorClick" CssClass="btn btn-success ml-3" ID="btn" runat="server"/>
                                     </div>
                                 </div>
                             </form>

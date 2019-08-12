@@ -10,3 +10,4 @@ C:\Users\Frederick\Desktop\PISI-MINEC-2019\DAL\bin\Debug\DAL.pdb
 C:\Users\Frederick\Desktop\PISI-MINEC-2019\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Frederick\Desktop\PISI-MINEC-2019\DAL\obj\Debug\DAL.dll
 C:\Users\Frederick\Desktop\PISI-MINEC-2019\DAL\obj\Debug\DAL.pdb
+C:\Users\Frederick\Desktop\PISI-MINEC-2019\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

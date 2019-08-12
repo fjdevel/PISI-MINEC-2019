@@ -73,14 +73,9 @@ namespace MinecPISI.Views.Beneficiarios
             Session.Remove("registroData"); //se elimina la informacion del formulario de registro de la sesion
             Session.Remove("tipoPersona"); //se elimina variable con el tipo de persona
 
-            int idUsuario = (Session["usuario"] as MV_DetalleUsuario)?.ID_USUARIO ?? 0;
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "ShowMessage('Registro de postulante Finalizado, Espere instrucciones para poder acceder al sistema', 'success');", true);
 
-            ScriptManager.RegisterStartupScript(this, GetType(),
-                "alert",
-                idUsuario != 0
-                    ? "alert('registro completado exitosamente!');window.location.href ='/dicapisitest/Beneficiario/Consultar/Beneficiario';"
-                    : "alert('registro completado exitosamente!, debes estar pendiente de tus medios de contacto, cuando se valide tu registro podras iniciar sesión en la plataforma');window.location.href ='/dicapisitest/login';",
-                true);
+                btn_finalizar.Visible = false;
         }
 
         protected void btn_upload_constancia_OnClick(object sender, EventArgs e)

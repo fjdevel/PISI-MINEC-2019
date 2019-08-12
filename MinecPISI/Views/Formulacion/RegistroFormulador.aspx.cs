@@ -92,8 +92,8 @@ namespace MinecPISI.Views.Formulacion
                 //Session["usuario"] = aUsuario.getUsuarioDetallesById(idUsuario);
 
                 //aUsuario.updateUsuarioAsAutenticado(idUsuario, Session.SessionID, true);
-
-                Response.RedirectToRoute("Login");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "ShowMessage('Registro de formulador exitoso, ahora debera agregar su experiencia al momento de loguearse', 'success');", true);
+                btn.Visible = false;
             }
             else
             {
