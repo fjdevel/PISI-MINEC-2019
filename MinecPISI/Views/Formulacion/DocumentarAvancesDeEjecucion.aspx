@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Layouts/Layout2.Master" AutoEventWireup="true" CodeBehind="DocumentarAvancesDeEjecucion.aspx.cs" Inherits="MinecPISI.Views.Formulacion.DocumentarAvancesDeEjecucuin" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Layouts/Layout2.Master" AutoEventWireup="true" CodeBehind="DocumentarAvancesDeEjecucion.aspx.cs" Inherits="MinecPISI.Views.Formulacion.DocumentarAvancesDeEjecucuin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cssextra" runat="server">
     <link href="<%= ResolveClientUrl("~/Views/css/tempusdominus-bootstrap-4.min.css") %>" rel='stylesheet' />

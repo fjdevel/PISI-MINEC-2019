@@ -33,5 +33,10 @@ namespace MinecPISI.Views.Formulacion
 
 
         }
+
+        protected void backBtn_Click(object sender, EventArgs e)
+        {
+            Response.RedirectToRoute("ConsultarFormuladores");
+        }
     }
 }

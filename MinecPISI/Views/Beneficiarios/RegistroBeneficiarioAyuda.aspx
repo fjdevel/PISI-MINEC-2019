@@ -28,6 +28,9 @@
 
                                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                         <ContentTemplate>
+                                           <asp:Panel ID="alerta" runat="server" Visible="false">
+                                               <h1>No existe ningun coordinador para verificar el registro de postulantes!!!</h1>
+                                           </asp:Panel>
                                             <asp:Panel ID="panel_info" runat="server" Visible="False">
                                                 <fieldset>
                                                     <h5 class="mt-4">Registro de Beneficiario</h5>

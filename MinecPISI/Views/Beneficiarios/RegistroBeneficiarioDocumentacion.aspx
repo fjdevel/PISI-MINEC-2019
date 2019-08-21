@@ -72,9 +72,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <button type="button" class="btn btn-secondary" id="declaracion">Generar Declaración Jurada</button>
-                                                </div>
+                                                
                                                 <asp:Button Text="Anterior" CssClass="btn btn-info" runat="server" OnClick="OnAnteriorClick" ID="btn_anterior" />
                                                 <asp:Button Text="Finalizar" CssClass="btn btn-info" runat="server" OnClick="OnFinalizarClick" ID="btn_finalizar" />
                                                 <asp:Button Text="Inicio" CssClass="btn btn-info" runat="server" CausesValidation="false" UseSubmitBehavior="false" PostBackUrl="~/Views/Administracion/index.aspx"  />
@@ -88,7 +86,9 @@
                                             <asp:PostBackTrigger ControlID="btn_upload_otro" />
                                         </Triggers>
                                     </asp:UpdatePanel>
-
+                                    <div class="form-group mt-2">
+                                                    <asp:LinkButton runat="server" CssClass="btn btn-success" ID="Declaracion" Text="Descargar ejemplo Declaración Jurada" OnClick="Declaracion_Click" />
+                                                </div>
                                 </form>
                             </div>
                         </div>

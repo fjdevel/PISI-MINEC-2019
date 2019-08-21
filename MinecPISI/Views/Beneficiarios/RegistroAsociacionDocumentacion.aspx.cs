@@ -100,8 +100,8 @@ namespace MinecPISI.Views.Beneficiarios
             ScriptManager.RegisterStartupScript(this, GetType(),
                 "alert",
                 idUsuario != 0
-                    ? "alert('registro completado exitosamente!');window.location.href ='/dicapisitest/Beneficiario/Consultar/Beneficiario';"
-                    : "alert('registro completado exitosamente!, debes estar pendiente de tus medios de contacto, cuando se valide tu registro podras iniciar sesión en la plataforma');window.location.href ='/dicapisitest/login';",
+                    ? "alert('registro completado exitosamente!');"
+                    : "alert('registro completado exitosamente!, debes estar pendiente de tus medios de contacto, cuando se valide tu registro podras iniciar sesión en la plataforma');",
                 true);
         }
 

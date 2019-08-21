@@ -35,7 +35,7 @@ namespace BLL.Acciones
 
          
             EMailBE dato = new EMailBE("Proyecto Especial de Pequeñas Inversiones para Soluciones Innovadoras", correo, "Formulador Validado", bodyText);
-
+            MINECBaseDll.BL.BaseLogic.SendEmail(dato);
             return true;
         }
         public static Boolean BeneficiarioElegible(string correo)
@@ -53,7 +53,7 @@ namespace BLL.Acciones
 
             
             EMailBE dato = new EMailBE("Proyecto Especial de Pequeñas Inversiones para Soluciones Innovadoras", correo, "Beneficiario Elegible", bodyText);
-
+            MINECBaseDll.BL.BaseLogic.SendEmail(dato);
 
             return true;
         }
@@ -75,7 +75,7 @@ namespace BLL.Acciones
           
             
             EMailBE dato = new EMailBE("Proyecto Especial de Pequeñas Inversiones para Soluciones Innovadoras", correo, "Nuevo prolema ingresado", bodyText);
-
+            MINECBaseDll.BL.BaseLogic.SendEmail(dato);
             return true;
         }
 
@@ -95,7 +95,7 @@ namespace BLL.Acciones
 
            
             EMailBE dato = new EMailBE("Proyecto Especial de Pequeñas Inversiones para Soluciones Innovadoras", correo, "Invitación a presentar propuestas de solución", bodyText);
-
+            MINECBaseDll.BL.BaseLogic.SendEmail(dato);
             return true;
         }
 
@@ -115,7 +115,7 @@ namespace BLL.Acciones
 
             
             EMailBE dato = new EMailBE("Proyecto Especial de Pequeñas Inversiones para Soluciones Innovadoras", correo, "Evaluación del proyecto " + codigo, bodyText);
-
+            MINECBaseDll.BL.BaseLogic.SendEmail(dato);
 
             return true;
         }

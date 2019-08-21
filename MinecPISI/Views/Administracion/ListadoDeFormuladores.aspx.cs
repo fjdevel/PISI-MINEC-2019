@@ -19,7 +19,7 @@ namespace MinecPISI.Views.Administracion
         protected void validar_Click(object sender, EventArgs e)
         {
             A_FORMULADOR.ValidarRegistro(Convert.ToInt32(idformulador.Text));
-            //A_CORREO.FormuladorValidado(correof.Text);
+            A_CORREO.FormuladorValidado(correof.Text);
             ScriptManager.RegisterStartupScript(this, GetType(),
                     "alert",
                     "alert('felicidades! ha validado el registro de un formulador,se ha notificado por correo y ahora podra ingresar al sistema...');",

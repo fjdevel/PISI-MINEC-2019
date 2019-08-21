@@ -26,8 +26,15 @@ namespace MinecPISI.Views.Beneficiarios
             ddl_depto.DataBind();
 
             #endregion
+            if (A_USUARIO.obtenerCoordinador() != null)
+            {
+                panel_info.Visible = true;
 
-            panel_info.Visible = true;
+            }
+            else
+            {
+                alerta.Visible = true;
+            }
         }
 
         protected void ddl_depto_OnSelectedIndexChanged(object sender, EventArgs e)

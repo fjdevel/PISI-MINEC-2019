@@ -52,7 +52,7 @@ namespace MinecPISI.Views.Beneficiarios
             if(res.IDENTITY != null)
                 ScriptManager.RegisterStartupScript(this, GetType(),
                     "alert",
-                    "alert('información complementaria agregada exitosamante!');window.location.href ='/dicapisitest/Beneficiario/Consultar/Beneficiario';",
+                    "alert('información complementaria agregada exitosamante!');",
                     true);
         }
 

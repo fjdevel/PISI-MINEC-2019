@@ -44,7 +44,7 @@
                     </asp:GridView>
                 </div>
             <asp:Panel runat="server" ID="pnl_beneficiario" Visible="False">
-                <p class="alert alert-info mt-4">Le recordamos siempre , que su Consultora que es <span class="font-weight-bold"><%Response.Write(miConsultor.NOMBRES + " " + miConsultor.APELLIDOS); %></span> si desea comunicarse con ella puede llamarle al numero  de teléfono <span class="font-weight-bold"><% Response.Write(miConsultor.TEL_CEL); %></span</p>
+                <p class="alert alert-info mt-4">Le recordamos siempre , que su Consultor/a es <span class="font-weight-bold"><%Response.Write(miConsultor.NOMBRES + " " + miConsultor.APELLIDOS); %></span> si desea comunicarse con ella puede llamarle al numero  de teléfono <span class="font-weight-bold"><% Response.Write(miConsultor.TEL_CEL); %></span</p>
                 
                 <div class="row">
                     <p id="mensaje" class="collapse alert alert-success" role="alert">Se ha notificado a <span class="font-weight-bold"><%Response.Write(miConsultor.NOMBRES + " " + miConsultor.APELLIDOS); %></span>, pronto se pondrá en contacto contigo</p>

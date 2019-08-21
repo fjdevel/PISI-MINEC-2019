@@ -51,7 +51,7 @@ namespace MinecPISI.App_Start
 
             route.MapPageRoute("AsignacionConsultor", "Administrar/Asignaciones", "~/Views/Administracion/ConsultoresMuniSector.aspx");
             route.MapPageRoute("ConsultarFormuladores", "Administrar/Formuladores", "~/Views/Administracion/ListadoDeFormuladores.aspx");
-
+            route.MapPageRoute("Documentos", "Administrar/Documentos", "~/Views/Administracion/DocumentosGenerales.aspx");
         }
     }
 }

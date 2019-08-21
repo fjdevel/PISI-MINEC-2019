@@ -72,10 +72,9 @@ namespace MinecPISI.Views.Beneficiarios
             AlmacenarDatos(_registroViewModel); //almacenamiento de datos del beneficiario
             Session.Remove("registroData"); //se elimina la informacion del formulario de registro de la sesion
             Session.Remove("tipoPersona"); //se elimina variable con el tipo de persona
-
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "ShowMessage('Registro de postulante Finalizado, Espere instrucciones para poder acceder al sistema', 'success');", true);
-
-                btn_finalizar.Visible = false;
+            ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "ShowMessage('Registro de postulante Finalizado, Espere instrucciones para poder acceder al sistema', 'success');", true);
+            btn_finalizar.Visible = false;
+            btn_anterior.Visible = false;
         }
 
         protected void btn_upload_constancia_OnClick(object sender, EventArgs e)
@@ -240,6 +239,38 @@ namespace MinecPISI.Views.Beneficiarios
             if (con.ID_PERSONA != 0)
                 A_ASIGNACION.Asignar(p.ID_PERSONA, con.ID_PERSONA);
             A_NOTIFICACION.GuardarNotificacion(A_USUARIO.obtenerCoordinador().ID_USUARIO, idUsuario, "B02");
+        }
+
+        protected void Declaracion_Click(object sender, EventArgs e)
+        {
+            DescargarArchivo("declaracion");
+        }
+
+        private void DescargarArchivo(string fileName)
+        {
+            var documentos = A_DOCUMENTO.ObtenerXIdBeneficiario(0, fileName);
+
+            foreach (var doc in documentos)
+            {
+                var file = new FileInfo(doc.DIRECCION);
+                var ext = Path.GetExtension(doc.DIRECCION).ToLower();
+
+                if (!file.Exists) return;
+
+                Response.Clear();
+
+                if (ext == ".jpg" || ext == ".jpeg")
+                    Response.ContentType = "image/jpeg";
+                else if (ext == ".png")
+                    Response.ContentType = "image/png";
+                else
+                    Response.ContentType = "application/pdf";
+
+                Response.AppendHeader("Content-Disposition",
+                    "attachment; filename=" + file.Name);
+                Response.TransmitFile(doc.DIRECCION);
+                Response.End();
+            }
         }
     }
 }

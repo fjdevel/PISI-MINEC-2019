@@ -264,6 +264,12 @@
                     <span>Administrar Formuladores</span>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%Response.Write(HttpContext.Current.Request.ApplicationPath);%>/Administrar/Documentos">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Administrar Documentos</span>
+                </a>
+            </li>
             <%break;
                 case 6:%>
             <!-- menu del comite -->

@@ -85,15 +85,9 @@ namespace MinecPISI.Views.Formulacion
                 res = aFormulador.insertFormulador(formulador, idUsuario);
                 formulador.ID_FORMULADOR = Convert.ToInt32(res.IDENTITY);
                 A_NOTIFICACION.GuardarNotificacion(A_USUARIO.obtenerCoordinador().ID_USUARIO, 0, "IF02");
-                ////Guardando el formulador en la sesión
-                //Session["formulador"] = formulador;
-
-                ////Guardando la información del usuario en la sesión
-                //Session["usuario"] = aUsuario.getUsuarioDetallesById(idUsuario);
-
-                //aUsuario.updateUsuarioAsAutenticado(idUsuario, Session.SessionID, true);
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "ShowMessage('Registro de formulador exitoso, ahora debera agregar su experiencia al momento de loguearse', 'success');", true);
                 btn.Visible = false;
+               
             }
             else
             {

@@ -86,10 +86,11 @@ namespace MinecPISI.Views.Formulacion
             var res = A_PROPUESTA.CambiarEstadoProceso("S02", idPropuesta,
                 ((MV_DetalleUsuario)Session["usuario"]).ID_USUARIO);
 
-            ScriptManager.RegisterStartupScript(this, GetType(),
-                    "alert",
-                    "alert('felicidades! has aceptado una propuesta de solución...');window.location.href ='/dicapisitest/Casos/Consulta/Propuestas';",
-                    true);
+            lnk_aceptar.Visible = false;
+            lnk_rechazar.Visible = false;
+            ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "ShowMessage('Felicidades ha aceptado una propuesta!, se notificara a su consultor y formulador de esta acción', 'success');", true);
+
+
         }
         protected void lnk_rechazar_OnClick(object sender, EventArgs e)
         {
@@ -102,11 +103,9 @@ namespace MinecPISI.Views.Formulacion
 
             lnk_aceptar.Visible = false;
             lnk_rechazar.Visible = false;
+            ScriptManager.RegisterStartupScript(this, GetType(), "Pop", "ShowMessage('Ha rechazado la propuesta, debera escoger otra para poder continuar!', 'error');", true);
 
-            ScriptManager.RegisterStartupScript(this, GetType(),
-                    "alert",
-                    "alert('Has rechazado una propuesta de solución, intenta con otra propuesta...');window.location.href ='/dicapisitest/Casos/Consulta/Propuestas';",
-                    true);
+
         }
         public void DescargarArchivo(string fileName)
         {

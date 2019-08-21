@@ -372,7 +372,7 @@ namespace MinecPISI.Views.Beneficiarios
             A_NOTIFICACION.GuardarNotificacion(4, usuario.ID_USUARIO, "B02");
 
             ScriptManager.RegisterStartupScript(this, GetType(),
-                "alert", "alert('has resuelto las observaciones que tenía este beneficiario espera una notificación cuando el coordinador valide la informacion que subiste.');window.location.href ='/dicapisitest/Beneficiario/Consultar/Beneficiario';", true);
+                "alert", "alert('has resuelto las observaciones que tenía este beneficiario espera una notificación cuando el coordinador valide la informacion que subiste.');", true);
         }
     }
 }

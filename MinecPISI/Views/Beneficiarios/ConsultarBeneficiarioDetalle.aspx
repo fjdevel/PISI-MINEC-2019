@@ -370,7 +370,7 @@
                                 <span class="text">Agregar Información Complementaria</span>
                         </asp:LinkButton>
                 <asp:Panel runat="server" ID="pnl_estadoVerificado" Visible="false">
-                    <div class="text-center mt-4 mb-4">
+                    
 
                         <%if (beneficiario.ESTADO_PROCESO != "B06" )
                             { %>
@@ -387,7 +387,6 @@
                             <span class="text">Generar Usuario</span>
                         </a>
                         <%}%>
-                    </div>
                 </asp:Panel>
                 <%
                     }

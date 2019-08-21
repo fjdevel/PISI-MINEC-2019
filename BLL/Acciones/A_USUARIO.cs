@@ -24,6 +24,8 @@ namespace BLL.Acciones
         public static BLL.Modelos.TB_USUARIO obtenerCoordinador()
         {
             var res = _context.SP_TB_USUARIO_ObtenerUsuarioCoordinador().FirstOrDefault();
+            if (res == null)
+                return null;
             return new BLL.Modelos.TB_USUARIO
             {
                 ID_USUARIO = res.ID_USUARIO

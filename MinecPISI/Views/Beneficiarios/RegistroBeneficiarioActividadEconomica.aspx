@@ -21,7 +21,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div>
-                                                <h5 class="mt-4">Registro de Beneficiario / Postulante</h5>
+                                                <h5 class="mt-4">Registro de  Postulante</h5>
                                             </div>
                                             <div class="progress mb-2" style="height: 30px;">
                                                 <div id="progressbar" class="progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">

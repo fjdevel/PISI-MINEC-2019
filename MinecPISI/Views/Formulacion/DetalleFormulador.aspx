@@ -17,6 +17,7 @@
     <div class="card-body">
 
         <form method="" runat="server">
+            <asp:Button runat="server" ID="backBtn" OnClick="backBtn_Click" Text="Regresar" />
            <div class="form-group">
                 <div class="form-row">
                     <div class="form-group col-lg-6">
